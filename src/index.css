@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Variables for palette (mirrors Tailwind extended colors) */
+:root {
+  --c-sun: #F6C74B;
+  --c-sun-accent: #E3A72F;
+  --c-sun-soft: #FFF1CC;
+  --c-sand: #F5F1E9;
+  --c-sand-alt: #ECE5D8;
+  --c-sand-deep: #E2D9C9;
+  --c-foam: #FAFBFC;
+  --c-ink: #2B2F36;
+  --c-ink-soft: #4A525E;
+  --c-coral: #E27A4F;
+  --c-focus: #FFD978;
+}
+
+body {
+  background: var(--c-sand);
+  color: var(--c-ink);
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  min-height: 100vh;
+}
+
+h1,h2,h3,h4,h5,h6 { font-weight: 600; letter-spacing: -0.5px; color: var(--c-ink); margin: 0; }
+
+a { color: var(--c-ink-soft); text-decoration: none; transition: color .25s; }
+a:hover { color: var(--c-ink); }
+
+/* Buttons */
+.btn { display:inline-flex; align-items:center; justify-content:center; border-radius:9999px; font-weight:500; font-size:0.875rem; line-height:1.2; padding:0.65rem 1.25rem; transition:all .25s; cursor:pointer; position:relative; border:1px solid transparent; }
+.btn:focus { outline:2px solid var(--c-focus); outline-offset:2px; }
+.btn:disabled { opacity:.5; cursor:not-allowed; }
+.btn-primary { background:var(--c-sun); color:var(--c-ink); box-shadow:0 2px 4px rgba(0,0,0,0.06); }
+.btn-primary:hover { background:var(--c-sun-accent); }
+.btn-outline { background:var(--c-foam); border-color:var(--c-sand-deep); color:var(--c-ink); }
+.btn-outline:hover { background:var(--c-sun-soft); border-color:var(--c-sun); }
+.btn-ghost { background:transparent; color:var(--c-ink-soft); }
+.btn-ghost:hover { background:rgba(246,199,75,0.15); color:var(--c-ink); }
+
+/* Surfaces */
+.card-surface { background:rgba(250,251,252,0.92); backdrop-filter:blur(6px); border:1px solid var(--c-sand-deep); border-radius:1rem; box-shadow:0 2px 4px -2px rgba(0,0,0,0.04),0 6px 16px -6px rgba(0,0,0,0.06); }
+.pill { background:var(--c-sun-soft); color:var(--c-ink); font-size:0.65rem; font-weight:600; padding:0.35rem 0.75rem; border-radius:9999px; letter-spacing:.5px; }
+.divider { height:1px; width:100%; background:linear-gradient(90deg,rgba(0,0,0,0), var(--c-sand-deep), rgba(0,0,0,0)); }
+
+/* Utility tweaks */
+.text-soft { color: var(--c-ink-soft); }
+
+/* Social Media Brand Colors */
+.instagram-gradient {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.tiktok-gradient {
+  background: linear-gradient(45deg, #ff0050 0%, #000000 50%, #00f2ea 100%);
+}
+
+.facebook-gradient {
+  background: linear-gradient(45deg, #1877f2 0%, #42a5f5 100%);
+}
+
+/* Removed default Vite styles; replaced with custom palette utilities */
+
+/* Removed default Vite styles; replaced with custom palette utilities */

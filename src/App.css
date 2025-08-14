@@ -1,0 +1,343 @@
+/* Custom styles for Arriba Surf Camp */
+
+/* TRD Color Palette */
+:root {
+  --orange-primary: #FF6B35;
+  --orange-secondary: #F7931E;
+  --dark: #333333;
+  --light-gray: #F8F8F8;
+  --white: #FFFFFF;
+  --overlay: rgba(0,0,0,0.4);
+}
+
+/* Ensure full width and no overflow */
+html, body, #root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.App {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Scrapbook Design Styles */
+.handwritten {
+  font-family: 'Kalam', cursive;
+  color: #2d3436;
+  line-height: 1.8;
+  transform: rotate(-0.5deg);
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.1);
+}
+
+.marker-text {
+  font-family: 'Permanent Marker', cursive;
+  color: #e17055;
+  text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+}
+
+.casual-handwriting {
+  font-family: 'Caveat', cursive;
+}
+
+/* Scrapbook Elements */
+.scrapbook-element:nth-child(1) { transform: rotate(-2deg); }
+.scrapbook-element:nth-child(2) { transform: rotate(4deg); }
+.scrapbook-element:nth-child(3) { transform: rotate(-1deg); }
+.scrapbook-element:nth-child(4) { transform: rotate(3deg); }
+.scrapbook-element:nth-child(5) { transform: rotate(2deg); }
+.scrapbook-element:nth-child(6) { transform: rotate(-3deg); }
+
+.polaroid {
+  box-shadow: 
+    0 4px 8px rgba(0,0,0,0.1),
+    0 2px 4px rgba(0,0,0,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.3);
+  background: white;
+  padding: 15px 15px 40px 15px;
+  border-radius: 2px;
+}
+
+.scrapbook-item:hover {
+  transform: rotate(0deg) scale(1.02);
+  z-index: 10;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Sticky Notes */
+.sticky-note {
+  position: relative;
+  padding: 15px 20px;
+  margin: 10px;
+  border-radius: 3px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transform: rotate(2deg);
+}
+
+.sticky-note.yellow {
+  background: linear-gradient(135deg, #fff3a0, #fed330);
+}
+
+.sticky-note.pink {
+  background: linear-gradient(135deg, #ffeaa7, #fd79a8);
+}
+
+.sticky-note.blue {
+  background: linear-gradient(135deg, #74b9ff, #0984e3);
+  color: white;
+}
+
+/* Washi Tape */
+.washi-tape {
+  position: absolute;
+  height: 20px;
+  opacity: 0.8;
+  border-radius: 2px;
+}
+
+.washi-tape.blue {
+  background: linear-gradient(90deg, #74b9ff, #0984e3);
+}
+
+.washi-tape.green {
+  background: linear-gradient(90deg, #55a3ff, #00b894);
+}
+
+.washi-tape.orange {
+  background: linear-gradient(90deg, #fd79a8, #e17055);
+}
+
+.washi-tape.diagonal {
+  transform: rotate(45deg);
+}
+
+/* Mobile Adaptations */
+@media (max-width: 768px) {
+  .scrapbook-item {
+    margin: 20px auto;
+    position: relative;
+    transform: rotate(0deg) !important;
+  }
+  
+  .handwritten {
+    transform: rotate(0deg);
+  }
+}
+
+/* Gallery Scrapbook Enhancements */
+.gallery-scrapbook {
+  position: relative;
+  min-height: 120vh;
+  padding: 40px 0;
+}
+
+/* CSS Grid with proper spacing - Method 1 from MD */
+.scrapbook-container {
+  position: relative;
+  padding: 60px 20px;
+}
+
+.scrapbook-card {
+  position: relative;
+  margin: 20px;
+  min-height: 400px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scrapbook-photo-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 
+    0 8px 16px rgba(0,0,0,0.1),
+    0 4px 8px rgba(0,0,0,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scrapbook-photo-card:hover {
+  box-shadow: 
+    0 16px 32px rgba(0,0,0,0.15),
+    0 8px 16px rgba(0,0,0,0.12),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+/* Ensure no overlapping in scrapbook layout */
+.scrapbook-container {
+  position: relative;
+  isolation: isolate;
+}
+
+.scrapbook-item-safe {
+  margin: 20px;
+  min-width: 200px;
+  min-height: 240px;
+}
+
+/* Light background texture */
+.gallery-light-bg {
+  background: 
+    radial-gradient(circle at 25% 25%, rgba(255,206,84,0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(255,145,77,0.1) 0%, transparent 50%),
+    linear-gradient(135deg, #fef7cd 0%, #fed7aa 100%);
+}
+
+/* Dropdown Navigation Improvements - From MD File */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease;
+  padding-top: 10px; /* Create hover zone */
+}
+
+/* Keep dropdown open when hovering parent OR dropdown itself */
+.dropdown:hover .dropdown-menu,
+.dropdown-menu:hover {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Alternative: Use focus-within for better accessibility */
+.dropdown:focus-within .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Mobile dropdown improvements */
+@media (max-width: 768px) {
+  .dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    display: none;
+  }
+  
+  .dropdown.active .dropdown-menu {
+    display: block;
+  }
+}
+
+/* React DatePicker custom styling */
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.react-datepicker__input-container input {
+  width: 100% !important;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.react-datepicker__input-container input:focus {
+  outline: none;
+  border-color: #f97316;
+  box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.2);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f97316;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ea580c;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for video elements */
+video::-webkit-media-controls {
+  display: none !important;
+}
+
+/* Ensure full height for video containers */
+.video-container {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Custom animation for navigation cards */
+.nav-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Gradient overlays */
+.gradient-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+}
+
+/* Hero text shadows for better readability */
+.hero-text {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Booking component backdrop blur fallback */
+.booking-backdrop {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Full width video */
+video {
+  width: 100vw !important;
+  height: 100vh !important;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+  }
+  
+  .booking-component {
+    margin: 0 1rem;
+    max-width: calc(100% - 2rem);
+  }
+
+  /* Ensure video covers full screen on mobile */
+  video {
+    width: 100vw !important;
+    height: 100vh !important;
+    object-fit: cover;
+  }
+}

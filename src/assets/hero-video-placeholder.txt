@@ -1,0 +1,2 @@
+<!-- Video placeholder - Replace with actual hero video -->
+<div class="video-placeholder bg-gradient-to-br from-blue-900 to-teal-700"></div>
