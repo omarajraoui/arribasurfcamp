@@ -65,7 +65,6 @@ const Chambres = () => {
                 alt={obj.label || `${t('surfcamp.rooms.title')} ${i+1}`}
                 aspect="w-full h-full"
         className="transition-transform duration-500 group-hover:scale-[1.04]"
-        manifestKey={obj.label ? obj.label.replace(/\s+/g,'-') : `room-${i+1}`}
               />
               {obj.label && (
                 <figcaption className="absolute inset-x-0 bottom-0 bg-black/40 backdrop-blur-sm text-[10px] md:text-[11px] text-white px-2 py-1">

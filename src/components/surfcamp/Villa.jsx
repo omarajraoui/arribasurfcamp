@@ -56,7 +56,6 @@ const Villa = () => {
                 alt={secondaryLabels[i] || `${t('surfcamp.villa.title')} ${i+1}`}
                 aspect="w-full h-full"
         className="transition-transform duration-500 group-hover:scale-[1.04]"
-        manifestKey={secondaryLabels[i] ? secondaryLabels[i].replace(/\s+/g,'-') : `villa-${i+1}`}
               />
               {secondaryLabels[i] && (
                 <figcaption className="absolute inset-x-0 bottom-0 bg-black/40 backdrop-blur-sm text-[10px] md:text-xs lg:text-[11px] text-white px-2 py-1">

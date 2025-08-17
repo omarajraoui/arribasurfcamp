@@ -31,19 +31,31 @@ const OptimizedImage = ({ src, alt, placeholder, className = '', sources = [], a
   const tinyFallback = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP4//8/AwAI/AL+X4KJ5QAAAABJRU5ErkJggg==';
   const [ph, setPh] = useState(placeholder || tinyFallback);
 
+  // Derive automatic manifest key from filename if not supplied
+  let autoKey = null;
+  if (src) {
+    try {
+      const parts = src.split('/');
+      const file = parts[parts.length - 1];
+      const base = file.replace(/\.[a-zA-Z0-9]+$/, '');
+      autoKey = base.toLowerCase();
+    } catch {}
+  }
+  const effectiveKey = (manifestKey || autoKey || '').toLowerCase();
+
   useEffect(() => {
-    if (!manifestKey) return;
+    if (!effectiveKey) return;
     fetch('/optimized/image-manifest.json')
       .then(r => r.json())
       .then(man => {
-        const entry = man[manifestKey.toLowerCase()];
+        const entry = man[effectiveKey];
         if (entry) {
           setManifestData(entry);
           if (entry.placeholder) setPh(entry.placeholder);
         }
       })
       .catch(()=>{});
-  }, [manifestKey]);
+  }, [effectiveKey]);
 
   return (
     <div className={`relative overflow-hidden ${aspect || ''}`}>
@@ -65,6 +77,7 @@ const OptimizedImage = ({ src, alt, placeholder, className = '', sources = [], a
           loading="lazy"
           decoding="async"
           onLoad={() => setLoaded(true)}
+          onError={() => setLoaded(true)}
           className={`w-full h-full object-cover transition-opacity duration-500 ${loaded ? 'opacity-100' : 'opacity-0'} ${className}`}
         />
       </picture>
