@@ -3,12 +3,16 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "dev": "vite",
+  "prebuild": "node scripts/optimize-images.mjs",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-  "deploy": "vite build && npx gh-pages -d dist",
+    "deploy:gh-pages": "vite build && npx gh-pages -d dist",
   "netlify:dev": "netlify dev",
   "functions:create": "netlify functions:create"
   },
@@ -16,6 +20,8 @@
     "framer-motion": "^12.23.12",
     "i18next": "^25.3.4",
     "i18next-browser-languagedetector": "^8.2.0",
+    "fast-glob": "^3.3.2",
+    "sharp": "^0.33.3",
     "leaflet": "^1.9.4",
     "react": "^19.1.1",
     "react-datepicker": "^8.4.0",
