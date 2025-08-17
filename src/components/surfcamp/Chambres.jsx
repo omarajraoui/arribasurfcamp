@@ -58,13 +58,14 @@ const Chambres = () => {
 
         {/* Secondary photos */}
   <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-          {secondaryImages.map((obj,i)=>(
+      {secondaryImages.map((obj,i)=>(
             <figure key={i} className="group rounded-2xl border border-gray-200 overflow-hidden aspect-[16/10] relative shadow-sm">
               <OptimizedImage
                 src={obj.src}
                 alt={obj.label || `${t('surfcamp.rooms.title')} ${i+1}`}
                 aspect="w-full h-full"
-                className="transition-transform duration-500 group-hover:scale-[1.04]"
+        className="transition-transform duration-500 group-hover:scale-[1.04]"
+        manifestKey={obj.label ? obj.label.replace(/\s+/g,'-') : `room-${i+1}`}
               />
               {obj.label && (
                 <figcaption className="absolute inset-x-0 bottom-0 bg-black/40 backdrop-blur-sm text-[10px] md:text-[11px] text-white px-2 py-1">

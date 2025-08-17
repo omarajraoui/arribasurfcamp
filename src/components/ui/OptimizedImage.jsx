@@ -15,8 +15,9 @@ import React, { useState, useEffect } from 'react';
   - On load of full image, fades in and removes blur.
 */
 
-const OptimizedImage = ({ src, alt, placeholder, className = '', sources = [], aspect }) => {
+const OptimizedImage = ({ src, alt, placeholder, className = '', sources = [], aspect, manifestKey }) => {
   const [loaded, setLoaded] = useState(false);
+  const [manifestData, setManifestData] = useState(null);
   // Derive potential webp sibling (build script generates .webp next to original)
   let autoWebpSource = null;
   if (src && /\.(jpe?g|png)$/i.test(src)) {
@@ -28,7 +29,21 @@ const OptimizedImage = ({ src, alt, placeholder, className = '', sources = [], a
   }
   // Use a 1x1 transparent png if no placeholder provided
   const tinyFallback = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP4//8/AwAI/AL+X4KJ5QAAAABJRU5ErkJggg==';
-  const ph = placeholder || tinyFallback;
+  const [ph, setPh] = useState(placeholder || tinyFallback);
+
+  useEffect(() => {
+    if (!manifestKey) return;
+    fetch('/optimized/image-manifest.json')
+      .then(r => r.json())
+      .then(man => {
+        const entry = man[manifestKey.toLowerCase()];
+        if (entry) {
+          setManifestData(entry);
+          if (entry.placeholder) setPh(entry.placeholder);
+        }
+      })
+      .catch(()=>{});
+  }, [manifestKey]);
 
   return (
     <div className={`relative overflow-hidden ${aspect || ''}`}>
@@ -39,6 +54,9 @@ const OptimizedImage = ({ src, alt, placeholder, className = '', sources = [], a
         aria-hidden="true"
       />
       <picture>
+        {manifestData && manifestData.variants && manifestData.variants.sort((a,b)=>b.width - a.width).map((v,i)=>(
+          <source key={i} srcSet={`${v.src} ${v.width}w`} type={v.type} />
+        ))}
         {autoWebpSource && <source {...autoWebpSource} />}
         {sources.map((s, i) => (<source key={i} {...s} />))}
         <img

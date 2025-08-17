@@ -49,13 +49,14 @@ const Villa = () => {
         </div>
 
         <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-          {[villa2, villa3, villaTerrace, villaView].map((src,i)=>(
+      {[villa2, villa3, villaTerrace, villaView].map((src,i)=>(
             <figure key={i} className="rounded-2xl border border-gray-200 overflow-hidden aspect-[16/10] relative group shadow-sm">
               <OptimizedImage
                 src={src}
                 alt={secondaryLabels[i] || `${t('surfcamp.villa.title')} ${i+1}`}
                 aspect="w-full h-full"
-                className="transition-transform duration-500 group-hover:scale-[1.04]"
+        className="transition-transform duration-500 group-hover:scale-[1.04]"
+        manifestKey={secondaryLabels[i] ? secondaryLabels[i].replace(/\s+/g,'-') : `villa-${i+1}`}
               />
               {secondaryLabels[i] && (
                 <figcaption className="absolute inset-x-0 bottom-0 bg-black/40 backdrop-blur-sm text-[10px] md:text-xs lg:text-[11px] text-white px-2 py-1">
