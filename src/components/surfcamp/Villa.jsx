@@ -5,8 +5,8 @@ import 'leaflet/dist/leaflet.css';
 // Villa photos
 import villaMain from '../../assets/surfcamp/villa.jpg';
 import villa2 from '../../assets/surfcamp/villa2.jpg';
-import villa3 from '../../assets/surfcamp/villa 3.jpg';
-import villaTerrace from '../../assets/surfcamp/villa terrace.jpg';
+import villa3 from '../../assets/surfcamp/villa-3.jpg';
+import villaTerrace from '../../assets/surfcamp/villa-terrace.jpg';
 import villaView from '../../assets/surfcamp/villaview.jpg';
 import OptimizedImage from '../ui/OptimizedImage';
 import L from 'leaflet';

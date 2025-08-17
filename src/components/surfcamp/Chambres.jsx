@@ -3,9 +3,9 @@ import { useTranslation } from 'react-i18next';
 // Room / shared space photos
 import roomMain from '../../assets/surfcamp/chambre.JPG';
 import roomAlt1 from '../../assets/surfcamp/chambre2.JPG';
-import roomAlt2 from '../../assets/surfcamp/chambre partagé2.JPG';
+import roomAlt2 from '../../assets/surfcamp/chambre-partage2.jpg';
 import roomAlt3 from '../../assets/surfcamp/yoga.JPG';
-import roomAlt4 from '../../assets/surfcamp/yoga class.JPG';
+import roomAlt4 from '../../assets/surfcamp/yoga-class.jpg';
 import OptimizedImage from '../ui/OptimizedImage';
 import { formatWeekBase } from '../../utils/currency';
 
