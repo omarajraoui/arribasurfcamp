@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
+// Leaflet map deferred
+import LazyMap from './LazyMap';
 // Villa photos
 import villaMain from '../../assets/surfcamp/villa.jpg';
 import villa2 from '../../assets/surfcamp/villa2.jpg';
@@ -9,18 +9,7 @@ import villa3 from '../../assets/surfcamp/villa-3.jpg';
 import villaTerrace from '../../assets/surfcamp/villa-terrace.jpg';
 import villaView from '../../assets/surfcamp/villaview.jpg';
 import OptimizedImage from '../ui/OptimizedImage';
-import L from 'leaflet';
-
-// Custom icon (fallback to default path) - adjust if you store a marker asset locally
-const pinIcon = new L.Icon({
-  iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
-  iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
-  shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [0, -34],
-  shadowSize: [41, 41]
-});
+// (Leaflet assets now loaded only when LazyMap enters viewport)
 
 const Villa = () => {
   const { t } = useTranslation();
@@ -92,20 +81,8 @@ const Villa = () => {
               </ul>
             </div>
             <div className="mt-8 w-full h-64 rounded-xl overflow-hidden border border-gray-200 relative z-10">
-              <MapContainer center={[-8.8885, 116.2829]} zoom={15} scrollWheelZoom={false} className="w-full h-full z-10">
-                <TileLayer
-                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                />
-  <Marker position={[-8.8885, 116.2829]} icon={pinIcon}>
-      <Popup>
-    {mapTitle}<br />
-    {mapAddress[0]}<br />
-    {mapAddress[1]}
-      </Popup>
-                </Marker>
-              </MapContainer>
-        <div className="absolute top-2 left-2 bg-white/80 backdrop-blur px-3 py-1 rounded-full text-[11px] font-medium text-brand-ink-soft shadow">{t('surfcamp.common.locationBadge')}</div>
+              <LazyMap />
+              <div className="absolute top-2 left-2 bg-white/80 backdrop-blur px-3 py-1 rounded-full text-[11px] font-medium text-brand-ink-soft shadow">{t('surfcamp.common.locationBadge')}</div>
             </div>
           </div>
         </div>

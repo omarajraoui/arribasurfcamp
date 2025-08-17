@@ -22,7 +22,7 @@ const HeroSection = () => {
           poster={import.meta.env.VITE_HERO_POSTER_URL || undefined}
           src={heroVideoSrc}
           crossOrigin="anonymous"
-          preload="auto"
+          preload="metadata"
           onError={() => setVideoError(true)}
         />
       )}
