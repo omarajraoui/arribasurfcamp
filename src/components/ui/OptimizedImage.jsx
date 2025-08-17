@@ -17,6 +17,15 @@ import React, { useState, useEffect } from 'react';
 
 const OptimizedImage = ({ src, alt, placeholder, className = '', sources = [], aspect }) => {
   const [loaded, setLoaded] = useState(false);
+  // Derive potential webp sibling (build script generates .webp next to original)
+  let autoWebpSource = null;
+  if (src && /\.(jpe?g|png)$/i.test(src)) {
+    try {
+      const webpGuess = src.replace(/\.(jpe?g|png)$/i, '.webp');
+      // We can't synchronously check existence at runtime in browser; include anyway.
+      autoWebpSource = { srcSet: webpGuess, type: 'image/webp' };
+    } catch {}
+  }
   // Use a 1x1 transparent png if no placeholder provided
   const tinyFallback = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP4//8/AwAI/AL+X4KJ5QAAAABJRU5ErkJggg==';
   const ph = placeholder || tinyFallback;
@@ -30,9 +39,8 @@ const OptimizedImage = ({ src, alt, placeholder, className = '', sources = [], a
         aria-hidden="true"
       />
       <picture>
-        {sources.map((s, i) => (
-          <source key={i} {...s} />
-        ))}
+        {autoWebpSource && <source {...autoWebpSource} />}
+        {sources.map((s, i) => (<source key={i} {...s} />))}
         <img
           src={src}
           alt={alt}
