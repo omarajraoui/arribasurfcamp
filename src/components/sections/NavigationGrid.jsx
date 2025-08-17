@@ -47,15 +47,23 @@ const NavigationGrid = () => {
     if (link) navigate(link);
   };
   
+  // Import static images so Vite bundles them correctly (direct /src paths won't resolve in production)
+  // Using dynamic requires is avoided so tree-shaking/hashing works.
+  const imgArriba = new URL('../../assets/Arriba.PNG', import.meta.url).href;
+  const imgEquipe = new URL('../../assets/equipe.JPG', import.meta.url).href;
+  const imgChambre = new URL('../../assets/chambre.JPG', import.meta.url).href;
+  const imgVilla = new URL('../../assets/villa.jpg', import.meta.url).href;
+  const imgPlanning = new URL('../../assets/planning.jpg', import.meta.url).href;
+
   const primaryMini = [
-    { title: t('cards.arriba'), image: '/src/assets/Arriba.PNG', link: '/histoire' },
-    { title: t('cards.team'), image: '/src/assets/equipe.JPG', link: '/equipe' },
+    { title: t('cards.arriba'), image: imgArriba, link: '/histoire' },
+    { title: t('cards.team'), image: imgEquipe, link: '/equipe' },
     { title: t('cards.gallery'), image: 'https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=400&h=300&fit=crop&auto=format', link: '/vie-arriba' }
   ];
   const secondaryCards = [
-  { title: t('cards.rooms'), image: '/src/assets/chambre.JPG', link: '/le-surf-camp#chambres' },
-  { title: t('cards.villa'), image: '/src/assets/villa.jpg', link: '/le-surf-camp#villa' },
-  { title: t('cards.planning'), image: '/src/assets/planning.jpg', link: '/le-surf-camp#planning' }
+    { title: t('cards.rooms'), image: imgChambre, link: '/le-surf-camp#chambres' },
+    { title: t('cards.villa'), image: imgVilla, link: '/le-surf-camp#villa' },
+    { title: t('cards.planning'), image: imgPlanning, link: '/le-surf-camp#planning' }
   ];
 
   const getCardIcon = (title) => {
