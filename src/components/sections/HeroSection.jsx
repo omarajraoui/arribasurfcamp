@@ -7,7 +7,7 @@ const HeroSection = () => {
   const { t } = useTranslation();
   
   const [videoError, setVideoError] = useState(false);
-  const heroVideoSrc = import.meta.env.VITE_HERO_VIDEO_URL || 'surf-video.mp4';
+  const heroVideoSrc = import.meta.env.VITE_HERO_VIDEO_URL || 'https://videos.pexels.com/video-files/4933720/4933720-uhd_2732_1440_30fps.mp4';
   return (
   <div className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-brand-sand">
       {/* Video Background (hidden if error) */}
@@ -21,6 +21,8 @@ const HeroSection = () => {
           style={{ width: '100vw', height: '100vh', objectFit: 'cover' }}
           poster={import.meta.env.VITE_HERO_POSTER_URL || undefined}
           src={heroVideoSrc}
+          crossOrigin="anonymous"
+          preload="auto"
           onError={() => setVideoError(true)}
         />
       )}
