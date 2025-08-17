@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import LExpArribaPage from './pages/LExpArribaPage';
-import LeSurfCamp from './pages/LeSurfCamp';
-import BookNow from './pages/BookNow';
+// Route-level code splitting
+const HomePage = lazy(() => import('./pages/HomePage'));
+const LExpArribaPage = lazy(() => import('./pages/LExpArribaPage'));
+const LeSurfCamp = lazy(() => import('./pages/LeSurfCamp'));
+const BookNow = lazy(() => import('./pages/BookNow'));
 import Navigation from './components/layout/Navigation';
 import SocialSidebar from './components/ui/SocialSidebar';
 import FloatingContactButtons from './components/ui/FloatingContactButtons';
@@ -23,12 +24,15 @@ function App() {
         <SocialSidebar />
         <FloatingContactButtons />
         
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/lexparriba" element={<LExpArribaPage />} />
-          <Route path="/le-surf-camp" element={<LeSurfCamp />} />
-          <Route path="/book-now" element={<BookNow />} />
-        </Routes>
+        <Suspense fallback={<div className="w-full min-h-screen flex items-center justify-center text-sm text-brand-ink-soft">Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/lexparriba" element={<LExpArribaPage />} />
+            <Route path="/le-surf-camp" element={<LeSurfCamp />} />
+            <Route path="/book-now" element={<BookNow />} />
+            <Route path="*" element={<HomePage />} />
+          </Routes>
+        </Suspense>
       </div>
     </Router>
   );

@@ -56,17 +56,17 @@ const Chambres = () => {
         </div>
 
         {/* Secondary photos */}
-        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6">
+  <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {secondaryImages.map((obj,i)=>(
-            <figure key={i} className="group rounded-xl border border-gray-200 overflow-hidden aspect-square relative">
+            <figure key={i} className="group rounded-2xl border border-gray-200 overflow-hidden aspect-[16/10] relative shadow-sm">
               <img
                 src={obj.src}
                 alt={obj.label || `${t('surfcamp.rooms.title')} ${i+1}`}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.04]"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                 loading="lazy"
               />
               {obj.label && (
-                <figcaption className="absolute inset-x-0 bottom-0 bg-black/40 text-[10px] md:text-[11px] text-white px-2 py-1 backdrop-blur-sm">
+                <figcaption className="absolute inset-x-0 bottom-0 bg-black/40 backdrop-blur-sm text-[10px] md:text-[11px] text-white px-2 py-1">
                   {obj.label}
                 </figcaption>
               )}

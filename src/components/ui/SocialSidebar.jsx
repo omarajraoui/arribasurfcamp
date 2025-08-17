@@ -34,7 +34,7 @@ const socials = [
 const SocialSidebar = () => {
   return (
     <aside
-      className="fixed left-2 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-2 p-3 rounded-xl bg-brand-foam/70 backdrop-blur-md border border-brand-sand-deep/70 shadow-subtle"
+      className="hidden md:flex fixed left-2 top-1/2 -translate-y-1/2 z-40 flex-col gap-2 p-2.5 rounded-xl bg-brand-foam/70 backdrop-blur-md border border-brand-sand-deep/70 shadow-subtle"
       aria-label="Social media links"
     >
       {socials.map(({ name, href, svg }) => (
@@ -44,10 +44,11 @@ const SocialSidebar = () => {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={name}
-          className="group relative w-10 h-12 flex items-center justify-center rounded-xl border-2 border-brand-sun hover:border-brand-sun-accent bg-white/90 hover:bg-brand-sun/10 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-brand-sun-accent transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg"
+          className="group relative w-8 h-10 flex items-center justify-center rounded-xl border-2 border-brand-sun hover:border-brand-sun-accent bg-white/90 hover:bg-brand-sun/10 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-brand-sun-accent transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg"
         >
           <span className="relative text-brand-ink group-hover:text-brand-sun-accent group-hover:scale-110 transition-all duration-300">
-            {svg}
+            {/** Shrink icon slightly for desktop */}
+            {React.cloneElement(svg, { className: 'w-4 h-4' })}
           </span>
         </a>
       ))}

@@ -26,6 +26,21 @@ const MasonryGrid = ({ photos, onPhotoClick }) => {
     }
   };
 
+  // Mobile specific height mapping for a varied vertical feed
+  const getMobileHeightClass = (size) => {
+    switch (size) {
+      case 'large':
+        return 'h-96';
+      case 'medium':
+        return 'h-72';
+      case 'wide':
+        return 'h-64';
+      case 'small':
+      default:
+        return 'h-56';
+    }
+  };
+
   return (
     <motion.div 
       className="masonry-grid scrapbook-container"
@@ -34,11 +49,11 @@ const MasonryGrid = ({ photos, onPhotoClick }) => {
       transition={{ duration: 0.6 }}
     >
       {/* Desktop Grid */}
-      <div className="hidden lg:grid grid-cols-4 gap-3 auto-rows-min px-4 py-8">
+  <div className="hidden lg:grid grid-cols-4 gap-3 auto-rows-min px-4 py-8">
         {photos.map((photo, index) => (
           <motion.div
             key={photo.id}
-            className={`${getSizeClass(photo.size)} ${getHeightClass(photo.size)} group cursor-pointer relative overflow-hidden rounded-lg scrapbook-card`}
+    className={`${getSizeClass(photo.size)} ${getHeightClass(photo.size)} group cursor-pointer relative overflow-hidden rounded-2xl scrapbook-card shadow-md`}
             initial={{ opacity: 0, scale: 0.8, y: 50 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ 
@@ -80,11 +95,11 @@ const MasonryGrid = ({ photos, onPhotoClick }) => {
       </div>
 
       {/* Tablet Grid */}
-      <div className="hidden md:grid lg:hidden grid-cols-3 gap-3 px-4 py-6">
+  <div className="hidden md:grid lg:hidden grid-cols-3 gap-3 px-4 py-6">
         {photos.map((photo, index) => (
           <motion.div
             key={photo.id}
-            className="h-64 group cursor-pointer relative overflow-hidden rounded-lg scrapbook-card"
+    className="h-64 group cursor-pointer relative overflow-hidden rounded-2xl scrapbook-card shadow-md"
             initial={{ opacity: 0, scale: 0.8, y: 50 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ 
@@ -124,34 +139,30 @@ const MasonryGrid = ({ photos, onPhotoClick }) => {
         ))}
       </div>
 
-      {/* Mobile Grid */}
-      <div className="grid md:hidden grid-cols-2 gap-2 px-4 py-4">
+      {/* Mobile Vertical Feed (single column) */}
+  <div className="md:hidden flex flex-col gap-5 px-4 py-6">
         {photos.map((photo, index) => (
           <motion.div
             key={photo.id}
-            className="h-48 group cursor-pointer relative overflow-hidden rounded-lg scrapbook-card"
-            initial={{ opacity: 0, scale: 0.8, y: 50 }}
+    className={`${getMobileHeightClass(photo.size)} group cursor-pointer relative overflow-hidden rounded-2xl first:pt-0 scrapbook-card shadow-md`}
+            initial={{ opacity: 0, scale: 0.95, y: 40 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ 
-              duration: 0.6, 
-              delay: index * 0.1,
-              ease: "easeOut"
-            }}
-            whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.5, delay: index * 0.06, ease: 'easeOut' }}
+            whileTap={{ scale: 0.97 }}
             onClick={() => onPhotoClick(photo)}
           >
             <img
               src={photo.src}
               alt={photo.title}
-              className="w-full h-full object-cover"
-              loading="lazy"
+      className="w-full h-full object-cover transition-transform duration-700 group-active:scale-105"
+              loading={index < 3 ? 'eager' : 'lazy'}
+              decoding="async"
             />
-            
-            {/* Mobile overlay - simpler */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 active:opacity-100 transition-opacity duration-200">
-              <div className="absolute bottom-0 left-0 right-0 p-3 text-white">
-                <h3 className="font-bold text-sm mb-1">{photo.title}</h3>
-                <p className="text-xs text-gray-200 truncate">{photo.description}</p>
+            {/* Caption overlay appears with press for mobile */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-active:opacity-100 transition-opacity duration-300">
+              <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                <h3 className="font-semibold text-base mb-1 line-clamp-1">{photo.title}</h3>
+                <p className="text-[11px] text-gray-200 line-clamp-2 leading-snug">{photo.description}</p>
               </div>
             </div>
           </motion.div>

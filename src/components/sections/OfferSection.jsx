@@ -62,6 +62,8 @@ const OfferSection = () => {
               <img
                 src={mainOffer.image}
                 alt={mainOffer.name}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
@@ -183,7 +185,7 @@ const OfferSection = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-center mt-16"
         >
-          <div className="flex flex-wrap justify-center items-center gap-8 text-brand-ink-soft">
+          <div className="flex flex-col items-center gap-6 text-brand-ink-soft">
             <div className="flex items-center gap-2">
               <svg className="w-5 h-5 text-brand-sun-accent" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>

@@ -65,6 +65,11 @@ const Navigation = ({ isVisible }) => {
     setDropdownTimeout(timeout);
   };
 
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const toggleMobile = () => setMobileOpen(o => !o);
+  const closeMobile = () => setMobileOpen(false);
+
   return (
     <motion.nav
       initial={{ y: -72, opacity: 0 }}
@@ -76,7 +81,7 @@ const Navigation = ({ isVisible }) => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-between py-2 md:py-3">
           {/* Left Navigation */}
-          <div className="flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             <button 
               onClick={() => handleNavigation('/')}
               className="relative group text-gray-800 font-medium tracking-wide cursor-pointer hover:text-orange-500 transition-colors duration-300"
@@ -131,12 +136,12 @@ const Navigation = ({ isVisible }) => {
               onClick={() => handleNavigation('/')}
               className="flex items-center group"
             >
-              <img src={logo} alt="Arriba Surf Camp Logo" className="h-20 sm:h-24 w-auto drop-shadow-md transition-transform group-hover:scale-105" />
+              <img src={logo} alt="Arriba Surf Camp Logo" className="h-20 sm:h-24 w-auto drop-shadow-md transition-transform group-hover:scale-105" loading="lazy" />
             </button>
           </div>
 
           {/* Right Navigation */}
-          <div className="flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             <div 
               className="relative dropdown"
               onMouseEnter={() => handleDropdownEnter('surf')}
@@ -199,8 +204,70 @@ const Navigation = ({ isVisible }) => {
               <span className="absolute inset-0 bg-gradient-to-r from-brand-sun-soft/0 via-white/30 to-brand-sun-soft/0 opacity-0 group-hover:opacity-100 transition-opacity" />
             </button>
           </div>
+          {/* Mobile Hamburger */}
+          <div className="md:hidden flex items-center">
+            <button
+              onClick={toggleMobile}
+              aria-label="Menu"
+              className="inline-flex items-center justify-center p-2 rounded-md text-brand-ink hover:bg-brand-sand/60 focus:outline-none focus:ring-2 focus:ring-brand-sun"
+            >
+              <span className="sr-only">Open main menu</span>
+              <svg className={`h-7 w-7 transition-transform ${mobileOpen ? 'rotate-90' : ''}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                {mobileOpen ? (
+                  <path d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <>
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="18" x2="21" y2="18" />
+                  </>
+                )}
+              </svg>
+            </button>
+          </div>
           </div>
         </div>
+        {/* Mobile Panel (conditionally rendered to avoid reserving space) */}
+        {mobileOpen && (
+          <div className="md:hidden origin-top animate-[fadeDown_0.3s_ease] bg-white/95 backdrop-blur border-t border-brand-sand-deep/50 shadow-lg">
+            <div className="px-4 pt-2 pb-6 space-y-4">
+              <div className="flex flex-col space-y-2">
+                <button onClick={() => { handleNavigation('/'); closeMobile(); }} className="text-left text-brand-ink/90 font-medium py-2 px-3 rounded-md hover:bg-brand-sand/70">{t('navigation.home')}</button>
+                <div className="border-t border-brand-sand/60 my-1" />
+                <p className="text-xs uppercase tracking-wider text-brand-ink/50 px-3">{t('navigation.experience')}</p>
+                <div className="grid grid-cols-1 gap-1 px-1">
+                  <button onClick={() => { handleNavigation('/lexparriba#histoire'); closeMobile(); }} className="text-left text-brand-ink/80 text-sm py-2 px-3 rounded-md hover:bg-brand-sand/60">{t('navigation.history')}</button>
+                  <button onClick={() => { handleNavigation('/lexparriba#equipe'); closeMobile(); }} className="text-left text-brand-ink/80 text-sm py-2 px-3 rounded-md hover:bg-brand-sand/60">{t('navigation.team')}</button>
+                  <button onClick={() => { handleNavigation('/lexparriba#vie-arriba'); closeMobile(); }} className="text-left text-brand-ink/80 text-sm py-2 px-3 rounded-md hover:bg-brand-sand/60">{t('navigation.life')}</button>
+                </div>
+                <div className="border-t border-brand-sand/60 my-2" />
+                <p className="text-xs uppercase tracking-wider text-brand-ink/50 px-3">{t('navigation.surfCamp')}</p>
+                <div className="grid grid-cols-1 gap-1 px-1">
+                  <button onClick={() => { handleNavigation('/le-surf-camp#chambres'); closeMobile(); }} className="text-left text-brand-ink/80 text-sm py-2 px-3 rounded-md hover:bg-brand-sand/60">{t('navigation.rooms')}</button>
+                  <button onClick={() => { handleNavigation('/le-surf-camp#villa'); closeMobile(); }} className="text-left text-brand-ink/80 text-sm py-2 px-3 rounded-md hover:bg-brand-sand/60">{t('navigation.villa')}</button>
+                  <button onClick={() => { handleNavigation('/le-surf-camp#planning'); closeMobile(); }} className="text-left text-brand-ink/80 text-sm py-2 px-3 rounded-md hover:bg-brand-sand/60">{t('navigation.planning')}</button>
+                </div>
+                <div className="border-t border-brand-sand/60 my-2" />
+                <div className="flex flex-wrap gap-2 bg-brand-sand/50 rounded-full px-2 py-1">
+                  {['ESP', 'ENG', 'FR', 'NL', 'ID'].map((lang) => (
+                    <button
+                      key={lang}
+                      onClick={() => { changeLanguage(lang); }}
+                      className={`px-2 py-0.5 text-[11px] font-semibold tracking-wide rounded-full transition-all ${
+                        selectedLanguage === lang 
+                          ? 'bg-brand-sun text-brand-ink shadow-sm' 
+                          : 'text-brand-ink/60 hover:text-brand-ink'
+                      }`}
+                    >
+                      {lang}
+                    </button>
+                  ))}
+                </div>
+                <button onClick={() => { handleNavigation('/book-now'); closeMobile(); }} className="w-full mt-2 bg-brand-sun text-brand-ink px-6 py-2 rounded-full font-semibold shadow-subtle hover:shadow-md transition-all border border-brand-sun-soft/60">{t('navigation.bookNow')}</button>
+              </div>
+            </div>
+          </div>
+        )}
   {/* Removed bottom gradient bar for cleaner transparent nav */}
       </div>
     </motion.nav>

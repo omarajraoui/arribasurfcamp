@@ -293,8 +293,12 @@ const GallerieSection = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           viewport={{ once: true }}
         >
-          <motion.button
-            className="px-8 py-3 bg-[#FF6B35] text-white font-semibold rounded-full hover:bg-[#E55A2B] transition-all duration-300 shadow-lg"
+          <motion.a
+            href="https://www.instagram.com/arriba.surfcamp.bali?igsh=YWQ4eWI3bHR5dTBs"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View more photos on Instagram"
+            className="inline-block px-8 py-3 bg-[#FF6B35] text-white font-semibold rounded-full hover:bg-[#E55A2B] transition-all duration-300 shadow-lg"
             whileHover={{ 
               scale: 1.05,
               boxShadow: "0 10px 30px rgba(255, 107, 53, 0.3)"
@@ -302,7 +306,7 @@ const GallerieSection = () => {
             whileTap={{ scale: 0.95 }}
           >
             {t('gallery.loadMore')}
-          </motion.button>
+          </motion.a>
         </motion.div>
 
         {/* Social Call to Action */}

@@ -6,7 +6,7 @@ const resources = {
   en: {
     translation: {
       heroExp: {
-        title: "L'EXP ARRIBA",
+  title: "ARRIBA EXPERIENCE",
         subtitle: "Live the ultimate surf adventure in Indonesia",
         description: "Since 2018, Arriba Surf Camp has been redefining the surf camp experience. Between crystal clear waters, a passionate community and secret spots, discover why our riders return year after year.",
         discover: "DISCOVER"
@@ -74,16 +74,16 @@ const resources = {
         }
       },
       navigation: {
-        home: "Home",
-        experience: "L'Exp Arriba",
-        surfCamp: "Le Surf Camp",
-        history: "L'Histoire",
-        team: "L'Équipe",
-        life: "La Vie Arriba",
-        rooms: "Les Chambres",
-        villa: "La Villa",
-        planning: "Le Planning",
-        bookNow: "Book Now"
+  home: "Home",
+  experience: "Arriba Experience",
+  surfCamp: "Surf Camp",
+  history: "History",
+  team: "Team",
+  life: "Arriba Life",
+  rooms: "Rooms",
+  villa: "Villa",
+  planning: "Schedule",
+  bookNow: "Book Now"
       },
       hero: {
         title: "ARRIBA SURF CAMP",
@@ -660,14 +660,14 @@ const resources = {
       photoFilter: { categories: { all: "Todo", surf: "Surf Sessions", camp: "Camp Life", food: "Food", sunsets: "Sunsets", community: "Community" }, descriptions: { all: "Todas las categorías", surf: "Sesiones de surf", camp: "Vida en el camp", food: "Gastronomía", sunsets: "Atardeceres", community: "Comunidad" } },
       navigation: {
         home: "Inicio",
-        experience: "L'Exp Arriba",
-        surfCamp: "Le Surf Camp",
-        history: "L'Histoire",
-        team: "L'Équipe",
-        life: "La Vie Arriba",
-        rooms: "Las Habitaciones",
-        villa: "La Villa",
-        planning: "Planificación",
+  experience: "Experiencia Arriba",
+  surfCamp: "Surf Camp",
+  history: "Historia",
+  team: "Equipo",
+  life: "Vida Arriba",
+  rooms: "Habitaciones",
+  villa: "Villa",
+  planning: "Planificación",
         bookNow: "Reservar"
       },
       hero: {
@@ -700,13 +700,13 @@ const resources = {
         invalidStart: "Por favor elige un domingo (estancia de domingo a sábado)."
       },
       cards: {
-        discover: "Descubrir",
-        arriba: "Arriba",
-        team: "L'Équipe",
-        gallery: "Galería",
-        rooms: "Habitaciones",
-        villa: "Villa",
-        planning: "Planning"
+  discover: "Descubrir",
+  arriba: "Arriba",
+  team: "Equipo",
+  gallery: "Galería",
+  rooms: "Habitaciones",
+  villa: "Villa",
+  planning: "Planificación"
       },
       offers: {
         title: "Elige Tu Aventura de Surf",
@@ -866,13 +866,13 @@ const resources = {
   photoFilter: { categories: { all: "Alles", surf: "Surf Sessions", camp: "Camp Life", food: "Food", sunsets: "Sunsets", community: "Community" }, descriptions: { all: "Alle categorieën", surf: "Surf sessies", camp: "Camp leven", food: "Gastronomie", sunsets: "Zonsondergangen", community: "Community" } },
       navigation: {
         home: "Home",
-        experience: "L'Exp Arriba",
-        surfCamp: "Le Surf Camp",
-        history: "L'Histoire",
-        team: "L'Équipe",
-        life: "La Vie Arriba",
-        rooms: "De Kamers",
-        villa: "De Villa",
+  experience: "Arriba Ervaring",
+  surfCamp: "Surf Camp",
+  history: "Geschiedenis",
+  team: "Team",
+  life: "Arriba Leven",
+  rooms: "Kamers",
+  villa: "Villa",
         planning: "Planning",
         bookNow: "Boek Nu"
       },
@@ -906,13 +906,13 @@ const resources = {
         invalidStart: "Kies een zondag (verblijf zondag t/m zaterdag)."
       },
       cards: {
-        discover: "Ontdekken",
-        arriba: "Arriba",
-        team: "L'Équipe",
-        gallery: "Galerij",
-        rooms: "Kamers",
-        villa: "Villa",
-        planning: "Planning"
+      discover: "Ontdekken",
+      arriba: "Arriba",
+      team: "Team",
+      gallery: "Galerij",
+      rooms: "Kamers",
+      villa: "Villa",
+      planning: "Planning"
       },
       offers: {
         title: "Kies Je Surf Avontuur",
@@ -1072,11 +1072,11 @@ const resources = {
   photoFilter: { categories: { all: "Semua", surf: "Surf Sessions", camp: "Camp Life", food: "Food", sunsets: "Sunsets", community: "Community" }, descriptions: { all: "Semua kategori", surf: "Sesi selancar", camp: "Kehidupan camp", food: "Gastronomi", sunsets: "Matahari terbenam", community: "Komunitas" } },
       navigation: {
         home: "Beranda",
-        experience: "L'Exp Arriba",
-        surfCamp: "Le Surf Camp",
-        history: "L'Histoire",
-        team: "L'Équipe",
-        life: "La Vie Arriba",
+  experience: "Pengalaman Arriba",
+  surfCamp: "Surf Camp",
+  history: "Sejarah",
+  team: "Tim",
+  life: "Kehidupan Arriba",
         rooms: "Kamar",
         villa: "Villa",
         planning: "Jadwal",
@@ -1112,13 +1112,13 @@ const resources = {
         invalidStart: "Silakan pilih hari Minggu (minggu Minggu sampai Sabtu)."
       },
       cards: {
-        discover: "Jelajahi",
-        arriba: "Arriba",
-        team: "L'Équipe",
-        gallery: "Galeri",
-        rooms: "Kamar",
-        villa: "Villa",
-        planning: "Jadwal"
+      discover: "Jelajahi",
+      arriba: "Arriba",
+      team: "Tim",
+      gallery: "Galeri",
+      rooms: "Kamar",
+      villa: "Villa",
+      planning: "Jadwal"
       },
       offers: {
         title: "Pilih Petualangan Selancar Anda",

@@ -16,8 +16,8 @@ const HeroVideo = () => {
           muted
           loop
           playsInline
-          poster="/surf-video.mp4"
-          onError={(e)=>{ e.currentTarget.src='/surf-video.mp4'; }}
+          poster="surf-video.mp4"
+          onError={(e)=>{ e.currentTarget.src='surf-video.mp4'; }}
         >
           <source src={heroVideoSrc} type="video/mp4" />
           {/* Fallback gradient background if video unsupported */}

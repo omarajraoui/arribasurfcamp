@@ -80,6 +80,7 @@ const Footer = () => {
                 <img 
                   src={photo.src} 
                   alt={photo.alt}
+                  loading="lazy"
                   className="w-full h-48 sm:h-32 lg:h-40 object-cover"
                 />
                 {/* Instagram Icon Overlay */}

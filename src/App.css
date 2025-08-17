@@ -24,6 +24,19 @@ html, body, #root {
   overflow-x: hidden;
 }
 
+/* Ensure navigation stays above interactive map layers */
+nav, .navigation, .navigation * {
+  z-index: 1000;
+}
+
+/* Constrain Leaflet map layers beneath navbar */
+.leaflet-container,
+.leaflet-pane,
+.leaflet-top,
+.leaflet-bottom {
+  z-index: 200 !important;
+}
+
 /* Scrapbook Design Styles */
 .handwritten {
   font-family: 'Kalam', cursive;

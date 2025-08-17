@@ -120,41 +120,7 @@ const ScrollNavigation = () => {
         )}
       </AnimatePresence>
 
-      {/* Mobile Navigation */}
-      <AnimatePresence>
-        {isVisible && (
-          <motion.nav
-            className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-40 lg:hidden"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 50 }}
-            transition={{ duration: 0.3 }}
-          >
-            <div className="bg-white bg-opacity-90 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg flex items-center space-x-1">
-              {sections.map((section, index) => (
-                <motion.button
-                  key={section.id}
-                  onClick={() => scrollToSection(section.id)}
-                  className={`
-                    w-10 h-10 rounded-full transition-all duration-300 
-                    flex items-center justify-center
-                    ${activeSection === section.id 
-                      ? 'bg-[#FF6B35] text-white shadow-lg' 
-                      : 'bg-transparent text-gray-600 hover:bg-gray-100'
-                    }
-                  `}
-                  whileTap={{ scale: 0.9 }}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  <span className="text-sm">{section.icon}</span>
-                </motion.button>
-              ))}
-            </div>
-          </motion.nav>
-        )}
-      </AnimatePresence>
+  {/* Mobile Navigation removed per request (hide section navigation on mobile) */}
 
       {/* Back to Home Button */}
       <motion.div

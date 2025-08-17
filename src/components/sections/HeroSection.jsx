@@ -25,7 +25,7 @@ const HeroSection = () => {
           e.target.nextElementSibling.style.display = 'block';
         }}
       >
-        <source src="/surf-video.mp4" type="video/mp4" />
+  <source src="surf-video.mp4" type="video/mp4" />
       </video>
       
       {/* Fallback background image if video doesn't load */}
