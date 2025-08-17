@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import BookingComponent from '../ui/BookingComponent';
@@ -6,35 +6,34 @@ import BookingComponent from '../ui/BookingComponent';
 const HeroSection = () => {
   const { t } = useTranslation();
   
+  const [videoError, setVideoError] = useState(false);
+  const heroVideoSrc = import.meta.env.VITE_HERO_VIDEO_URL || 'surf-video.mp4';
   return (
   <div className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-brand-sand">
-      {/* Video Background */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover"
-        style={{ 
-          width: '100vw', 
-          height: '100vh',
-          objectFit: 'cover'
-        }}
-        onError={(e) => {
-          e.target.style.display = 'none';
-          e.target.nextElementSibling.style.display = 'block';
-        }}
-      >
-  <source src="surf-video.mp4" type="video/mp4" />
-      </video>
+      {/* Video Background (hidden if error) */}
+      {!videoError && (
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute top-0 left-0 w-full h-full object-cover"
+          style={{ width: '100vw', height: '100vh', objectFit: 'cover' }}
+          poster={import.meta.env.VITE_HERO_POSTER_URL || undefined}
+          src={heroVideoSrc}
+          onError={() => setVideoError(true)}
+        />
+      )}
       
-      {/* Fallback background image if video doesn't load */}
-      <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-600 via-cyan-500 to-teal-600 hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
-      </div>
+      {/* Fallback background gradient if video doesn't load */}
+      {(videoError) && (
+        <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-600 via-cyan-500 to-teal-600">
+          <div className="absolute inset-0 bg-black/20" />
+        </div>
+      )}
       
-      {/* Overlay */}
-  <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-black/40 via-black/30 to-black/50"></div>
+    {/* Overlay */}
+  <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
       
       {/* Content */}
   <div className="relative z-10 w-full text-center text-white px-4">
