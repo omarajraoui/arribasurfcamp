@@ -5,9 +5,10 @@ import path from 'path'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), splitVendorChunkPlugin()],
-  // Use relative base so the build works when served from a subfolder or opened via simple static server
-  // For deployment at a sub-path like /app/, change to base: '/app/' and rebuild
-  base: './',
+  // Use absolute base for production custom domain so route deep links load JS chunks correctly
+  // (previous './' caused assets to be requested under nested paths like /lexparriba/assets/... => 404)
+  // If you ever deploy under a sub-path, set base: '/subpath/'
+  base: '/',
   resolve: {
     alias: {
       '@assets': path.resolve(__dirname, 'src/assets'),
