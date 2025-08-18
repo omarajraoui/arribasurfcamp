@@ -4,8 +4,8 @@ import { formatPrice } from '../../utils/currency';
 
 const PaymentOptions = ({ amount }) => {
   const [method, setMethod] = useState('card');
-  const { t } = useTranslation();
-  const lng = (t.i18n?.language || t.i18n || 'en').split('-')[0];
+  const { t, i18n } = useTranslation();
+  const lng = (i18n.language || 'en').split('-')[0];
   const totalDisplay = amount ? formatPrice(amount, lng) : '---';
 
   return (

@@ -42,8 +42,9 @@ const Navigation = ({ isVisible }) => {
 
     if (path.startsWith('/lexparriba#')) {
       handleHashNav('/lexparriba');
-    } else if (path.startsWith('/le-surf-camp#')) {
-      handleHashNav('/le-surf-camp');
+    } else if (path.startsWith('/le-surf-camp#') || path.startsWith('/surf-camp#')) {
+      // Normalize legacy path to new professional endpoint
+      handleHashNav('/surf-camp');
     } else {
       navigate(path);
     }
@@ -161,19 +162,19 @@ const Navigation = ({ isVisible }) => {
                   onMouseLeave={handleDropdownLeave}
                 >
                   <button 
-                    onClick={() => handleNavigation('/le-surf-camp#chambres')}
+                    onClick={() => handleNavigation('/surf-camp#chambres')}
                     className="block w-full text-left px-4 py-2 text-brand-ink/90 hover:bg-brand-sand hover:text-brand-ink rounded-md transition-colors font-medium"
                   >
                     {t('navigation.rooms')}
                   </button>
                   <button 
-                    onClick={() => handleNavigation('/le-surf-camp#villa')}
+                    onClick={() => handleNavigation('/surf-camp#villa')}
                     className="block w-full text-left px-4 py-2 text-brand-ink/90 hover:bg-brand-sand hover:text-brand-ink rounded-md transition-colors font-medium"
                   >
                     {t('navigation.villa')}
                   </button>
                   <button 
-                    onClick={() => handleNavigation('/le-surf-camp#planning')}
+                    onClick={() => handleNavigation('/surf-camp#planning')}
                     className="block w-full text-left px-4 py-2 text-brand-ink/90 hover:bg-brand-sand hover:text-brand-ink rounded-md transition-colors font-medium"
                   >
                     {t('navigation.planning')}
@@ -243,9 +244,9 @@ const Navigation = ({ isVisible }) => {
                 <div className="border-t border-brand-sand/60 my-2" />
                 <p className="text-xs uppercase tracking-wider text-brand-ink/50 px-3">{t('navigation.surfCamp')}</p>
                 <div className="grid grid-cols-1 gap-1 px-1">
-                  <button onClick={() => { handleNavigation('/le-surf-camp#chambres'); closeMobile(); }} className="text-left text-brand-ink/80 text-sm py-2 px-3 rounded-md hover:bg-brand-sand/60">{t('navigation.rooms')}</button>
-                  <button onClick={() => { handleNavigation('/le-surf-camp#villa'); closeMobile(); }} className="text-left text-brand-ink/80 text-sm py-2 px-3 rounded-md hover:bg-brand-sand/60">{t('navigation.villa')}</button>
-                  <button onClick={() => { handleNavigation('/le-surf-camp#planning'); closeMobile(); }} className="text-left text-brand-ink/80 text-sm py-2 px-3 rounded-md hover:bg-brand-sand/60">{t('navigation.planning')}</button>
+                  <button onClick={() => { handleNavigation('/surf-camp#chambres'); closeMobile(); }} className="text-left text-brand-ink/80 text-sm py-2 px-3 rounded-md hover:bg-brand-sand/60">{t('navigation.rooms')}</button>
+                  <button onClick={() => { handleNavigation('/surf-camp#villa'); closeMobile(); }} className="text-left text-brand-ink/80 text-sm py-2 px-3 rounded-md hover:bg-brand-sand/60">{t('navigation.villa')}</button>
+                  <button onClick={() => { handleNavigation('/surf-camp#planning'); closeMobile(); }} className="text-left text-brand-ink/80 text-sm py-2 px-3 rounded-md hover:bg-brand-sand/60">{t('navigation.planning')}</button>
                 </div>
                 <div className="border-t border-brand-sand/60 my-2" />
                 <div className="flex flex-wrap gap-2 bg-brand-sand/50 rounded-full px-2 py-1">

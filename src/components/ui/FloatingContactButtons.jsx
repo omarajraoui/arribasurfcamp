@@ -34,8 +34,8 @@ const socials = [
 ];
 
 const FloatingContactButtons = () => {
-  const whatsappLink = 'https://wa.me/0000000000'; // TODO replace with real phone
-  const emailLink = 'mailto:contact@arribasurfcamp.com';
+  const whatsappLink = 'https://wa.me/33768960462';
+  const emailLink = 'mailto:arriba.surfcamp.bali@gmail.com';
 
   return (
     <div className="fixed bottom-3 right-3 flex flex-col items-end gap-2 z-50">

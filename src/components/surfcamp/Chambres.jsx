@@ -6,11 +6,12 @@ import roomAlt1 from '../../assets/surfcamp/chambre2.JPG';
 import roomAlt2 from '../../assets/surfcamp/chambre-partage2.jpg';
 import roomAlt3 from '../../assets/surfcamp/yoga.JPG';
 import roomAlt4 from '../../assets/surfcamp/yoga-class.jpg';
-import OptimizedImage from '../ui/OptimizedImage';
+// OptimizedImage removed for secondary thumbnails to avoid build visibility issues
+// import OptimizedImage from '../ui/OptimizedImage';
 import { formatWeekBase } from '../../utils/currency';
 
 const Chambres = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const amenities = t('surfcamp.rooms.amenities', { returnObjects: true });
   const secondaryLabels = t('surfcamp.rooms.secondaryPhotos', { returnObjects: true });
 
@@ -19,6 +20,8 @@ const Chambres = () => {
     src,
     label: secondaryLabels[idx] || ''
   }));
+
+  const formattedPrice = formatWeekBase((i18n.language || 'en').split('-')[0]);
 
   return (
     <section className="w-full py-24 px-4 bg-white">
@@ -60,11 +63,11 @@ const Chambres = () => {
   <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
       {secondaryImages.map((obj,i)=>(
             <figure key={i} className="group rounded-2xl border border-gray-200 overflow-hidden aspect-[16/10] relative shadow-sm">
-              <OptimizedImage
+              <img
                 src={obj.src}
                 alt={obj.label || `${t('surfcamp.rooms.title')} ${i+1}`}
-                aspect="w-full h-full"
-        className="transition-transform duration-500 group-hover:scale-[1.04]"
+                loading="lazy"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
               />
               {obj.label && (
                 <figcaption className="absolute inset-x-0 bottom-0 bg-black/40 backdrop-blur-sm text-[10px] md:text-[11px] text-white px-2 py-1">
@@ -80,7 +83,7 @@ const Chambres = () => {
           <div className="bg-gradient-to-br from-brand-sun-accent/10 to-brand-sun-soft/10 border border-brand-sun-accent/30 rounded-3xl p-12 text-center shadow-md">
             <h3 className="text-2xl font-bold text-brand-ink mb-4">{t('surfcamp.common.uniqueRateTitle')}</h3>
             <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-              <div className="text-6xl font-extrabold text-brand-sun-accent tracking-tight">{formatWeekBase((t.i18n?.language || 'en').split('-')[0])}</div>
+              <div className="text-6xl font-extrabold text-brand-sun-accent tracking-tight">{formattedPrice}</div>
               <ul className="text-sm text-brand-ink-soft space-y-2 text-left max-w-xs">
                 <li>{t('surfcamp.rooms.pricing.durationLine')}</li>
                 <li>{t('surfcamp.rooms.pricing.allInclusiveLine')}</li>

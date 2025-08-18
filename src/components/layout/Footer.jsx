@@ -44,7 +44,7 @@ const Footer = () => {
     },
     {
       name: 'Email',
-      href: 'mailto:contact@arribasurfcamp.com',
+      href: 'mailto:arriba.surfcamp.bali@gmail.com',
       icon: (
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
           <path d="M2 6.75A2.75 2.75 0 0 1 4.75 4h14.5A2.75 2.75 0 0 1 22 6.75v10.5A2.75 2.75 0 0 1 19.25 20H4.75A2.75 2.75 0 0 1 2 17.25V6.75Zm2.75-.25a.25.25 0 0 0-.25.25v.334l7.5 4.286 7.5-4.286V6.75a.25.25 0 0 0-.25-.25H4.75Zm15.5 3.216-6.93 3.962a.75.75 0 0 1-.74 0L4.65 9.716v7.534c0 .138.112.25.25.25h14.2a.25.25 0 0 0 .25-.25V9.716Z"/>

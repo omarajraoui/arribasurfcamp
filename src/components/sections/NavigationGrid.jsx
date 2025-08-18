@@ -15,7 +15,7 @@ const NavigationGrid = () => {
       [t('cards.gallery')]: 'vie-arriba'    // Galerie -> La Vie Arriba section
     };
     
-    // Map secondary surf camp cards to their sections on /le-surf-camp
+  // Map secondary surf camp cards to their sections on /surf-camp (professional endpoint)
     const surfCampSectionMap = {
       [t('cards.rooms')]: 'chambres',
       [t('cards.villa')]: 'villa',
@@ -35,7 +35,7 @@ const NavigationGrid = () => {
     }
 
     if (surfCampSection) {
-      navigate(`/le-surf-camp#${surfCampSection}`);
+  navigate(`/surf-camp#${surfCampSection}`);
       setTimeout(() => {
         const el = document.getElementById(surfCampSection);
         if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -49,7 +49,7 @@ const NavigationGrid = () => {
   
   // Import static images so Vite bundles them correctly (direct /src paths won't resolve in production)
   // Using dynamic requires is avoided so tree-shaking/hashing works.
-  const imgArriba = new URL('../../assets/Arriba.PNG', import.meta.url).href;
+  const imgArriba = new URL('../../assets/arribanew.jpeg', import.meta.url).href;
   const imgEquipe = new URL('../../assets/equipe.JPG', import.meta.url).href;
   const imgChambre = new URL('../../assets/chambre.JPG', import.meta.url).href;
   const imgVilla = new URL('../../assets/villa.jpg', import.meta.url).href;
@@ -61,9 +61,9 @@ const NavigationGrid = () => {
     { title: t('cards.gallery'), image: 'https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=400&h=300&fit=crop&auto=format', link: '/vie-arriba' }
   ];
   const secondaryCards = [
-    { title: t('cards.rooms'), image: imgChambre, link: '/le-surf-camp#chambres' },
-    { title: t('cards.villa'), image: imgVilla, link: '/le-surf-camp#villa' },
-    { title: t('cards.planning'), image: imgPlanning, link: '/le-surf-camp#planning' }
+  { title: t('cards.rooms'), image: imgChambre, link: '/surf-camp#chambres' },
+  { title: t('cards.villa'), image: imgVilla, link: '/surf-camp#villa' },
+  { title: t('cards.planning'), image: imgPlanning, link: '/surf-camp#planning' }
   ];
 
   const getCardIcon = (title) => {

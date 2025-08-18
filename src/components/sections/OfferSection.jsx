@@ -5,16 +5,12 @@ import { formatWeekBase, formatPrice, BASE_WEEK_PRICE_EUR } from '../../utils/cu
 
 const OfferSection = () => {
   const { t, i18n } = useTranslation();
-
-  const lng = (i18n.language || 'en').split('-')[0];
-  const baseDisplay = formatWeekBase(lng);
-  const originalDisplay = formatPrice(BASE_WEEK_PRICE_EUR * 1.3, lng);
+  // derive fresh each render so switching language updates price
+  const baseDisplay = formatWeekBase((i18n.language || 'en').split('-')[0]);
   const mainOffer = {
     name: t('bookNowPage.standardPackage') + ' Arriba',
     duration: t('bookNowPage.packageFeatures.0').replace('✓ ','').split(',')[0],
   price: baseDisplay,
-  originalPrice: originalDisplay,
-    discount: "23%",
     image: 'https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=800&h=600&fit=crop&auto=format',
     features: t('bookNowPage.packageFeatures', { returnObjects: true }),
     highlights: [
@@ -52,10 +48,7 @@ const OfferSection = () => {
         >
           <div className="relative bg-white rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500">
             
-            {/* Discount Badge */}
-            <div className="absolute top-6 left-6 z-20 bg-red-500 text-white text-sm font-bold px-4 py-2 rounded-full shadow-lg">
-              {mainOffer.discount}{t('offerSection.discountSuffix')}
-            </div>
+            {/* Discount removed */}
 
             {/* Hero Image Section */}
             <div className="relative h-80 lg:h-96 overflow-hidden">
@@ -87,23 +80,20 @@ const OfferSection = () => {
               
               {/* Pricing Section */}
               <div className="text-center mb-10">
-                <div className="flex items-center justify-center gap-4 mb-4">
+                <div className="flex flex-col items-center justify-center gap-2 mb-4">
                   <span className="text-5xl lg:text-6xl font-bold text-brand-sun-accent">{mainOffer.price}</span>
-                  <div className="text-left">
-                    <span className="text-2xl text-brand-ink-soft line-through block">{mainOffer.originalPrice}</span>
-          <span className="text-sm text-brand-ink-soft">{t('offers.perPerson')}</span>
-                  </div>
+                  <span className="text-sm text-brand-ink-soft">{t('offers.perPerson')}</span>
                 </div>
-        <p className="text-brand-ink-soft mb-6">{t('offerSection.allInclusiveTagline')}</p>
-                
-                {/* CTA Button */}
-                <motion.button 
+                <p className="text-brand-ink-soft mb-6">{t('offerSection.allInclusiveTagline')}</p>
+                {/* CTA Button now links to booking page */}
+                <motion.a
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="btn btn-primary px-12 py-4 text-xl font-bold shadow-lg hover:shadow-xl transition-all duration-300"
+                  href="/book-now"
+                  className="inline-block btn btn-primary px-12 py-4 text-xl font-bold shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   {t('offerSection.cta', { price: mainOffer.price })}
-                </motion.button>
+                </motion.a>
               </div>
 
               {/* Features Grid */}
@@ -164,12 +154,12 @@ const OfferSection = () => {
                       {t('offerSection.contactText')}
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3">
-                      <button className="btn btn-outline flex-1 py-2 text-sm">
+                      <a href="https://wa.me/33768960462" target="_blank" rel="noopener noreferrer" className="btn btn-outline flex-1 py-2 text-sm">
                         {t('offerSection.contactWhatsapp')}
-                      </button>
-                      <button className="btn btn-outline flex-1 py-2 text-sm">
+                      </a>
+                      <a href="mailto:arriba.surfcamp.bali@gmail.com" className="btn btn-outline flex-1 py-2 text-sm">
                         {t('offerSection.contactEmail')}
-                      </button>
+                      </a>
                     </div>
                   </div>
                 </div>

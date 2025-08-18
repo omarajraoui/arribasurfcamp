@@ -31,6 +31,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/lexparriba" element={<LExpArribaPage />} />
+            <Route path="/surf-camp" element={<LeSurfCamp />} />
             <Route path="/le-surf-camp" element={<LeSurfCamp />} />
             <Route path="/book-now" element={<BookNow />} />
             <Route path="*" element={<HomePage />} />

@@ -39,7 +39,7 @@ const MobileSocialBar = () => {
           {s.icon}
         </a>
       ))}
-      <a href="mailto:contact@arribasurfcamp.com" className="w-10 h-10 flex items-center justify-center rounded-xl bg-brand-sun text-brand-ink font-bold text-xs tracking-tight hover:scale-105 transition-transform" aria-label="Email">
+  <a href="mailto:arriba.surfcamp.bali@gmail.com" className="w-10 h-10 flex items-center justify-center rounded-xl bg-brand-sun text-brand-ink font-bold text-xs tracking-tight hover:scale-105 transition-transform" aria-label="Email">
         @
       </a>
     </nav>

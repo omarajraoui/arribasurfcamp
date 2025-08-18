@@ -48,7 +48,7 @@ const BookNow = () => {
   <div className="book-now-page bg-gradient-to-b from-brand-foam to-white min-h-screen pt-36 pb-32 px-4">
       <section className="booking-hero text-center max-w-3xl mx-auto mb-16">
   <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-brand-ink mb-4">{t('bookNowPage.heroTitle')}</h1>
-  <p className="text-lg md:text-xl text-brand-ink-soft">{t('bookNowPage.heroSubtitle')}</p>
+  <p className="text-lg md:text-xl text-brand-ink-soft">{t('bookNowPage.heroSubtitle', { price: formatPrice(BASE_WEEK_PRICE_EUR, (i18n.language||'en').split('-')[0]) })}</p>
       </section>
 
       <section className="booking-form-section max-w-7xl mx-auto grid lg:grid-cols-3 gap-12 items-start">
@@ -119,13 +119,34 @@ const BookNow = () => {
         </div>
       </section>
 
-      <section className="trust-signals mt-32 max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
-        {t('bookNowPage.trustSignals', { returnObjects: true }).map((text,i)=>(
-          <div key={i} className="flex items-center gap-4 bg-white rounded-2xl p-6 shadow-sm border border-gray-200">
-            <span className="text-2xl" role="img" aria-label={text}>{['🔒','📞','🔄'][i] || '⭐'}</span>
-            <span className="font-medium text-brand-ink-soft text-sm">{text}</span>
-          </div>
-        ))}
+      <section className="trust-signals mt-32 max-w-4xl mx-auto">
+        {(() => {
+          const items = t('bookNowPage.trustSignals', { returnObjects: true });
+          if (!items || items.length === 0) return null;
+          if (items.length === 2) {
+            return (
+              <div className="flex flex-col sm:flex-row items-stretch justify-center gap-8">
+                {items.map((text,i)=>(
+                  <div key={i} className="flex-1 flex items-center gap-4 bg-white rounded-2xl p-6 shadow-sm border border-gray-200 justify-center">
+                    <span className="text-3xl" role="img" aria-label={text}>{['🔒','🔄'][i] || '⭐'}</span>
+                    <span className="font-semibold text-brand-ink text-sm tracking-wide text-center">{text}</span>
+                  </div>
+                ))}
+              </div>
+            );
+          }
+          // fallback original grid for 1 or 3+ items
+          return (
+            <div className="grid md:grid-cols-3 gap-8">
+              {items.map((text,i)=>(
+                <div key={i} className="flex items-center gap-4 bg-white rounded-2xl p-6 shadow-sm border border-gray-200">
+                  <span className="text-2xl" role="img" aria-label={text}>{['🔒','📞','🔄'][i] || '⭐'}</span>
+                  <span className="font-medium text-brand-ink-soft text-sm">{text}</span>
+                </div>
+              ))}
+            </div>
+          );
+        })()}
       </section>
     </div>
   );

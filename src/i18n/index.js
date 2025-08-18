@@ -10,9 +10,9 @@ const resources = {
         close: "Close notice"
       },
       heroExp: {
-  title: "ARRIBA EXPERIENCE",
-        subtitle: "Live the ultimate surf adventure in Indonesia",
-        description: "Since 2018, Arriba Surf Camp has been redefining the surf camp experience. Between crystal clear waters, a passionate community and secret spots, discover why our riders return year after year.",
+        title: "ARRIBA EXPERIENCE",
+        subtitle: "28 travelers, one villa in Lombok, 7 days of total immersion",
+        description: "Shared rooms (4 to 6 beds) in the heart of a tropical villa with private pool and open common areas. Modern comfort, friendly atmosphere and ideal location: a place designed to rest, connect and fully live the Surf Camp adventure.",
         discover: "DISCOVER"
       },
       history: {
@@ -36,7 +36,7 @@ const resources = {
       team: {
         title: "The Arriba Team",
         subtitle: "Meet the passionate people who make every moment unique",
-        closingNote: "Each member of our team brings their own magic to the Arriba experience. Together we create memories that last a lifetime! ❤️",
+  closingNote: "",
         members: [
           { id: 1, name: "Camille", role: "Operations & Guest Experience", photo: "/src/assets/gallery/camille-to-crop.jpeg", bio: "She orchestrates daily logistics, partner coordination and ensures every guest feels at home.", stickyNote: "Organized magic ✨", noteColor: "yellow", rotation: -5 },
           { id: 2, name: "Louise", role: "Community & Experience Curator", photo: "/src/assets/gallery/louise-to-crop.jpeg", bio: "She grows the Arriba community and shapes the collective vibe before, during and after each stay.", stickyNote: "Community heart ❤️", noteColor: "pink", rotation: 6 }
@@ -122,7 +122,7 @@ const resources = {
         viewAll: "View All Packages",
         contactUs: "Contact Us",
         limitedOffer: "🏄‍♂️ Limited Time Offer - Book Before March 2025!",
-        limitedDesc: "Save up to 25% on all surf packages. Perfect waves, expert instructors, and unforgettable memories await. All packages include insurance and 24/7 support.",
+  limitedDesc: "Save up to 25% on all surf packages. Perfect waves, expert instructors, and unforgettable memories await. All packages include insurance.",
         packages: {
           beginner: {
             name: "Beginner Package",
@@ -168,7 +168,7 @@ const resources = {
           }
         }
       },
-      surfcamp: {
+    surfcamp: {
         common: {
           amenitiesTitle: "Amenities",
           capacityConfigTitle: "Capacity & Layout",
@@ -176,7 +176,7 @@ const resources = {
           locationBadge: "Location",
           uniqueRateTitle: "Single Rate",
           weekTypeTitle: "Typical Week",
-          photoPlanningPlaceholder: "Hand-drawn planning visual coming soon"
+      photoPlanningPlaceholder: ""
         },
         photo: {
           mainRoomPlaceholder: "Main room photo (ocean view) coming soon",
@@ -244,7 +244,7 @@ const resources = {
         planning: {
           title: "Planning",
           subtitle: "A balanced week between surf progression, wellness and local discovery",
-          daysOrder: ["monday","tuesday","wednesday","thursday","friday","weekend"],
+          daysOrder: ["weekend","monday","tuesday","wednesday","thursday","friday"],
           days: {
             monday: { label: "MONDAY", activities: ["🏄‍♂️ Surf Lesson (7am)", "🧘‍♀️ Yoga (5pm)", "🎉 Welcome Dinner"] },
             tuesday: { label: "TUESDAY", activities: ["🏄‍♂️ Surf Lesson (7am)", "👨‍🍳 Cooking Class (3pm)", "🌅 Sunset Free Time"] },
@@ -253,12 +253,13 @@ const resources = {
             friday: { label: "FRIDAY", activities: ["🏄‍♂️ Surf Lesson (7am)", "💪 Pilates (5pm)", "🔥 Group BBQ (7pm)"] },
             weekend: { label: "WEEKEND", activities: ["🏄‍♂️ Surf Lesson (7am)", "🏝️ Explore Lombok", "👋 Farewell Party"] }
           },
-          legends: [
-            "🏄‍♂️ Daily included surf",
-            "🧘‍♀️ 3x Yoga/Pilates per week",
-            "🎭 Cultural activities",
-            "🎉 Group moments"
-          ]
+           legends: [
+             "🏄‍♂️ Daily included surf",
+             "🧘‍♀️ 3x Yoga/Pilates per week",
+             "🎭 Cultural activities",
+             "🎉 Group moments"
+           ],
+          activityAlert: "Special TREK weekend & Lombok mountain discovery – 24 September. Book your week."
         }
       }
       ,
@@ -286,7 +287,7 @@ const resources = {
       },
       bookNowPage: {
         heroTitle: "Book Your Arriba Adventure",
-        heroSubtitle: "Unforgettable 7 days all inclusive at 500€",
+  heroSubtitle: "Unforgettable 7 days all inclusive from {{price}}",
         steps: { dates: "1. Choose your dates", participants: "2. Participants", package: "3. Package", info: "4. Your information", payment: "5. Payment" },
         weeklyNote: "Weekly stays (7 days / 6 nights).",
         standardPackage: "Standard Package",
@@ -295,7 +296,7 @@ const resources = {
         includedBadge: "INCLUDED",
         confirmCta: "Confirm booking",
         termsNote: "By confirming you accept our general terms & flexible cancellation policy.",
-  trustSignals: ["Secure payment","Support 24/7","Flexible cancellation"],
+  trustSignals: ["Secure payment","Flexible cancellation"],
   invalidStart: "Please choose a Sunday (weekly stays run Sunday → Saturday)."
       },
       personalInfoForm: { firstName: "First Name", lastName: "Last Name", email: "Email", phone: "Phone / WhatsApp", infoNote: "We will use this information only for your booking." },
@@ -333,9 +334,9 @@ const resources = {
         close: "Fermer l'avertissement"
       },
       heroExp: {
-        title: "L'EXP ARRIBA",
-        subtitle: "Vivez l'aventure surf ultime en Indonésie",
-        description: "Depuis 2018, Arriba Surf Camp redéfinit l'expérience du surf camp. Entre eaux cristallines, communauté passionnée et spots secrets, découvrez pourquoi nos riders reviennent année après année.",
+        title: "L'EXPERIENCE ARRIBA",
+        subtitle: "28 voyageurs, une villa à Lombok, 7 jours d'immersion totale",
+        description: "Chambres partagées de 4 à 6 lits au cœur d’une villa tropicale avec piscine privée et espaces communs ouverts. Confort moderne, ambiance conviviale et localisation idéale : un lieu pensé pour se reposer, partager et vivre pleinement l’aventure du Surf Camp.",
         discover: "DÉCOUVRIR"
       },
       history: {
@@ -349,20 +350,21 @@ const resources = {
           adventures: "Endless Adventures!"
         },
         timeline: [
-          { year: "2018", title: "Le Rêve Commence", content: "Tout a commencé avec un rêve simple : partager la magie des vagues indonésiennes. Notre fondateur, tombé amoureux de ces eaux cristallines lors d'un voyage solo, a su qu'il devait créer quelque chose de spécial ici.", noteText: "Premier voyage en Indo - Mind blown! 🤯", noteColor: "yellow" },
-          { year: "2019", title: "Première Vague", content: "La recherche du spot parfait nous a menés aux quatre coins de l'archipel. Après des mois d'exploration, nous avons trouvé notre petit coin de paradis - isolé, authentique, avec des vagues parfaites toute l'année.", noteText: "Location secrète trouvée! 📍", noteColor: "pink" },
-          { year: "2020", title: "Construction Begins", content: "Malgré les défis mondiaux, nous avons commencé la construction avec l'aide de la communauté locale. Chaque bambou, chaque pierre a été choisi avec amour pour créer un camp qui respecte l'environnement.", noteText: "Bambou par bambou... 🎋", noteColor: "blue" },
-          { year: "2021", title: "Ouverture!", content: "Les premiers surfeurs ont débarqué et la magie a opéré instantanément. Voir leurs sourires après une session parfaite, c'était la confirmation que notre rêve était devenu réalité.", noteText: "First guests = First family ❤️", noteColor: "yellow" },
-          { year: "2022-2024", title: "Growing Family", content: "De saison en saison, notre famille s'agrandit. Chaque surfeur qui repart emporte un morceau d'Arriba avec lui, et nous laisse un morceau de son histoire. C'est ça, l'esprit Arriba.", noteText: "Endless summer vibes! ☀️", noteColor: "pink" }
+          { year: "1", title: "L'origine du projet", content: "Camille et Louise se sont rencontrées en tant qu'animatrices dans une colonie de vacances pour enfants en France. Cette expérience commune dans l'animation nous a rapidement rapprochées et nous a donné une expertise solide dans la création d'expériences de groupe réussies.", noteText: "Rencontre", noteColor: "yellow" },
+          { year: "2", title: "Découverte de l'Indonésie", content: "À 18 ans, Camille est partie vivre en Indonésie. Son parcours l'a menée de Sulawesi à Bali, puis à Lombok où elle a découvert le surf. L'aspect sauvage et préservé de Lombok, combiné à des conditions de surf exceptionnelles, l'a convaincue du potentiel de cette destination.", noteText: "Inspiration", noteColor: "pink" },
+          { year: "3", title: "Naissance du concept", content: "Louise a rejoint Camille quelques mois plus tard en Indonésie. Fortes de notre expérience en animation, nous avons développé l'idée d'un camp de surf pour adultes. L'objectif : proposer des vacances alliant aventure, découverte du surf, et détente, sans le stress de l'organisation.", noteText: "Idée", noteColor: "blue" },
+          { year: "4", title: "Arriba Surf Camps aujourd'hui", content: "Notre formule s'adresse aux adultes en quête d'aventure, d'amitié et de tranquillité. Nous nous occupons de toute l'organisation pour permettre à nos clients de profiter pleinement de leur séjour : surf, exploration de Lombok, et moments de détente dans un environnement naturel exceptionnel.", noteText: "Expérience", noteColor: "yellow" },
+          { year: "5", title: "Le projet prend forme", content: "Après plus d'une année de réflexion, de planification et de peaufinage de chaque détail, notre projet Arriba Surf Camps est prêt à voir le jour. Nous recherchons maintenant des investisseurs passionnés qui partagent notre vision pour donner vie à cette aventure unique.", noteText: "Structure", noteColor: "pink" },
+          { year: "6", title: "Rejoignez l'aventure", content: "Si notre projet vous inspire et que vous souhaitez faire partie de cette belle aventure, n'hésitez pas à nous contacter. Ensemble, créons des souvenirs inoubliables !", noteText: "Investir", noteColor: "blue" }
         ]
       },
       team: {
         title: "L'Équipe Arriba",
-        subtitle: "Rencontrez les passionnés qui rendent chaque moment unique",
-  closingNote: "Pas juste une équipe : une tribu qui transforme une semaine de surf en aventure humaine. Hâte d'écrire la prochaine page avec vous ! 🌊🤙🔥",
+    subtitle: "Rencontrez les passionnés qui rendent chaque moment unique",
+  closingNote: "",
         members: [
-          { id: 1, name: "Camille", role: "Opérations & Expérience Client", photo: "/src/assets/gallery/camille-to-crop.jpeg", bio: "Elle gère l'organisation quotidienne, coordonne les partenaires et veille à ce que tout se déroule parfaitement.", stickyNote: "Organisation ✨", noteColor: "yellow", rotation: -5 },
-          { id: 2, name: "Louise", role: "Communauté & Animation", photo: "/src/assets/gallery/louise-to-crop.jpeg", bio: "Elle développe la communauté Arriba et garantit l'énergie collective unique de chaque groupe.", stickyNote: "Énergie ❤️", noteColor: "pink", rotation: 6 }
+          { id: 1, name: "Camille", role: "Opérations & Expérience Client", photo: "/src/assets/gallery/camille-to-crop.jpeg", bio: "Elle gère l'organisation quotidienne, coordonne les partenaires et veille à ce que tout se déroule parfaitement.", stickyNote: "", noteColor: "yellow", rotation: -5 },
+          { id: 2, name: "Louise", role: "Communauté & Animation", photo: "/src/assets/gallery/louise-to-crop.jpeg", bio: "Elle développe la communauté Arriba et garantit l'énergie collective unique de chaque groupe.", stickyNote: "", noteColor: "pink", rotation: 6 }
         ],
         annotations: {
           bestTeam: "Best team ever! 🎉",
@@ -373,7 +375,7 @@ const resources = {
       },
       gallery: {
         title: "La Vie Arriba",
-        subtitle: "Découvrez la magie d'Arriba à travers les yeux de notre communauté. Chaque photo raconte une histoire, chaque moment devient souvenir.",
+  subtitle: "7 jours, 1000 moments à partager: Sessions surf à l'aube, fous rires pendant les cours de cuisine, soirées sous les étoiles... Découvrez en images l'aventure Arriba qui vous attend à Lombok",
         loadMore: "Voir Plus de Moments",
         shareTitle: "Partagez Votre Expérience Arriba",
         shareSubtitle: "Taguez-nous @arribasurfcamp pour apparaître dans notre galerie !"
@@ -445,7 +447,7 @@ const resources = {
         viewAll: "Voir Tous les Forfaits",
         contactUs: "Nous Contacter",
         limitedOffer: "🏄‍♂️ Offre Limitée - Réservez Avant Mars 2025!",
-        limitedDesc: "Économisez jusqu'à 25% sur tous les forfaits surf. Vagues parfaites, instructeurs experts, et souvenirs inoubliables vous attendent. Tous les forfaits incluent l'assurance et le support 24/7.",
+  limitedDesc: "Économisez jusqu'à 25% sur tous les forfaits surf. Vagues parfaites, instructeurs experts, et souvenirs inoubliables vous attendent. Tous les forfaits incluent l'assurance.",
         packages: {
           beginner: {
             name: "Forfait Débutant",
@@ -499,7 +501,7 @@ const resources = {
           locationBadge: "Emplacement",
           uniqueRateTitle: "Tarif Unique",
           weekTypeTitle: "Semaine Type",
-          photoPlanningPlaceholder: "Visuel planning manuscrit à venir"
+          photoPlanningPlaceholder: ""
         },
         photo: {
           mainRoomPlaceholder: "Photo principale chambre (vue océan) à venir",
@@ -564,10 +566,10 @@ const resources = {
             addressLines: ["Jalan Sekotong Raya", "Tajung, Lombok"]
           }
         },
-        planning: {
+  planning: {
           title: "Le Planning",
           subtitle: "Une semaine équilibrée entre progression surf, bien-être et découverte locale",
-          daysOrder: ["monday","tuesday","wednesday","thursday","friday","weekend"],
+          daysOrder: ["weekend","monday","tuesday","wednesday","thursday","friday"],
           days: {
             monday: { label: "LUNDI", activities: ["🏄‍♂️ Surf Lesson (7h)", "🧘‍♀️ Yoga (17h)", "🎉 Welcome Dinner"] },
             tuesday: { label: "MARDI", activities: ["🏄‍♂️ Surf Lesson (7h)", "👨‍🍳 Cours Cuisine (15h)", "🌅 Sunset Libre"] },
@@ -581,7 +583,8 @@ const resources = {
             "🧘‍♀️ 3x Yoga/Pilates/semaine",
             "🎭 Activités culturelles",
             "🎉 Moments de groupe"
-          ]
+          ],
+          activityAlert: "Week-end spécialisé TREK & découverte des montagnes de Lombok – 24 Septembre. Réservez votre semaine."
         }
       }
       ,
@@ -609,7 +612,7 @@ const resources = {
       },
       bookNowPage: {
         heroTitle: "Réservez Votre Aventure Arriba",
-        heroSubtitle: "7 jours inoubliables à 500€ tout compris",
+  heroSubtitle: "7 jours inoubliables tout compris dès {{price}}",
         steps: { dates: "1. Choisissez vos dates", participants: "2. Nombre de participants", package: "3. Formule", info: "4. Vos informations", payment: "5. Paiement" },
         weeklyNote: "Séjours hebdomadaires (7 jours / 6 nuits).",
         standardPackage: "Formule Standard",
@@ -618,7 +621,7 @@ const resources = {
         includedBadge: "INCLUS",
         confirmCta: "Confirmer la réservation",
         termsNote: "En confirmant vous acceptez nos conditions générales & politique d'annulation flexible.",
-        trustSignals: ["Paiement sécurisé","Support 24/7","Annulation flexible"],
+  trustSignals: ["Paiement sécurisé","Annulation flexible"],
         invalidStart: "Veuillez choisir un dimanche (séjour du dimanche au samedi)."
       },
       personalInfoForm: { firstName: "Prénom", lastName: "Nom", email: "Email", phone: "Téléphone / WhatsApp", infoNote: "Nous utiliserons ces informations uniquement pour votre réservation." },
@@ -657,8 +660,8 @@ const resources = {
       },
       heroExp: {
         title: "L'EXP ARRIBA",
-        subtitle: "Vive la aventura de surf definitiva en Indonesia",
-        description: "Desde 2018, Arriba Surf Camp redefine la experiencia surf camp. Entre aguas cristalinas, comunidad apasionada y spots secretos, descubre por qué nuestros riders regresan año tras año.",
+        subtitle: "28 viajeros, una villa en Lombok, 7 días de inmersión total",
+        description: "Habitaciones compartidas (4 a 6 camas) en el corazón de una villa tropical con piscina privada y zonas comunes abiertas. Confort moderno, ambiente acogedor y localización ideal: un lugar pensado para descansar, conectar y vivir plenamente la aventura del Surf Camp.",
         discover: "DESCUBRIR"
       },
       history: {
@@ -676,7 +679,7 @@ const resources = {
       team: {
         title: "El Equipo Arriba",
         subtitle: "Conoce a los apasionados que hacen cada momento único",
-        closingNote: "Cada miembro aporta su magia. Juntos creamos recuerdos para toda la vida! ❤️",
+  closingNote: "",
         members: [
           { id: 1, name: "Camille", role: "Operaciones & Experiencia", photo: "/src/assets/gallery/camille-to-crop.jpeg", bio: "Coordina la logística diaria y asegura que cada huésped se sienta en casa.", stickyNote: "Organización ✨", noteColor: "yellow", rotation: -5 },
           { id: 2, name: "Louise", role: "Comunidad & Animación", photo: "/src/assets/gallery/louise-to-crop.jpeg", bio: "Hace crecer la comunidad Arriba y crea la energía colectiva única.", stickyNote: "Energía ❤️", noteColor: "pink", rotation: 6 }
@@ -714,7 +717,7 @@ const resources = {
       },
       bookNowPage: {
         heroTitle: "Reserva Tu Aventura Arriba",
-        heroSubtitle: "7 días inolvidables todo incluido por 500€",
+  heroSubtitle: "7 días inolvidables todo incluido desde {{price}}",
         steps: { dates: "1. Elige tus fechas", participants: "2. Participantes", package: "3. Paquete", info: "4. Tus datos", payment: "5. Pago" },
         weeklyNote: "Estancias semanales (7 días / 6 noches).",
         standardPackage: "Paquete Estándar",
@@ -723,7 +726,7 @@ const resources = {
         includedBadge: "INCLUIDO",
         confirmCta: "Confirmar reserva",
         termsNote: "Al confirmar aceptas nuestros términos y política flexible de cancelación.",
-        trustSignals: ["Pago seguro","Soporte 24/7","Cancelación flexible"],
+  trustSignals: ["Pago seguro","Cancelación flexible"],
         invalidStart: "Por favor elige un domingo (estancia de domingo a sábado)."
       },
       cards: {
@@ -748,7 +751,7 @@ const resources = {
         viewAll: "Ver Todos los Paquetes",
         contactUs: "Contáctanos",
         limitedOffer: "🏄‍♂️ Oferta Limitada - ¡Reserva Antes de Marzo 2025!",
-        limitedDesc: "Ahorra hasta 25% en todos los paquetes de surf. Olas perfectas, instructores expertos, y recuerdos inolvidables te esperan. Todos los paquetes incluyen seguro y soporte 24/7.",
+  limitedDesc: "Ahorra hasta 25% en todos los paquetes de surf. Olas perfectas, instructores expertos, y recuerdos inolvidables te esperan. Todos los paquetes incluyen seguro.",
         packages: {
           beginner: {
             name: "Paquete Principiante",
@@ -802,7 +805,7 @@ const resources = {
           locationBadge: "Ubicación",
           uniqueRateTitle: "Tarifa Única",
           weekTypeTitle: "Semana Tipo",
-          photoPlanningPlaceholder: "Planificación dibujada a mano próximamente"
+          photoPlanningPlaceholder: ""
         },
         rooms: {
           title: "Habitaciones",
@@ -879,7 +882,8 @@ const resources = {
             "🧘‍♀️ 3x Yoga/Pilates por semana",
             "🎭 Actividades culturales",
             "🎉 Momentos de grupo"
-          ]
+          ],
+          activityAlert: "Fin de semana especial TREK y descubrimiento de las montañas de Lombok – 24 de Septiembre. Reserva tu semana."
         }
       }
     }
@@ -890,7 +894,7 @@ const resources = {
         notice: "Deze site is in aanbouw – uitsluitend voor investeerdersonderzoek",
         close: "Melding sluiten"
       },
-  heroExp: { title: "L'EXP ARRIBA", subtitle: "Beleef het ultieme surf avontuur in Indonesië", description: "Sinds 2018 herdefinieert Arriba Surf Camp de surf camp ervaring.", discover: "ONTDEK" },
+  heroExp: { title: "L'EXP ARRIBA", subtitle: "28 reizigers, één villa op Lombok, 7 dagen totale onderdompeling", description: "Gedeelde kamers (4 tot 6 bedden) in het hart van een tropische villa met privézwembad en open gemeenschappelijke ruimtes. Modern comfort, gezellige sfeer en ideale ligging: een plek om uit te rusten, te verbinden en de Surf Camp avontuur volledig te beleven.", discover: "ONTDEK" },
   history: { title: "Ons Verhaal", subtitle: "Het Arriba avontuur: van idee tot surf paradijs 🏄‍♂️", annotations: { start: "Ons verhaal begint...", dreams: "Dromen worden realiteit ✨", building: "Paradijs bouwen!", family: "Familie groeit 👨‍👩‍👧‍👦", adventures: "Eindeloze avonturen!" }, timeline: [
     { year: "2018", title: "De Droom Begint", content: "Een simpel idee om de magie van Indonesische golven te delen groeit uit tot een visie.", noteText: "Eerste Indo trip 🤯", noteColor: "yellow" },
     { year: "2019", title: "Eerste Zoektocht", content: "Maandenlang zoeken naar de perfecte plek tot we ons hoekje paradijs vinden.", noteText: "Geheime spot gevonden! 📍", noteColor: "pink" },
@@ -898,7 +902,7 @@ const resources = {
     { year: "2021", title: "Opening", content: "De eerste surfers arriveren – de sfeer is meteen magisch.", noteText: "Eerste gasten = familie ❤️", noteColor: "yellow" },
     { year: "2022-2024", title: "Groeiende Familie", content: "Iedere surfer laat een stukje verhaal achter – dat is Arriba spirit.", noteText: "Endless summer ☀️", noteColor: "pink" }
   ] },
-  team: { title: "Het Arriba Team", subtitle: "Ontmoet de gepassioneerde mensen die elk moment uniek maken", closingNote: "Elk lid brengt eigen magie. Samen creëren we herinneringen voor het leven! ❤️", members: [
+  team: { title: "Het Arriba Team", subtitle: "Ontmoet de gepassioneerde mensen die elk moment uniek maken", closingNote: "", members: [
     { id: 1, name: "Camille", role: "Operaties & Gastbeleving", photo: "/src/assets/gallery/camille-to-crop.jpeg", bio: "Ze coördineert de dagelijkse logistiek en zorgt dat elke gast zich thuis voelt.", stickyNote: "Organisatie ✨", noteColor: "yellow", rotation: -5 },
     { id: 2, name: "Louise", role: "Community & Beleving", photo: "/src/assets/gallery/louise-to-crop.jpeg", bio: "Ze bouwt de Arriba community uit en creëert de unieke groepsenergie.", stickyNote: "Energie ❤️", noteColor: "pink", rotation: 6 }
   ], annotations: { bestTeam: "Beste team! 🎉", family: "Arriba Family ✨", legends: "LEGENDS!", memories: "Herinneringen maken 📸" } },
@@ -933,7 +937,7 @@ const resources = {
       },
       bookNowPage: {
         heroTitle: "Boek Je Arriba Avontuur",
-        heroSubtitle: "Onvergetelijke 7 dagen all-in voor 500€",
+  heroSubtitle: "Onvergetelijke 7 dagen all-in vanaf {{price}}",
         steps: { dates: "1. Kies je data", participants: "2. Deelnemers", package: "3. Pakket", info: "4. Jouw gegevens", payment: "5. Betaling" },
         weeklyNote: "Wekelijkse verblijven (7 dagen / 6 nachten).",
         standardPackage: "Standaard Pakket",
@@ -942,7 +946,7 @@ const resources = {
         includedBadge: "INBEGREPEN",
         confirmCta: "Boeking bevestigen",
         termsNote: "Door te bevestigen accepteer je onze algemene voorwaarden & flexibel annuleringsbeleid.",
-        trustSignals: ["Veilige betaling","24/7 Support","Flexibele annulering"],
+  trustSignals: ["Veilige betaling","Flexibele annulering"],
         invalidStart: "Kies een zondag (verblijf zondag t/m zaterdag)."
       },
       paymentOptions: {
@@ -984,7 +988,7 @@ const resources = {
         viewAll: "Bekijk Alle Pakketten",
         contactUs: "Neem Contact Op",
         limitedOffer: "🏄‍♂️ Beperkte Tijd Aanbieding - Boek Voor Maart 2025!",
-        limitedDesc: "Bespaar tot 25% op alle surf pakketten. Perfecte golven, expert instructeurs, en onvergetelijke herinneringen wachten op je. Alle pakketten inclusief verzekering en 24/7 ondersteuning.",
+  limitedDesc: "Bespaar tot 25% op alle surf pakketten. Perfecte golven, expert instructeurs, en onvergetelijke herinneringen wachten op je. Alle pakketten inclusief verzekering.",
         packages: {
           beginner: {
             name: "Beginner Pakket",
@@ -1038,7 +1042,7 @@ const resources = {
           locationBadge: "Locatie",
           uniqueRateTitle: "Enkel Tarief",
           weekTypeTitle: "Typische Week",
-          photoPlanningPlaceholder: "Handgetekende planning binnenkort"
+          photoPlanningPlaceholder: ""
         },
         rooms: {
           title: "De Kamers",
@@ -1115,7 +1119,8 @@ const resources = {
             "🧘‍♀️ 3x Yoga/Pilates per week",
             "🎭 Culturele activiteiten",
             "🎉 Groepsmomenten"
-          ]
+          ],
+          activityAlert: "Speciaal TREK weekend & ontdekking van de bergen van Lombok – 24 September. Boek je week."
         }
       }
     }
@@ -1126,9 +1131,9 @@ const resources = {
         notice: "Situs ini masih dalam pembangunan – hanya untuk riset investor",
         close: "Tutup pemberitahuan"
       },
-  heroExp: { title: "L'EXP ARRIBA", subtitle: "Rasakan petualangan surf terbaik di Indonesia", description: "Sejak 2018, Arriba Surf Camp mendefinisikan ulang pengalaman surf camp.", discover: "JELAJAHI" },
+  heroExp: { title: "L'EXP ARRIBA", subtitle: "28 traveler, satu vila di Lombok, 7 hari imersi total", description: "Kamar bersama (4–6 tempat tidur) di jantung vila tropis dengan kolam renang privat dan area komunal terbuka. Kenyamanan modern, suasana hangat dan lokasi ideal: tempat untuk istirahat, terhubung dan menjalani penuh petualangan Surf Camp.", discover: "JELAJAHI" },
   history: { title: "Kisah Kami", subtitle: "Petualangan Arriba: dari ide ke surga selancar 🏄‍♂️", annotations: { start: "Kisah kami dimulai...", dreams: "Mimpi jadi nyata ✨", building: "Membangun surga!", family: "Keluarga bertambah 👨‍👩‍👧‍👦", adventures: "Petualangan tanpa akhir!" }, timeline: [] },
-  team: { title: "Tim Arriba", subtitle: "Temui orang-orang penuh passion", closingNote: "Setiap anggota membawa energi unik – bersama kita ciptakan kenangan seumur hidup! ❤️", members: [
+  team: { title: "Tim Arriba", subtitle: "Temui orang-orang penuh passion", closingNote: "", members: [
     { id: 1, name: "Camille", role: "Operasi & Pengalaman Tamu", photo: "/src/assets/gallery/camille-to-crop.jpeg", bio: "Mengatur logistik harian dan memastikan setiap tamu merasa di rumah.", stickyNote: "Organisasi ✨", noteColor: "yellow", rotation: -5 },
     { id: 2, name: "Louise", role: "Komunitas & Pengalaman", photo: "/src/assets/gallery/louise-to-crop.jpeg", bio: "Membangun komunitas Arriba dan menjaga energi kolektif yang khas.", stickyNote: "Energi ❤️", noteColor: "pink", rotation: 6 }
   ], annotations: { bestTeam: "Tim terbaik! 🎉", family: "Arriba Family ✨", legends: "LEGENDS!", memories: "Mencipta kenangan 📸" } },
@@ -1170,7 +1175,7 @@ const resources = {
       },
       bookNowPage: {
         heroTitle: "Pesan Petualangan Arriba Anda",
-        heroSubtitle: "7 hari tak terlupakan all-in 500€",
+  heroSubtitle: "7 hari tak terlupakan all-in mulai {{price}}",
         steps: { dates: "1. Pilih tanggal", participants: "2. Peserta", package: "3. Paket", info: "4. Informasi Anda", payment: "5. Pembayaran" },
         weeklyNote: "Menginap mingguan (7 hari / 6 malam).",
         standardPackage: "Paket Standar",
@@ -1179,7 +1184,7 @@ const resources = {
         includedBadge: "TERMASUK",
         confirmCta: "Konfirmasi pemesanan",
         termsNote: "Dengan mengkonfirmasi Anda menerima syarat umum & kebijakan pembatalan fleksibel.",
-        trustSignals: ["Pembayaran aman","Dukungan 24/7","Pembatalan fleksibel"],
+  trustSignals: ["Pembayaran aman","Pembatalan fleksibel"],
         invalidStart: "Silakan pilih hari Minggu (minggu Minggu sampai Sabtu)."
       },
       cards: {
@@ -1204,7 +1209,7 @@ const resources = {
         viewAll: "Lihat Semua Paket",
         contactUs: "Hubungi Kami",
         limitedOffer: "🏄‍♂️ Penawaran Terbatas - Pesan Sebelum Maret 2025!",
-        limitedDesc: "Hemat hingga 25% untuk semua paket selancar. Ombak sempurna, instruktur ahli, dan kenangan tak terlupakan menanti Anda. Semua paket termasuk asuransi dan dukungan 24/7.",
+  limitedDesc: "Hemat hingga 25% untuk semua paket selancar. Ombak sempurna, instruktur ahli, dan kenangan tak terlupakan menanti Anda. Semua paket termasuk asuransi.",
         packages: {
           beginner: {
             name: "Paket Pemula",
@@ -1258,7 +1263,7 @@ const resources = {
           locationBadge: "Lokasi",
           uniqueRateTitle: "Tarif Tunggal",
           weekTypeTitle: "Minggu Tipikal",
-          photoPlanningPlaceholder: "Visual planning tulisan tangan segera hadir"
+          photoPlanningPlaceholder: ""
         },
         rooms: {
           title: "Kamar",
@@ -1335,7 +1340,8 @@ const resources = {
             "🧘‍♀️ 3x Yoga/Pilates per minggu",
             "🎭 Aktivitas budaya",
             "🎉 Momen kelompok"
-          ]
+          ],
+          activityAlert: "Weekend spesial TREK & eksplorasi pegunungan Lombok – 24 September. Pesan minggumu."
         }
       }
     }

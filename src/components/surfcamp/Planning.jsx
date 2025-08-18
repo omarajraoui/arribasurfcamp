@@ -15,6 +15,7 @@ const Planning = () => {
           <p className="text-lg md:text-xl text-brand-ink-soft max-w-3xl mx-auto">{t('surfcamp.planning.subtitle')}</p>
         </header>
 
+
         <div className="bg-white border border-gray-200 rounded-3xl p-10 shadow-sm">
           <h3 className="text-2xl font-semibold text-brand-ink mb-10">{t('surfcamp.common.weekTypeTitle')}</h3>
           <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-6">
@@ -37,8 +38,27 @@ const Planning = () => {
           </div>
         </div>
 
-        <div className="mt-24 w-full max-w-4xl mx-auto rounded-2xl border border-dashed border-gray-300 h-72 flex items-center justify-center text-sm text-brand-ink-soft">
-          {t('surfcamp.common.photoPlanningPlaceholder')}
+        {/* Activity alert full-width (within container) without outer white bordered wrapper */}
+        <div className="mt-24 w-full">
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-orange-100 via-amber-100 to-orange-50 px-6 md:px-12 py-8 w-full shadow border border-orange-300/60">
+            <div className="absolute inset-0 pointer-events-none opacity-25 bg-[radial-gradient(circle_at_80%_40%,#fb923c,transparent_70%)]" />
+            <div className="flex flex-col md:flex-row md:items-center gap-6 relative">
+              <div className="mx-auto md:mx-0 w-14 h-14 rounded-full bg-gradient-to-br from-orange-400 to-amber-500 flex items-center justify-center text-white shadow-md ring-4 ring-white/40">
+                <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2Z" />
+                </svg>
+              </div>
+              <p className="md:flex-1 font-semibold text-base md:text-lg text-brand-ink leading-relaxed tracking-tight text-center md:text-left">
+                {t('surfcamp.planning.activityAlert')}
+              </p>
+              <div className="flex md:self-stretch items-center justify-center">
+                <a href="#book" className="inline-flex items-center gap-2 text-sm md:text-base font-semibold px-6 py-3 rounded-full bg-orange-500 text-white shadow hover:bg-orange-600 transition">
+                  <span>BOOK NOW</span>
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 5l7 7-7 7" /></svg>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

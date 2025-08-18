@@ -8,6 +8,7 @@ import villa2 from '../../assets/surfcamp/villa2.jpg';
 import villa3 from '../../assets/surfcamp/villa-3.jpg';
 import villaTerrace from '../../assets/surfcamp/villa-terrace.jpg';
 import villaView from '../../assets/surfcamp/villaview.jpg';
+// OptimizedImage swapped for plain <img> in secondary grid to avoid any manifest resolution issues in build
 import OptimizedImage from '../ui/OptimizedImage';
 // (Leaflet assets now loaded only when LazyMap enters viewport)
 
@@ -51,11 +52,11 @@ const Villa = () => {
         <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
       {[villa2, villa3, villaTerrace, villaView].map((src,i)=>(
             <figure key={i} className="rounded-2xl border border-gray-200 overflow-hidden aspect-[16/10] relative group shadow-sm">
-              <OptimizedImage
+              <img
                 src={src}
                 alt={secondaryLabels[i] || `${t('surfcamp.villa.title')} ${i+1}`}
-                aspect="w-full h-full"
-        className="transition-transform duration-500 group-hover:scale-[1.04]"
+                loading="lazy"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
               />
               {secondaryLabels[i] && (
                 <figcaption className="absolute inset-x-0 bottom-0 bg-black/40 backdrop-blur-sm text-[10px] md:text-xs lg:text-[11px] text-white px-2 py-1">
