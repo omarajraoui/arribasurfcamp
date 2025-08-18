@@ -342,6 +342,8 @@ const resources = {
         title: "L'Équipe Arriba",
         subtitle: "Rencontrez les passionnés qui rendent chaque moment unique",
         closingNote: "Chaque membre de notre équipe apporte sa propre magie à l'expérience Arriba. Ensemble, nous créons des souvenirs qui durent toute une vie! ❤️",
+  // Updated closing note for a fresher brand-aligned vibe
+  closingNote: "Pas juste une équipe : la tribu qui transforme une semaine de surf en aventure humaine. Hâte d'écrire la prochaine page avec toi. 🌊🤙❤️",
         members: [
           { id: 1, name: "Camille", role: "Opérations & Expérience Client", photo: "/src/assets/gallery/camille-to-crop.jpeg", bio: "Elle gère l'organisation quotidienne, coordonne les partenaires et veille à ce que tout se déroule parfaitement.", stickyNote: "Organisation ✨", noteColor: "yellow", rotation: -5 },
           { id: 2, name: "Louise", role: "Communauté & Animation", photo: "/src/assets/gallery/louise-to-crop.jpeg", bio: "Elle développe la communauté Arriba et garantit l'énergie collective unique de chaque groupe.", stickyNote: "Énergie ❤️", noteColor: "pink", rotation: 6 }
