@@ -8,6 +8,18 @@ const HeroSection = () => {
   
   const [videoError, setVideoError] = useState(false);
   const heroVideoSrc = import.meta.env.VITE_HERO_VIDEO_URL || 'https://videos.pexels.com/video-files/4933720/4933720-uhd_2732_1440_30fps.mp4';
+  // Split long subtitle into two lines (comma or colon heuristic)
+  const rawSubtitle = t('hero.subtitle');
+  let line1 = rawSubtitle;
+  let line2 = '';
+  const separator = rawSubtitle.includes(',') ? ',' : (rawSubtitle.includes(':') ? ':' : null);
+  if (separator) {
+    const idx = rawSubtitle.indexOf(separator);
+    if (idx !== -1) {
+      line1 = rawSubtitle.slice(0, idx).trim();
+      line2 = rawSubtitle.slice(idx + 1).trim();
+    }
+  }
   return (
   <div className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-brand-sand">
       {/* Video Background (hidden if error) */}
@@ -18,7 +30,7 @@ const HeroSection = () => {
           loop
           playsInline
           className="absolute top-0 left-0 w-full h-full object-cover"
-          style={{ width: '100vw', height: '100vh', objectFit: 'cover' }}
+          style={{ width: '100vw', height: '100vh', objectFit: 'cover', objectPosition: 'center 35%' }}
           poster={import.meta.env.VITE_HERO_POSTER_URL || undefined}
           src={heroVideoSrc}
           crossOrigin="anonymous"
@@ -52,9 +64,10 @@ const HeroSection = () => {
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-xl md:text-2xl lg:text-3xl mb-8 tracking-normal hero-text text-brand-sun-soft drop-shadow-[0_2px_6px_rgba(0,0,0,0.55)]"
+          className="text-xl md:text-2xl lg:text-3xl mb-8 tracking-normal hero-text text-brand-sun-soft drop-shadow-[0_2px_6px_rgba(0,0,0,0.55)] leading-snug"
         >
-          {t('hero.subtitle')}
+          <span className="block">{line1}</span>
+          {line2 && <span className="block">{line2}</span>}
         </motion.p>
         
         <div className="flex justify-center w-full">
