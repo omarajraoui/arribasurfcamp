@@ -7,6 +7,8 @@ const LeSurfCamp = lazy(() => import('./pages/LeSurfCamp'));
 const BookNow = lazy(() => import('./pages/BookNow'));
 import Navigation from './components/layout/Navigation';
 import SocialSidebar from './components/ui/SocialSidebar';
+import ConstructionBanner from './components/ui/ConstructionBanner';
+import MobileSocialBar from './components/ui/MobileSocialBar';
 import FloatingContactButtons from './components/ui/FloatingContactButtons';
 import useNavbarVisibility from './hooks/useNavbarVisibility';
 import './i18n';
@@ -20,8 +22,10 @@ function App() {
   return (
     <Router>
       <div className="App w-full min-h-screen">
-        <Navigation isVisible={isNavVisible} />
+  <ConstructionBanner />
+  <Navigation isVisible={isNavVisible} />
         <SocialSidebar />
+  <MobileSocialBar />
         <FloatingContactButtons />
         
         <Suspense fallback={<div className="w-full min-h-screen flex items-center justify-center text-sm text-brand-ink-soft">Loading...</div>}>

@@ -34,12 +34,8 @@ const resources = {
         subtitle: "Meet the passionate people who make every moment unique",
         closingNote: "Each member of our team brings their own magic to the Arriba experience. Together we create memories that last a lifetime! ❤️",
         members: [
-          { id: 1, name: "Karim El Hamdani", role: "Founder & Lead Guide", photo: "/api/placeholder/300/300", bio: "Surf passionate for 15 years, Karim created Arriba to share his passion with the world.", stickyNote: "The boss! 🤙", noteColor: "yellow", rotation: -5 },
-          { id: 2, name: "Sofia Benali", role: "Surf Instructor", photo: "/api/placeholder/300/300", bio: "National surf champion, Sofia turns beginners into real surfers with patience and expertise.", stickyNote: "Surf Queen! 🏄‍♀️", noteColor: "pink", rotation: 8 },
-          { id: 3, name: "Ahmed Tazi", role: "Cultural Guide", photo: "/api/placeholder/300/300", bio: "Native from the region, Ahmed helps you discover hidden secrets and authenticity.", stickyNote: "Stories! 📚", noteColor: "blue", rotation: -3 },
-          { id: 4, name: "Lisa Martinez", role: "Camp Coordinator", photo: "/api/placeholder/300/300", bio: "Exceptional organizer, Lisa ensures every detail of your stay is perfect.", stickyNote: "Perfectionist ✨", noteColor: "green", rotation: 6 },
-          { id: 5, name: "Youssef Alami", role: "Chef & Nutritionist", photo: "/api/placeholder/300/300", bio: "Creator of culinary delights, Youssef nourishes body and soul with local creations.", stickyNote: "Food Master! 🍽️", noteColor: "orange", rotation: -7 },
-          { id: 6, name: "Emma Thompson", role: "Official Photographer", photo: "/api/placeholder/300/300", bio: "Capturer of magical moments, Emma immortalizes your adventures with a unique artistic eye.", stickyNote: "Smile! 📸", noteColor: "purple", rotation: 4 }
+          { id: 1, name: "Camille", role: "Operations & Guest Experience", photo: "/src/assets/gallery/camille-to-crop.jpeg", bio: "She orchestrates daily logistics, partner coordination and ensures every guest feels at home.", stickyNote: "Organized magic ✨", noteColor: "yellow", rotation: -5 },
+          { id: 2, name: "Louise", role: "Community & Experience Curator", photo: "/src/assets/gallery/louise-to-crop.jpeg", bio: "She grows the Arriba community and shapes the collective vibe before, during and after each stay.", stickyNote: "Community heart ❤️", noteColor: "pink", rotation: 6 }
         ],
         annotations: {
           bestTeam: "Best team ever! 🎉",
@@ -87,7 +83,7 @@ const resources = {
       },
       hero: {
         title: "ARRIBA SURF CAMP",
-        subtitle: "Lombok, Indonesia – Experience the Ultimate Surf Adventure"
+  subtitle: "Reinventing the surf camp: 7 days of total immersion – surf, Indonesian culture & group spirit"
       },
       booking: {
         title: "Book Your Surf Adventure",
@@ -347,12 +343,8 @@ const resources = {
         subtitle: "Rencontrez les passionnés qui rendent chaque moment unique",
         closingNote: "Chaque membre de notre équipe apporte sa propre magie à l'expérience Arriba. Ensemble, nous créons des souvenirs qui durent toute une vie! ❤️",
         members: [
-          { id: 1, name: "Karim El Hamdani", role: "Fondateur & Guide Principal", photo: "/api/placeholder/300/300", bio: "Passionné de surf depuis 15 ans, Karim a créé Arriba pour partager sa passion avec le monde entier.", stickyNote: "Le boss! 🤙", noteColor: "yellow", rotation: -5 },
-          { id: 2, name: "Sofia Benali", role: "Instructrice de Surf", photo: "/api/placeholder/300/300", bio: "Championne nationale de surf, Sofia transforme les débutants en vrais surfeurs avec patience et expertise.", stickyNote: "Surf Queen! 🏄‍♀️", noteColor: "pink", rotation: 8 },
-          { id: 3, name: "Ahmed Tazi", role: "Guide Culturel", photo: "/api/placeholder/300/300", bio: "Natif de la région, Ahmed vous fera découvrir les secrets cachés et l'authenticité du Maroc.", stickyNote: "Stories! 📚", noteColor: "blue", rotation: -3 },
-          { id: 4, name: "Lisa Martinez", role: "Coordinatrice Camp", photo: "/api/placeholder/300/300", bio: "Organisatrice hors pair, Lisa s'assure que chaque détail de votre séjour soit parfait.", stickyNote: "Perfectionniste ✨", noteColor: "green", rotation: 6 },
-          { id: 5, name: "Youssef Alami", role: "Chef & Nutritionniste", photo: "/api/placeholder/300/300", bio: "Créateur de délices culinaires, Youssef nourrit les corps et les âmes avec ses créations locales.", stickyNote: "Food Master! 🍽️", noteColor: "orange", rotation: -7 },
-          { id: 6, name: "Emma Thompson", role: "Photographe Officielle", photo: "/api/placeholder/300/300", bio: "Captureuse de moments magiques, Emma immortalise vos aventures avec un œil artistique unique.", stickyNote: "Smile! 📸", noteColor: "purple", rotation: 4 }
+          { id: 1, name: "Camille", role: "Opérations & Expérience Client", photo: "/src/assets/gallery/camille-to-crop.jpeg", bio: "Elle gère l'organisation quotidienne, coordonne les partenaires et veille à ce que tout se déroule parfaitement.", stickyNote: "Organisation ✨", noteColor: "yellow", rotation: -5 },
+          { id: 2, name: "Louise", role: "Communauté & Animation", photo: "/src/assets/gallery/louise-to-crop.jpeg", bio: "Elle développe la communauté Arriba et garantit l'énergie collective unique de chaque groupe.", stickyNote: "Énergie ❤️", noteColor: "pink", rotation: 6 }
         ],
         annotations: {
           bestTeam: "Best team ever! 🎉",
@@ -400,7 +392,7 @@ const resources = {
       },
       hero: {
         title: "ARRIBA SURF CAMP",
-        subtitle: "Lombok, Indonésie – Vivez l'Aventure Surf Ultime"
+  subtitle: "Réinventons le surf camp, 7 jours d'immersion totale entre surf, culture indonésienne et esprit de groupe"
       },
       booking: {
         title: "Réservez Votre Aventure Surf",
