@@ -13,241 +13,37 @@ const GallerieSection = () => {
   const photoCategories = ['all','surf','camp','food','sunsets','community'].map(id => ({ id, label: t(`photoFilter.categories.${id}`), icon: '' }));
 
   const galleryPhotos = [
-    // Surf Sessions - High quality surf photos
-    {
-      id: 1,
-      src: 'https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=600&h=800&fit=crop',
-      category: 'surf',
-      title: 'Perfect Barrel Ride',
-      description: 'Dawn patrol session at our secret spot - pure stoke!',
-      size: 'large'
-    },
-    {
-      id: 2,
-      src: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=600&fit=crop',
-      category: 'surf',
-      title: 'Learning the Waves',
-      description: 'First time surfer getting the hang of it',
-      size: 'medium'
-    },
-    {
-      id: 3,
-      src: 'https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=400&h=400&fit=crop',
-      category: 'surf',
-      title: 'Sunset Surf Magic',
-      description: 'Golden hour sessions are the best',
-      size: 'small'
-    },
-    {
-      id: 4,
-      src: 'https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=400&h=600&fit=crop',
-      category: 'surf',
-      title: 'Big Wave Challenge',
-      description: 'Advanced surfers tackling the bigger sets',
-      size: 'medium'
-    },
-    {
-      id: 5,
-      src: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&h=400&fit=crop',
-      category: 'surf',
-      title: 'Aerial Maneuver',
-      description: 'Taking surfing to the next level',
-      size: 'wide'
-    },
-    {
-      id: 6,
-      src: 'https://images.unsplash.com/photo-1520637736862-4d197d17c80a?w=400&h=600&fit=crop',
-      category: 'surf',
-      title: 'Group Session Heading Out for Waves',
-      description: 'Group session heading out for waves',
-      size: 'medium'
-    },
-    
-    // Beach Life & Camp
-    {
-      id: 7,
-      src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=800&fit=crop',
-      category: 'camp',
-      title: 'Beach Paradise',
-      description: 'Our slice of Indonesian paradise',
-      size: 'large'
-    },
-    {
-      id: 8,
-      src: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=400&fit=crop',
-      category: 'camp',
-      title: 'Morning Yoga on Beach',
-      description: 'Starting the day with mindfulness',
-      size: 'small'
-    },
-    {
-      id: 9,
-      src: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=400&h=600&fit=crop',
-      category: 'camp',
-      title: 'Beachfront Villa',
-      description: 'Wake up to the sound of waves',
-      size: 'medium'
-    },
-    {
-      id: 10,
-      src: 'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=600&h=400&fit=crop',
-      category: 'camp',
-      title: 'Beach Volleyball Fun',
-      description: 'Afternoon games on the sand',
-      size: 'wide'
-    },
-    {
-      id: 11,
-      src: 'https://images.unsplash.com/photo-1507646227500-4d389b0012be?w=400&h=600&fit=crop',
-      category: 'camp',
-      title: 'Hammock Time',
-      description: 'Perfect spot for afternoon naps',
-      size: 'medium'
-    },
-    
-    // Food & Island Life
-    {
-      id: 12,
-      src: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=600&fit=crop',
-      category: 'food',
-      title: 'Sophie\'s Island Fusion',
-      description: 'French techniques meet Indonesian flavors',
-      size: 'medium'
-    },
-    {
-      id: 13,
-      src: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=400&fit=crop',
-      category: 'food',
-      title: 'Fresh Tropical Feast',
-      description: 'Local ingredients, incredible taste',
-      size: 'small'
-    },
-    {
-      id: 14,
-      src: 'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=600&h=800&fit=crop',
-      category: 'food',
-      title: 'Fresh Catch BBQ',
-      description: 'Grilled fish straight from the ocean',
-      size: 'large'
-    },
-    {
-      id: 15,
-      src: 'https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=600&h=400&fit=crop',
-      category: 'food',
-      title: 'Tropical Smoothie Bowls',
-      description: 'Healthy fuel for surf sessions',
-      size: 'wide'
-    },
-    
-    // Epic Sunsets
-    {
-      id: 16,
-      src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=800&fit=crop',
-      category: 'sunsets',
-      title: 'Golden Hour Paradise',
-      description: 'Every evening delivers magic like this',
-      size: 'large'
-    },
-    {
-      id: 17,
-      src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=600&fit=crop',
-      category: 'sunsets',
-      title: 'Surfer Silhouettes',
-      description: 'Heading home after epic sessions',
-      size: 'medium'
-    },
-    {
-      id: 18,
-      src: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=400&fit=crop',
-      category: 'sunsets',
-      title: 'Mirror Perfect',
-      description: 'When the ocean becomes glass',
-      size: 'small'
-    },
-    {
-      id: 19,
-      src: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&h=400&fit=crop',
-      category: 'sunsets',
-      title: 'Fire Sky Reflection',
-      description: 'Nature\'s daily masterpiece',
-      size: 'wide'
-    },
-    
-    // Community & Friendships
-    {
-      id: 20,
-      src: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&h=600&fit=crop',
-      category: 'community',
-      title: 'Surf Buddies for Life',
-      description: 'Friendships formed in the lineup',
-      size: 'medium'
-    },
-    {
-      id: 21,
-      src: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&h=800&fit=crop',
-      category: 'community',
-      title: 'Camp Family Celebration',
-      description: 'Birthday surprise Indonesian style',
-      size: 'large'
-    },
-    {
-      id: 22,
-      src: 'https://images.unsplash.com/photo-1530549387789-4c1017266635?w=400&h=400&fit=crop',
-      category: 'community',
-      title: 'Group Photo Memories',
-      description: 'Capturing the Arriba spirit',
-      size: 'small'
-    },
-    {
-      id: 23,
-      src: 'https://images.unsplash.com/photo-1516815231560-8f41ec531527?w=600&h=400&fit=crop',
-      category: 'community',
-      title: 'Beach Bonfire Stories',
-      description: 'Sharing tales under the stars',
-      size: 'wide'
-    },
-    {
-      id: 24,
-      src: 'https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=400&h=600&fit=crop',
-      category: 'community',
-      title: 'Teaching Moments',
-      description: 'Passing on surf wisdom and local culture',
-      size: 'medium'
-    },
-    
-    // Additional unique photos
-    {
-      id: 25,
-      src: 'https://images.unsplash.com/photo-1544919982-b61976f0ba43?w=600&h=400&fit=crop',
-      category: 'community',
-      title: 'Beach Laughter',
-      description: 'Spontaneous moments of pure joy',
-      size: 'wide'
-    },
-    {
-      id: 26,
-      src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop',
-      category: 'surf',
-      title: 'Learning Together',
-      description: 'Surf lessons with friends',
-      size: 'medium'
-    },
-    {
-      id: 27,
-      src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop',
-      category: 'camp',
-      title: 'Morning Surf Check',
-      description: 'Checking conditions before dawn patrol',
-      size: 'small'
-    },
-    {
-      id: 28,
-      src: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&h=800&fit=crop',
-      category: 'food',
-      title: 'Beach Picnic',
-      description: 'Fresh local fruits and good vibes',
-      size: 'large'
-    }
+    // Row 1 (hero)
+    { id: 1, category: 'surf', size: 'large', title: 'Perfect Barrel', description: 'Dawn patrol perfection', src: 'https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=1200&h=800&fit=crop' },
+    // Row 2 (wide + small)
+    { id: 2, category: 'camp', size: 'wide', title: 'Beach Paradise', description: 'Our slice of paradise', src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=600&fit=crop' },
+    { id: 3, category: 'surf', size: 'small', title: 'Lineup Check', description: 'Reading the sets', src: 'https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=400&h=400&fit=crop' },
+    // Row 3 (2 medium)
+    { id: 4, category: 'surf', size: 'medium', title: 'Learning the Waves', description: 'First rides stoke', src: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=600&fit=crop' },
+    { id: 5, category: 'surf', size: 'medium', title: 'Big Wave Challenge', description: 'Charging bigger sets', src: 'https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=800&h=600&fit=crop' },
+    // Row 4 (4 small)
+    { id: 6, category: 'sunsets', size: 'small', title: 'Mirror Sunset', description: 'Ocean turns to glass', src: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=400&fit=crop' },
+    { id: 7, category: 'food', size: 'small', title: 'Tropical Feast', description: 'Vibrant island plate', src: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=400&fit=crop' },
+    { id: 8, category: 'community', size: 'small', title: 'Camp Smiles', description: 'Friends after session', src: 'https://images.unsplash.com/photo-1530549387789-4c1017266635?w=400&h=400&fit=crop' },
+    { id: 9, category: 'food', size: 'small', title: 'Smoothie Bowl', description: 'Fuel for waves', src: 'https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=400&h=400&fit=crop' },
+    // Row 5 (wide + small)
+    { id: 10, category: 'sunsets', size: 'wide', title: 'Fire Sky', description: 'Evening blaze', src: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200&h=600&fit=crop' },
+    { id: 11, category: 'camp', size: 'small', title: 'Yoga Flow', description: 'Morning balance', src: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=400&fit=crop' },
+    // Row 6 (medium + small + small)
+    { id: 12, category: 'camp', size: 'medium', title: 'Beachfront Villa', description: 'Wake to waves', src: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&h=600&fit=crop' },
+    { id: 13, category: 'community', size: 'small', title: 'Teaching Moment', description: 'Sharing tips', src: 'https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=400&h=400&fit=crop' },
+    { id: 14, category: 'food', size: 'small', title: 'Island Fusion', description: 'Local + French style', src: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=400&fit=crop' },
+    // Row 7 (small + medium + small)
+    { id: 15, category: 'surf', size: 'small', title: 'Aerial Boost', description: 'Progression moment', src: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&h=400&fit=crop' },
+    { id: 16, category: 'community', size: 'medium', title: 'Camp Celebration', description: 'Birthday vibes', src: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&h=600&fit=crop' },
+    { id: 17, category: 'surf', size: 'small', title: 'Paddle Out', description: 'Heading for sets', src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop' },
+    // Row 8 (medium + medium)
+    { id: 18, category: 'food', size: 'medium', title: 'Fresh Catch BBQ', description: 'Ocean to grill', src: 'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=800&h=600&fit=crop' },
+    { id: 19, category: 'community', size: 'medium', title: 'Bonfire Night', description: 'Stories & stars', src: 'https://images.unsplash.com/photo-1498550744921-75f79806b8a7?w=800&h=600&fit=crop' },
+    // Row 9 (wide + small) => completes 20
+  { id: 20, category: 'surf', size: 'wide', title: 'Glassy Dawn', description: 'Early calm', src: 'https://images.unsplash.com/photo-1501973801540-537f08ccae7b?w=1200&h=600&fit=crop' },
+  // Added small photo to complete final row (wide + small)
+  { id: 21, category: 'sunsets', size: 'small', title: 'First Light', description: 'Soft glow arriving', src: 'https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=400&h=800&fit=crop' }
   ];
 
   const filteredPhotos = activeFilter === 'all' 

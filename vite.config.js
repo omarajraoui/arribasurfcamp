@@ -3,12 +3,15 @@ import react from '@vitejs/plugin-react'
 import path from 'path'
 
 // https://vite.dev/config/
+// Allow switching between absolute and relative asset base.
+// Default: '/' (good for proper hosting where dist/ is the web root).
+// To generate a build that can be opened from a subfolder (e.g. file:// or /project/dist/index.html via Live Server),
+// run: VITE_RELATIVE=1 npm run build  (this sets base to './').
+// Force relative base so opening dist/index.html from a parent path (e.g. Live Server at repo root) works.
+// If you deploy to a real domain root, this can stay './' or be switched back to '/'.
 export default defineConfig({
   plugins: [react(), splitVendorChunkPlugin()],
-  // Use absolute base for production custom domain so route deep links load JS chunks correctly
-  // (previous './' caused assets to be requested under nested paths like /lexparriba/assets/... => 404)
-  // If you ever deploy under a sub-path, set base: '/subpath/'
-  base: '/',
+  base: './',
   resolve: {
     alias: {
       '@assets': path.resolve(__dirname, 'src/assets'),

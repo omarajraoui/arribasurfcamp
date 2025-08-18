@@ -2,42 +2,47 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const MasonryGrid = ({ photos, onPhotoClick }) => {
+  // New sizing system: grid is 4 columns desktop. small=1 col, medium=2 cols, wide=3 cols, large=4 cols. All one row tall.
   const getSizeClass = (size) => {
     switch (size) {
       case 'large':
-        return 'col-span-2 row-span-2';
+        return 'col-span-4';
+      case 'wide':
+        return 'col-span-3';
       case 'medium':
-        return 'col-span-1 row-span-2';
+        return 'col-span-2';
       case 'small':
       default:
-        return 'col-span-1 row-span-1';
+        return 'col-span-1';
     }
   };
 
+  // Uniform heights per size (no alternation) for perfect alignment; small = portrait phone style
   const getHeightClass = (size) => {
     switch (size) {
       case 'large':
-        return 'h-96';
+        return 'h-[30rem]';
+      case 'wide':
+        return 'h-[24rem]';
       case 'medium':
-        return 'h-64';
+        return 'h-[22rem]';
       case 'small':
       default:
-        return 'h-48';
+        return 'h-[24rem]'; // match wide height for alignment
     }
   };
 
-  // Mobile specific height mapping for a varied vertical feed
   const getMobileHeightClass = (size) => {
     switch (size) {
       case 'large':
-        return 'h-96';
-      case 'medium':
-        return 'h-72';
+        return 'h-[26rem]';
       case 'wide':
-        return 'h-64';
+        return 'h-[22rem]';
+      case 'medium':
+        return 'h-[20rem]';
       case 'small':
       default:
-        return 'h-56';
+        return 'h-[22rem]';
     }
   };
 
@@ -49,11 +54,11 @@ const MasonryGrid = ({ photos, onPhotoClick }) => {
       transition={{ duration: 0.6 }}
     >
       {/* Desktop Grid */}
-  <div className="hidden lg:grid grid-cols-4 gap-3 auto-rows-min px-4 py-8">
-        {photos.map((photo, index) => (
+  <div className="hidden lg:grid grid-cols-4 gap-4 px-4 py-8">
+    {photos.map((photo, index) => (
           <motion.div
             key={photo.id}
-    className={`${getSizeClass(photo.size)} ${getHeightClass(photo.size)} group cursor-pointer relative overflow-hidden rounded-2xl scrapbook-card shadow-md`}
+  className={`${getSizeClass(photo.size)} ${getHeightClass(photo.size)} group cursor-pointer relative overflow-hidden rounded-2xl shadow-md`}
             initial={{ opacity: 0, scale: 0.8, y: 50 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ 
@@ -96,10 +101,10 @@ const MasonryGrid = ({ photos, onPhotoClick }) => {
 
       {/* Tablet Grid */}
   <div className="hidden md:grid lg:hidden grid-cols-3 gap-3 px-4 py-6">
-        {photos.map((photo, index) => (
+    {photos.map((photo, index) => (
           <motion.div
             key={photo.id}
-    className="h-64 group cursor-pointer relative overflow-hidden rounded-2xl scrapbook-card shadow-md"
+  className={`${getHeightClass(photo.size)} col-span-1 group cursor-pointer relative overflow-hidden rounded-2xl shadow-md`}
             initial={{ opacity: 0, scale: 0.8, y: 50 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ 
@@ -140,11 +145,11 @@ const MasonryGrid = ({ photos, onPhotoClick }) => {
       </div>
 
       {/* Mobile Vertical Feed (single column) */}
-  <div className="md:hidden flex flex-col gap-5 px-4 py-6">
-        {photos.map((photo, index) => (
+  <div className="md:hidden flex flex-col gap-4 px-4 py-6">
+    {photos.map((photo, index) => (
           <motion.div
             key={photo.id}
-    className={`${getMobileHeightClass(photo.size)} group cursor-pointer relative overflow-hidden rounded-2xl first:pt-0 scrapbook-card shadow-md`}
+  className={`${getMobileHeightClass(photo.size)} group cursor-pointer relative overflow-hidden rounded-2xl first:pt-0 shadow-md`}
             initial={{ opacity: 0, scale: 0.95, y: 40 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.06, ease: 'easeOut' }}

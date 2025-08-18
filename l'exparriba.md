@@ -1,8 +1,4 @@
-L'EXP ARRIBA - PAGE SPECIFICATION DOCUMENT
-🏄‍♂️ PAGE OVERVIEW
-L'Exp Arriba is a comprehensive single-page experience that tells the complete story of Arriba Surf Camp through three distinct sections. The page uses smooth scrolling navigation and immersive storytelling with videos, sketches, and photo galleries.
-
-🎯 NAVIGATION BEHAVIOR
+<!-- Cleared during repository cleanup. -->
 Smart Scroll Navigation System:
 
 From Homepage Navbar: Click "L'Histoire" → Navigate to /lexp-arriba + auto-scroll to #histoire section

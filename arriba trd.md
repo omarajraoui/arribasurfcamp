@@ -3,11 +3,8 @@
 ## PROJECT OVERVIEW
 Build a modern surf camp website using React + Tailwind CSS inspired by Hotel Dame des Arts design patterns, featuring immersive visuals, smooth animations, and multi-language support.
 
----
 
 ## 🎯 CORE FUNCTIONALITY REQUIREMENTS
-
-### 1. HERO SECTION WITH VIDEO BACKGROUND
 **Functionality:**
 - Full-screen video background showing a man surfing
 - Overlay with camp title "ARRIBA SURF CAMP"

@@ -5,6 +5,10 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 const resources = {
   en: {
     translation: {
+      construction: {
+        notice: "This site is under construction – for investor research purposes only",
+        close: "Close notice"
+      },
       heroExp: {
   title: "ARRIBA EXPERIENCE",
         subtitle: "Live the ultimate surf adventure in Indonesia",
@@ -297,9 +301,19 @@ const resources = {
       personalInfoForm: { firstName: "First Name", lastName: "Last Name", email: "Email", phone: "Phone / WhatsApp", infoNote: "We will use this information only for your booking." },
       paymentOptions: {
         method: { card: "Card", bank: "Bank Transfer", later: "Later" },
-        cardModule: "Card payment module (Stripe) coming soon 🔐",
-        bank: { title: "Bank transfer", iban: "IBAN: FR76 XXXX XXXX XXXX", bic: "BIC: XXXXXXXX", proof: "Send proof to booking@arriba.com" },
-        later: "Book now, pay later (validation within 48h).",
+        card: {
+          title: "Pay by Card",
+          form: { cardholder: "Cardholder", number: "Card Number" },
+          comingSoon: "Secure payment module coming soon (Stripe)."
+        },
+        secure: "SECURE",
+        secureDetail: "256-bit encryption",
+        bank: { title: "Bank Transfer", iban: "FR76 XXXX XXXX XXXX", bic: "BIC XXXXXXXX", proof: "Send proof to booking@arriba.com", note: "Processing 1-2 business days" },
+        laterTitle: "Book Now, Decide Later",
+        later: "Lock in your spot without immediate payment.",
+        laterPoints: ["Confirmation within 24h","Link to pay deposit when ready","Spot held 72h"],
+        breakdown: { title: "Payment Breakdown", package: "Package Total", deposit30: "30% Deposit", balance: "Remaining Balance", note: "Balance due 14 days before arrival." },
+        timeline: { title: "Timeline", steps: ["Booking & deposit","Confirmation & welcome pack","Balance payment","Arrival & adventure"] },
         deposit: "Deposit (30%):"
       },
       bookingSummary: {
@@ -314,6 +328,10 @@ const resources = {
   },
   fr: {
     translation: {
+      construction: {
+        notice: "Ce site est en construction – destiné uniquement à la recherche d'investisseurs",
+        close: "Fermer l'avertissement"
+      },
       heroExp: {
         title: "L'EXP ARRIBA",
         subtitle: "Vivez l'aventure surf ultime en Indonésie",
@@ -606,10 +624,20 @@ const resources = {
       personalInfoForm: { firstName: "Prénom", lastName: "Nom", email: "Email", phone: "Téléphone / WhatsApp", infoNote: "Nous utiliserons ces informations uniquement pour votre réservation." },
       paymentOptions: {
         method: { card: "Carte", bank: "Virement", later: "Plus tard" },
-        cardModule: "Module paiement carte (Stripe) à intégrer 🔐",
-        bank: { title: "Virement bancaire", iban: "IBAN: FR76 XXXX XXXX XXXX", bic: "BIC: XXXXXXXX", proof: "Envoyez le justificatif à booking@arriba.com" },
-        later: "Réservez maintenant, payez plus tard (validation sous 48h).",
-        deposit: "Acompte (30%):"
+        card: {
+          title: "Payer par Carte",
+          form: { cardholder: "Titulaire", number: "Numéro de carte" },
+          comingSoon: "Module de paiement sécurisé bientôt disponible (Stripe)."
+        },
+        secure: "SÉCURISÉ",
+        secureDetail: "Chiffrement 256-bit",
+        bank: { title: "Virement bancaire", iban: "FR76 XXXX XXXX XXXX", bic: "BIC XXXXXXXX", proof: "Envoyez la preuve à booking@arriba.com", note: "Traitement 1-2 jours ouvrés" },
+        laterTitle: "Réserver Maintenant, Décider Plus Tard",
+        later: "Bloquez votre place sans paiement immédiat.",
+        laterPoints: ["Confirmation sous 24h","Lien pour payer l'acompte quand prêt","Place gardée 72h"],
+        breakdown: { title: "Détail du Paiement", package: "Total Forfait", deposit30: "Acompte 30%", balance: "Solde Restant", note: "Solde à régler 14 jours avant l'arrivée." },
+        timeline: { title: "Timeline", steps: ["Réservation & acompte","Confirmation & pack de bienvenue","Paiement du solde","Arrivée & aventure"] },
+        deposit: "Acompte (30%) :"
       },
       bookingSummary: {
         title: "Résumé",
@@ -623,6 +651,10 @@ const resources = {
   },
   es: {
     translation: {
+      construction: {
+        notice: "Este sitio está en construcción – solo para investigación de inversores",
+        close: "Cerrar aviso"
+      },
       heroExp: {
         title: "L'EXP ARRIBA",
         subtitle: "Vive la aventura de surf definitiva en Indonesia",
@@ -645,7 +677,10 @@ const resources = {
         title: "El Equipo Arriba",
         subtitle: "Conoce a los apasionados que hacen cada momento único",
         closingNote: "Cada miembro aporta su magia. Juntos creamos recuerdos para toda la vida! ❤️",
-        members: [],
+        members: [
+          { id: 1, name: "Camille", role: "Operaciones & Experiencia", photo: "/src/assets/gallery/camille-to-crop.jpeg", bio: "Coordina la logística diaria y asegura que cada huésped se sienta en casa.", stickyNote: "Organización ✨", noteColor: "yellow", rotation: -5 },
+          { id: 2, name: "Louise", role: "Comunidad & Animación", photo: "/src/assets/gallery/louise-to-crop.jpeg", bio: "Hace crecer la comunidad Arriba y crea la energía colectiva única.", stickyNote: "Energía ❤️", noteColor: "pink", rotation: 6 }
+        ],
         annotations: { bestTeam: "Mejor equipo! 🎉", family: "Arriba Family ✨", legends: "LEGENDA!", memories: "Creando recuerdos 📸" }
       },
       gallery: { title: "La Vida Arriba", subtitle: "Descubre la magia de Arriba...", loadMore: "Ver Más Momentos", shareTitle: "Comparte Tu Experiencia Arriba", shareSubtitle: "Etiquétanos @arribasurfcamp para aparecer!" },
@@ -851,9 +886,22 @@ const resources = {
   },
   nl: {
     translation: {
+      construction: {
+        notice: "Deze site is in aanbouw – uitsluitend voor investeerdersonderzoek",
+        close: "Melding sluiten"
+      },
   heroExp: { title: "L'EXP ARRIBA", subtitle: "Beleef het ultieme surf avontuur in Indonesië", description: "Sinds 2018 herdefinieert Arriba Surf Camp de surf camp ervaring.", discover: "ONTDEK" },
-  history: { title: "Ons Verhaal", subtitle: "Het Arriba avontuur: van idee tot surf paradijs 🏄‍♂️", annotations: { start: "Ons verhaal begint...", dreams: "Dromen worden realiteit ✨", building: "Paradijs bouwen!", family: "Familie groeit 👨‍👩‍👧‍👦", adventures: "Eindeloze avonturen!" }, timeline: [] },
-  team: { title: "Het Arriba Team", subtitle: "Ontmoet de gepassioneerde mensen", closingNote: "Elk lid brengt magie.", members: [], annotations: { bestTeam: "Beste team! 🎉", family: "Arriba Family ✨", legends: "LEGENDS!", memories: "Herinneringen maken 📸" } },
+  history: { title: "Ons Verhaal", subtitle: "Het Arriba avontuur: van idee tot surf paradijs 🏄‍♂️", annotations: { start: "Ons verhaal begint...", dreams: "Dromen worden realiteit ✨", building: "Paradijs bouwen!", family: "Familie groeit 👨‍👩‍👧‍👦", adventures: "Eindeloze avonturen!" }, timeline: [
+    { year: "2018", title: "De Droom Begint", content: "Een simpel idee om de magie van Indonesische golven te delen groeit uit tot een visie.", noteText: "Eerste Indo trip 🤯", noteColor: "yellow" },
+    { year: "2019", title: "Eerste Zoektocht", content: "Maandenlang zoeken naar de perfecte plek tot we ons hoekje paradijs vinden.", noteText: "Geheime spot gevonden! 📍", noteColor: "pink" },
+    { year: "2020", title: "Bouw Start", content: "Met lokale hulp bouwen we duurzaam – bamboe voor bamboe.", noteText: "Bamboe stap voor stap 🎋", noteColor: "blue" },
+    { year: "2021", title: "Opening", content: "De eerste surfers arriveren – de sfeer is meteen magisch.", noteText: "Eerste gasten = familie ❤️", noteColor: "yellow" },
+    { year: "2022-2024", title: "Groeiende Familie", content: "Iedere surfer laat een stukje verhaal achter – dat is Arriba spirit.", noteText: "Endless summer ☀️", noteColor: "pink" }
+  ] },
+  team: { title: "Het Arriba Team", subtitle: "Ontmoet de gepassioneerde mensen die elk moment uniek maken", closingNote: "Elk lid brengt eigen magie. Samen creëren we herinneringen voor het leven! ❤️", members: [
+    { id: 1, name: "Camille", role: "Operaties & Gastbeleving", photo: "/src/assets/gallery/camille-to-crop.jpeg", bio: "Ze coördineert de dagelijkse logistiek en zorgt dat elke gast zich thuis voelt.", stickyNote: "Organisatie ✨", noteColor: "yellow", rotation: -5 },
+    { id: 2, name: "Louise", role: "Community & Beleving", photo: "/src/assets/gallery/louise-to-crop.jpeg", bio: "Ze bouwt de Arriba community uit en creëert de unieke groepsenergie.", stickyNote: "Energie ❤️", noteColor: "pink", rotation: 6 }
+  ], annotations: { bestTeam: "Beste team! 🎉", family: "Arriba Family ✨", legends: "LEGENDS!", memories: "Herinneringen maken 📸" } },
   gallery: { title: "Arriba Leven", subtitle: "Ontdek de magie...", loadMore: "Meer Momenten", shareTitle: "Deel Je Arriba Ervaring", shareSubtitle: "Tag ons @arribasurfcamp" },
   photoFilter: { categories: { all: "Alles", surf: "Surf Sessions", camp: "Camp Life", food: "Food", sunsets: "Sunsets", community: "Community" }, descriptions: { all: "Alle categorieën", surf: "Surf sessies", camp: "Camp leven", food: "Gastronomie", sunsets: "Zonsondergangen", community: "Community" } },
       navigation: {
@@ -896,6 +944,23 @@ const resources = {
         termsNote: "Door te bevestigen accepteer je onze algemene voorwaarden & flexibel annuleringsbeleid.",
         trustSignals: ["Veilige betaling","24/7 Support","Flexibele annulering"],
         invalidStart: "Kies een zondag (verblijf zondag t/m zaterdag)."
+      },
+      paymentOptions: {
+        method: { card: "Kaart", bank: "Overschrijving", later: "Later" },
+        card: {
+          title: "Betalen met Kaart",
+          form: { cardholder: "Kaarthouder", number: "Kaartnummer" },
+          comingSoon: "Beveiligde betaalmodule komt binnenkort (Stripe)."
+        },
+        secure: "VEILIG",
+        secureDetail: "256-bit versleuteling",
+        bank: { title: "Bankoverschrijving", iban: "FR76 XXXX XXXX XXXX", bic: "BIC XXXXXXXX", proof: "Stuur bewijs naar booking@arriba.com", note: "Verwerking 1-2 werkdagen" },
+        laterTitle: "Nu boeken, later beslissen",
+        later: "Reserveer je plek zonder directe betaling.",
+        laterPoints: ["Bevestiging binnen 24u","Link voor aanbetaling wanneer klaar","Plek 72u gereserveerd"],
+        breakdown: { title: "Betalingsoverzicht", package: "Pakket Totaal", deposit30: "30% Aanbetaling", balance: "Resterend Saldo", note: "Saldo te betalen 14 dagen voor aankomst." },
+        timeline: { title: "Tijdlijn", steps: ["Boeking & aanbetaling","Bevestiging & welkomstpakket","Saldo betaling","Aankomst & avontuur"] },
+        deposit: "Aanbetaling (30%):"
       },
       cards: {
       discover: "Ontdekken",
@@ -1057,9 +1122,23 @@ const resources = {
   },
   id: {
     translation: {
+      construction: {
+        notice: "Situs ini masih dalam pembangunan – hanya untuk riset investor",
+        close: "Tutup pemberitahuan"
+      },
   heroExp: { title: "L'EXP ARRIBA", subtitle: "Rasakan petualangan surf terbaik di Indonesia", description: "Sejak 2018, Arriba Surf Camp mendefinisikan ulang pengalaman surf camp.", discover: "JELAJAHI" },
   history: { title: "Kisah Kami", subtitle: "Petualangan Arriba: dari ide ke surga selancar 🏄‍♂️", annotations: { start: "Kisah kami dimulai...", dreams: "Mimpi jadi nyata ✨", building: "Membangun surga!", family: "Keluarga bertambah 👨‍👩‍👧‍👦", adventures: "Petualangan tanpa akhir!" }, timeline: [] },
-  team: { title: "Tim Arriba", subtitle: "Temui orang-orang penuh passion", closingNote: "Setiap anggota membawa magi mereka.", members: [], annotations: { bestTeam: "Tim terbaik! 🎉", family: "Arriba Family ✨", legends: "LEGENDS!", memories: "Mencipta kenangan 📸" } },
+  team: { title: "Tim Arriba", subtitle: "Temui orang-orang penuh passion", closingNote: "Setiap anggota membawa energi unik – bersama kita ciptakan kenangan seumur hidup! ❤️", members: [
+    { id: 1, name: "Camille", role: "Operasi & Pengalaman Tamu", photo: "/src/assets/gallery/camille-to-crop.jpeg", bio: "Mengatur logistik harian dan memastikan setiap tamu merasa di rumah.", stickyNote: "Organisasi ✨", noteColor: "yellow", rotation: -5 },
+    { id: 2, name: "Louise", role: "Komunitas & Pengalaman", photo: "/src/assets/gallery/louise-to-crop.jpeg", bio: "Membangun komunitas Arriba dan menjaga energi kolektif yang khas.", stickyNote: "Energi ❤️", noteColor: "pink", rotation: 6 }
+  ], annotations: { bestTeam: "Tim terbaik! 🎉", family: "Arriba Family ✨", legends: "LEGENDS!", memories: "Mencipta kenangan 📸" } },
+  history: { title: "Kisah Kami", subtitle: "Petualangan Arriba: dari ide ke surga selancar 🏄‍♂️", annotations: { start: "Kisah kami dimulai...", dreams: "Mimpi jadi nyata ✨", building: "Membangun surga!", family: "Keluarga bertambah 👨‍👩‍👧‍👦", adventures: "Petualangan tanpa akhir!" }, timeline: [
+    { year: "2018", title: "Mimpi Dimulai", content: "Ide sederhana berbagi keajaiban ombak Indonesia tumbuh jadi visi.", noteText: "Trip Indo pertama 🤯", noteColor: "yellow" },
+    { year: "2019", title: "Mencari Spot", content: "Berbulan eksplorasi hingga menemukan sudut surga kami.", noteText: "Spot rahasia ditemukan! 📍", noteColor: "pink" },
+    { year: "2020", title: "Mulai Bangun", content: "Dengan bantuan lokal kita bangun secara berkelanjutan – bambu demi bambu.", noteText: "Bambu bertahap 🎋", noteColor: "blue" },
+    { year: "2021", title: "Pembukaan", content: "Surfer pertama tiba – energi langsung terasa.", noteText: "Tamu pertama = keluarga ❤️", noteColor: "yellow" },
+    { year: "2022-2024", title: "Keluarga Bertumbuh", content: "Setiap surfer tinggalkan bagian cerita – itulah spirit Arriba.", noteText: "Endless summer ☀️", noteColor: "pink" }
+  ] },
   gallery: { title: "Kehidupan Arriba", subtitle: "Temukan magi Arriba...", loadMore: "Lihat Lebih Banyak", shareTitle: "Bagikan Pengalaman Arriba", shareSubtitle: "Tag kami @arribasurfcamp" },
   photoFilter: { categories: { all: "Semua", surf: "Surf Sessions", camp: "Camp Life", food: "Food", sunsets: "Sunsets", community: "Community" }, descriptions: { all: "Semua kategori", surf: "Sesi selancar", camp: "Kehidupan camp", food: "Gastronomi", sunsets: "Matahari terbenam", community: "Komunitas" } },
       navigation: {

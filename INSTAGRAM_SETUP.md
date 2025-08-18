@@ -1,23 +1,4 @@
-# Instagram Photos Setup Guide
-
-## How to Add Real Instagram Photos to Your Footer
-
-### Step 1: Download Your Instagram Photos
-1. Go to your Instagram account: [@arriba.surfcamp.bali](https://www.instagram.com/arriba.surfcamp.bali)
-2. Download the photos you want to display in the footer
-3. Resize them to 300x300px or 400x400px for best performance
-4. Save them with descriptive names like:
-   - `surf-session-1.jpg`
-   - `camp-life-1.jpg`
-   - `sunset-1.jpg`
-   - etc.
-
-### Step 2: Add Photos to Project
-1. Place your downloaded Instagram photos in the `public/instagram/` folder
-2. Update the paths in `src/data/instagramPhotos.js`
-
-### Step 3: Update Photo Data
-Edit `src/data/instagramPhotos.js` and replace the placeholder paths with your actual photo names:
+<!-- Cleared during repository cleanup. -->
 
 ```javascript
 const instagramPhotos = [

@@ -45,10 +45,19 @@ const OptimizedImage = ({ src, alt, placeholder, className = '', sources = [], a
 
   useEffect(() => {
     if (!effectiveKey) return;
-    fetch('/optimized/image-manifest.json')
-      .then(r => r.json())
+    // Respect Vite base (supports relative './' builds)
+    const base = (import.meta && import.meta.env && import.meta.env.BASE_URL) || '/';
+    fetch(`${base}optimized/image-manifest.json`)
+      .then(r => r.ok ? r.json() : null)
       .then(man => {
-        const entry = man[effectiveKey];
+        if (!man) return;
+        // Manifest keys are original filenames without build hashes; when hashed we fall back gracefully.
+        let entry = man[effectiveKey];
+        if (!entry) {
+          // Try stripping a trailing hash pattern (-xxxxxx) from key
+            const stripped = effectiveKey.replace(/-[a-z0-9_]{6,}$/i, '');
+            entry = man[stripped];
+        }
         if (entry) {
           setManifestData(entry);
           if (entry.placeholder) setPh(entry.placeholder);

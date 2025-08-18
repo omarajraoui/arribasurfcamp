@@ -1,13 +1,4 @@
-# Le Surf Camp Sections Development Guide
-
-## 🏄‍♂️ Navigation Structure
-
-### Main Page: `/le-surf-camp`
-- **Clickable main link** "Le Surf Camp" → goes to `/le-surf-camp` landing page
-- **Dropdown links** → scroll to specific sections on same page:
-  - "Les Chambres" → `/le-surf-camp#chambres`
-  - "La Villa" → `/le-surf-camp#villa` 
-  - "Le Planning" → `/le-surf-camp#planning`
+<!-- Cleared during repository cleanup. -->
 
 ### Page Structure:
 ```jsx

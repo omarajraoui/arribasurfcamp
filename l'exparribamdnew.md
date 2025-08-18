@@ -1,13 +1,4 @@
-# Scrapbook UI Improvement Guide - From Basic to Rich
-
-## 🎯 Key Differences Analysis
-
-### Current State (Image 1):
-- **Too much white space** - feels empty and sterile
-- **Cards are too spaced out** - losing the cramped scrapbook feel
-- **Missing decorative elements** - no stickers, doodles, or embellishments
-- **Limited color variety** - mostly white backgrounds
-- **No layering depth** - everything feels flat
+<!-- Cleared during repository cleanup. -->
 
 ### Target State (Image 2):
 - **Dense, packed layout** - every inch is used

@@ -113,8 +113,9 @@ const Footer = () => {
 
       {/* Social Media Links */}
       <div className="py-12 bg-white">
-        <div className="max-w-2xl mx-auto">
-          <ul className="flex justify-center items-center gap-8 lg:gap-12 flex-wrap">
+        <div className="max-w-4xl mx-auto">
+          {/* Desktop / large screens: inline row */}
+          <ul className="hidden sm:flex justify-center items-center gap-8 lg:gap-12 flex-wrap">
             {socialLinks.map((social) => (
               <li key={social.name}>
                 <a
@@ -122,6 +123,26 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-center gap-3 text-brand-ink hover:text-brand-sun-accent transition-all duration-300 ease-out transform hover:scale-105"
+                >
+                  <span className="transition-transform duration-300 group-hover:scale-110">
+                    {social.icon}
+                  </span>
+                  <span className="text-sm font-bold uppercase tracking-wider font-title">
+                    {social.name}
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+          {/* Mobile: stacked centered */}
+          <ul className="sm:hidden flex flex-col items-center gap-6">
+            {socialLinks.map((social) => (
+              <li key={social.name} className="w-full flex justify-center">
+                <a
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-3 text-brand-ink hover:text-brand-sun-accent transition-all duration-300 ease-out"
                 >
                   <span className="transition-transform duration-300 group-hover:scale-110">
                     {social.icon}
