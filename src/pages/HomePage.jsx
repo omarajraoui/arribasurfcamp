@@ -8,7 +8,7 @@ const HomePage = () => {
   return (
     <>
       <HeroSection />
-      <NavigationGrid />
+  <NavigationGrid />
       <OfferSection />
       <Footer />
     </>

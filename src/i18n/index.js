@@ -26,11 +26,12 @@ const resources = {
             adventures: "Endless Adventures!"
         },
         timeline: [
-          { year: "2018", title: "The Dream Begins", content: "It all started with a simple dream: to share the magic of Indonesian waves. Our founder, who fell in love with these crystal waters during a solo trip, knew he had to create something special here.", noteText: "First Indo trip - Mind blown! 🤯", noteColor: "yellow" },
-          { year: "2019", title: "First Wave", content: "The search for the perfect spot took us across the archipelago. After months of exploration, we found our little corner of paradise – isolated, authentic, with perfect waves all year.", noteText: "Secret location found! 📍", noteColor: "pink" },
-          { year: "2020", title: "Construction Begins", content: "Despite global challenges, we started building with the help of the local community. Every bamboo, every stone was chosen with love to create a camp that respects the environment.", noteText: "Bamboo by bamboo... 🎋", noteColor: "blue" },
-          { year: "2021", title: "Opening!", content: "The first surfers arrived and the magic happened instantly. Seeing their smiles after a perfect session confirmed our dream became reality.", noteText: "First guests = First family ❤️", noteColor: "yellow" },
-          { year: "2022-2024", title: "Growing Family", content: "Season after season, our family grows. Every surfer leaves with a piece of Arriba and leaves us a piece of their story. That’s the Arriba spirit.", noteText: "Endless summer vibes! ☀️", noteColor: "pink" }
+          { year: "1", title: "Project Origin", content: "Camille and Louise met while working as group leaders in a French children’s holiday camp. That shared experience brought us together and gave us solid expertise in creating meaningful group dynamics.", noteText: "Meeting", noteColor: "yellow" },
+          { year: "2", title: "Discovering Indonesia", content: "At 18, Camille moved to Indonesia. From Sulawesi to Bali and finally Lombok where she discovered surfing. The island’s raw, preserved nature and world‑class conditions revealed its incredible potential.", noteText: "Inspiration", noteColor: "pink" },
+          { year: "3", title: "Birth of the Concept", content: "Louise joined Camille a few months later. Drawing on our group animation background, we shaped the idea of an adult surf camp: adventure, surf progression and relaxation—without the stress of planning.", noteText: "Idea", noteColor: "blue" },
+          { year: "4", title: "Arriba Surf Camps Today", content: "Our formula speaks to adults seeking adventure, friendship and calm. We take care of logistics so guests can focus on surfing, exploring Lombok and recharging in an exceptional natural environment.", noteText: "Experience", noteColor: "yellow" },
+          { year: "5", title: "The Project Takes Shape", content: "After over a year of reflection, planning and refining every detail, the Arriba Surf Camps project is ready to emerge. We’re now looking for passionate investors who share our vision to bring this unique adventure to life.", noteText: "Structure", noteColor: "pink" },
+          { year: "6", title: "Join the Adventure", content: "If our project inspires you and you’d like to be part of the journey, reach out. Together we’ll create unforgettable memories!", noteText: "Invest", noteColor: "blue" }
         ]
       },
       team: {
@@ -38,8 +39,8 @@ const resources = {
         subtitle: "Meet the passionate people who make every moment unique",
   closingNote: "",
         members: [
-          { id: 1, name: "Camille", role: "Operations & Guest Experience", photo: "/src/assets/gallery/camille-to-crop.jpeg", bio: "She orchestrates daily logistics, partner coordination and ensures every guest feels at home.", stickyNote: "Organized magic ✨", noteColor: "yellow", rotation: -5 },
-          { id: 2, name: "Louise", role: "Community & Experience Curator", photo: "/src/assets/gallery/louise-to-crop.jpeg", bio: "She grows the Arriba community and shapes the collective vibe before, during and after each stay.", stickyNote: "Community heart ❤️", noteColor: "pink", rotation: 6 }
+          { id: 1, name: "Camille", role: "Operations & Guest Experience", photo: "/src/assets/gallery/camille-to-crop.jpeg", bio: "She orchestrates daily logistics, partner coordination and ensures every guest feels at home.", stickyNote: "", noteColor: "yellow", rotation: -5 },
+          { id: 2, name: "Louise", role: "Community & Experience Curator", photo: "/src/assets/gallery/louise-to-crop.jpeg", bio: "She grows the Arriba community and shapes the collective vibe before, during and after each stay.", stickyNote: "", noteColor: "pink", rotation: 6 }
         ],
         annotations: {
           bestTeam: "Best team ever! 🎉",
@@ -85,6 +86,7 @@ const resources = {
   planning: "Schedule",
   bookNow: "Book Now"
       },
+  // homeRoomTypes removed (section deprecated)
       hero: {
         title: "ARRIBA SURF CAMP",
   subtitle: "Reinventing the surf camp: 7 days of total immersion – surf, Indonesian culture & group spirit"
@@ -94,6 +96,7 @@ const resources = {
         arrivalDate: "Arrival Date",
         departureDate: "Departure Date",
         participants: "Participants",
+  roomType: "Room type",
         person: "Person",
         people: "People",
         searchBook: "SEARCH & BOOK",
@@ -102,10 +105,10 @@ const resources = {
       },
       cards: {
         discover: "Discover",
-        arriba: "Arriba",
-        team: "L'Équipe",
-        gallery: "Galerie",
-        rooms: "Chambres",
+        arriba: "Arriba Experience",
+        team: "The Team",
+        gallery: "Gallery",
+        rooms: "Rooms",
         villa: "Villa",
         planning: "Planning"
       },
@@ -244,14 +247,15 @@ const resources = {
         planning: {
           title: "Planning",
           subtitle: "A balanced week between surf progression, wellness and local discovery",
-          daysOrder: ["weekend","monday","tuesday","wednesday","thursday","friday"],
+          daysOrder: ["sunday","monday","tuesday","wednesday","thursday","friday","saturday"],
           days: {
-            monday: { label: "MONDAY", activities: ["🏄‍♂️ Surf Lesson (7am)", "🧘‍♀️ Yoga (5pm)", "🎉 Welcome Dinner"] },
+            sunday: { label: "SUNDAY", activities: ["✈️ Arrival Day", "🌅 Sunset Welcome", "🍽️ Welcome Dinner"] },
+            monday: { label: "MONDAY", activities: ["🏄‍♂️ Surf Lesson (7am)", "🧘‍♀️ Yoga (5pm)", "🎉 Community Time"] },
             tuesday: { label: "TUESDAY", activities: ["🏄‍♂️ Surf Lesson (7am)", "👨‍🍳 Cooking Class (3pm)", "🌅 Sunset Free Time"] },
             wednesday: { label: "WEDNESDAY", activities: ["🏄‍♂️ Surf Lesson (7am)", "🤿 Snorkeling Trip (2pm)", "🎬 Movie Night (8pm)"] },
             thursday: { label: "THURSDAY", activities: ["🏄‍♂️ Surf Lesson (7am)", "🙏 Balinese Offerings (4pm)", "🧘‍♀️ Yoga (6pm)"] },
             friday: { label: "FRIDAY", activities: ["🏄‍♂️ Surf Lesson (7am)", "💪 Pilates (5pm)", "🔥 Group BBQ (7pm)"] },
-            weekend: { label: "WEEKEND", activities: ["🏄‍♂️ Surf Lesson (7am)", "🏝️ Explore Lombok", "👋 Farewell Party"] }
+            saturday: { label: "SATURDAY", activities: ["🏄‍♂️ Final Surf Session", "🏝️ Explore Lombok", "👋 Farewell Party"] }
           },
            legends: [
              "🏄‍♂️ Daily included surf",
@@ -288,7 +292,7 @@ const resources = {
       bookNowPage: {
         heroTitle: "Book Your Arriba Adventure",
   heroSubtitle: "Unforgettable 7 days all inclusive from {{price}}",
-        steps: { dates: "1. Choose your dates", participants: "2. Participants", package: "3. Package", info: "4. Your information", payment: "5. Payment" },
+        steps: { dates: "1. Choose your dates", participants: "2. Participants", roomType: "3. Room type", package: "4. Package", info: "5. Your information", payment: "6. Payment" },
         weeklyNote: "Weekly stays (7 days / 6 nights).",
         standardPackage: "Standard Package",
         perPerson: "/ person",
@@ -297,7 +301,12 @@ const resources = {
         confirmCta: "Confirm booking",
         termsNote: "By confirming you accept our general terms & flexible cancellation policy.",
   trustSignals: ["Secure payment","Flexible cancellation"],
-  invalidStart: "Please choose a Sunday (weekly stays run Sunday → Saturday)."
+  invalidStart: "Please choose a Sunday (weekly stays run Sunday → Saturday).",
+        roomTypes: {
+          mixed: { title: "Mixed Room", description: "Share with both male & female travelers." },
+          girls: { title: "Girls Only Room", description: "Women-only shared room for extra comfort." },
+          boys: { title: "Boys Only Room", description: "Men-only shared room – relaxed vibe." }
+        }
       },
       personalInfoForm: { firstName: "First Name", lastName: "Last Name", email: "Email", phone: "Phone / WhatsApp", infoNote: "We will use this information only for your booking." },
       paymentOptions: {
@@ -321,6 +330,7 @@ const resources = {
         title: "Summary",
         dates: "Dates",
         participants: "Participants",
+        roomType: "Room Type",
         weekPrice: "Week price",
         total: "Total",
         inclusions: ["All inclusive except flights & alcoholic drinks","Confirmation within 24h","30% deposit to secure your spot"]
@@ -410,6 +420,7 @@ const resources = {
         planning: "Le Planning",
         bookNow: "Réserver"
       },
+  // homeRoomTypes removed (section deprecated)
       hero: {
         title: "ARRIBA SURF CAMP",
   subtitle: "Réinventons le surf camp, 7 jours d'immersion totale entre surf, culture indonésienne et esprit de groupe"
@@ -419,6 +430,7 @@ const resources = {
         arrivalDate: "Date d'Arrivée",
         departureDate: "Date de Départ",
         participants: "Participants",
+  roomType: "Type de chambre",
         person: "Personne",
         people: "Personnes",
         searchBook: "RECHERCHER & RÉSERVER",
@@ -427,7 +439,7 @@ const resources = {
       },
       cards: {
         discover: "Découvrir",
-        arriba: "Arriba",
+        arriba: "Expérience Arriba",
         team: "L'Équipe",
         gallery: "Galerie",
         rooms: "Chambres",
@@ -569,14 +581,15 @@ const resources = {
   planning: {
           title: "Le Planning",
           subtitle: "Une semaine équilibrée entre progression surf, bien-être et découverte locale",
-          daysOrder: ["weekend","monday","tuesday","wednesday","thursday","friday"],
+          daysOrder: ["dimanche","lundi","mardi","mercredi","jeudi","vendredi","samedi"],
           days: {
-            monday: { label: "LUNDI", activities: ["🏄‍♂️ Surf Lesson (7h)", "🧘‍♀️ Yoga (17h)", "🎉 Welcome Dinner"] },
-            tuesday: { label: "MARDI", activities: ["🏄‍♂️ Surf Lesson (7h)", "👨‍🍳 Cours Cuisine (15h)", "🌅 Sunset Libre"] },
-            wednesday: { label: "MERCREDI", activities: ["🏄‍♂️ Surf Lesson (7h)", "🤿 Snorkeling Trip (14h)", "🎬 Movie Night (20h)"] },
-            thursday: { label: "JEUDI", activities: ["🏄‍♂️ Surf Lesson (7h)", "🙏 Offrandes Balinaises (16h)", "🧘‍♀️ Yoga (18h)"] },
-            friday: { label: "VENDREDI", activities: ["🏄‍♂️ Surf Lesson (7h)", "💪 Pilates (17h)", "🔥 BBQ Groupe (19h)"] },
-            weekend: { label: "WEEKEND", activities: ["🏄‍♂️ Surf Lesson (7h)", "🏝️ Explore Lombok", "👋 Farewell Party"] }
+            dimanche: { label: "DIMANCHE", activities: ["✈️ Jour d'Arrivée", "🌅 Accueil Sunset", "🍽️ Dîner de Bienvenue"] },
+            lundi: { label: "LUNDI", activities: ["🏄‍♂️ Surf Lesson (7h)", "🧘‍♀️ Yoga (17h)", "🎉 Temps Communauté"] },
+            mardi: { label: "MARDI", activities: ["🏄‍♂️ Surf Lesson (7h)", "👨‍🍳 Cours Cuisine (15h)", "🌅 Sunset Libre"] },
+            mercredi: { label: "MERCREDI", activities: ["🏄‍♂️ Surf Lesson (7h)", "🤿 Snorkeling Trip (14h)", "🎬 Movie Night (20h)"] },
+            jeudi: { label: "JEUDI", activities: ["🏄‍♂️ Surf Lesson (7h)", "🙏 Offrandes Balinaises (16h)", "🧘‍♀️ Yoga (18h)"] },
+            vendredi: { label: "VENDREDI", activities: ["🏄‍♂️ Surf Lesson (7h)", "💪 Pilates (17h)", "🔥 BBQ Groupe (19h)"] },
+            samedi: { label: "SAMEDI", activities: ["🏄‍♂️ Session Surf Finale", "🏝️ Explore Lombok", "👋 Farewell Party"] }
           },
           legends: [
             "🏄‍♂️ Surf quotidien inclus",
@@ -613,7 +626,7 @@ const resources = {
       bookNowPage: {
         heroTitle: "Réservez Votre Aventure Arriba",
   heroSubtitle: "7 jours inoubliables tout compris dès {{price}}",
-        steps: { dates: "1. Choisissez vos dates", participants: "2. Nombre de participants", package: "3. Formule", info: "4. Vos informations", payment: "5. Paiement" },
+        steps: { dates: "1. Choisissez vos dates", participants: "2. Nombre de participants", roomType: "3. Type de chambre", package: "4. Formule", info: "5. Vos informations", payment: "6. Paiement" },
         weeklyNote: "Séjours hebdomadaires (7 jours / 6 nuits).",
         standardPackage: "Formule Standard",
         perPerson: "/ personne",
@@ -622,7 +635,12 @@ const resources = {
         confirmCta: "Confirmer la réservation",
         termsNote: "En confirmant vous acceptez nos conditions générales & politique d'annulation flexible.",
   trustSignals: ["Paiement sécurisé","Annulation flexible"],
-        invalidStart: "Veuillez choisir un dimanche (séjour du dimanche au samedi)."
+        invalidStart: "Veuillez choisir un dimanche (séjour du dimanche au samedi).",
+        roomTypes: {
+          mixed: { title: "Chambre Mixte", description: "Partagée avec voyageurs hommes & femmes." },
+          girls: { title: "Chambre Filles Uniquement", description: "Réservée aux voyageuses." },
+          boys: { title: "Chambre Garçons Uniquement", description: "Réservée aux voyageurs." }
+        }
       },
       personalInfoForm: { firstName: "Prénom", lastName: "Nom", email: "Email", phone: "Téléphone / WhatsApp", infoNote: "Nous utiliserons ces informations uniquement pour votre réservation." },
       paymentOptions: {
@@ -646,6 +664,7 @@ const resources = {
         title: "Résumé",
         dates: "Dates",
         participants: "Participants",
+        roomType: "Type de chambre",
         weekPrice: "Prix semaine",
         total: "Total",
         inclusions: ["Tout inclus sauf vols & boissons alcoolisées","Confirmation sous 24h","Acompte 30% pour bloquer votre place"]
@@ -669,11 +688,12 @@ const resources = {
         subtitle: "La aventura Arriba: de una idea al paraíso del surf 🏄‍♂️",
         annotations: { start: "Nuestra historia comienza...", dreams: "Los sueños se hacen realidad ✨", building: "Construyendo el paraíso!", family: "La familia crece 👨‍👩‍👧‍👦", adventures: "Aventuras infinitas!" },
         timeline: [
-          { year: "2018", title: "El Sueño Empieza", content: "Todo comenzó con un sueño simple: compartir la magia de las olas indonesias.", noteText: "Primer viaje a Indo! 🤯", noteColor: "yellow" },
-          { year: "2019", title: "Primera Ola", content: "Buscando el spot perfecto encontramos nuestro rincón de paraíso.", noteText: "Spot secreto encontrado! 📍", noteColor: "pink" },
-          { year: "2020", title: "Construcción", content: "Empezamos la construcción con ayuda de la comunidad local.", noteText: "Bambú a bambú... 🎋", noteColor: "blue" },
-          { year: "2021", title: "Apertura!", content: "Los primeros surfers llegaron y la magia ocurrió.", noteText: "Primeros huéspedes ❤️", noteColor: "yellow" },
-          { year: "2022-2024", title: "Familia Creciendo", content: "Cada surfer deja un pedazo de historia.", noteText: "Verano sin fin ☀️", noteColor: "pink" }
+          { year: "1", title: "Origen del Proyecto", content: "Camille y Louise se conocieron como animadoras en un campamento de niños francés. Esta experiencia compartida en animación de grupos nos unió y nos dio expertise sólida en crear experiencias grupales exitosas.", noteText: "Encuentro", noteColor: "yellow" },
+          { year: "2", title: "Descubriendo Indonesia", content: "A los 18 años, Camille se fue a vivir a Indonesia. Su viaje la llevó de Sulawesi a Bali, luego a Lombok donde descubrió el surf. El aspecto salvaje y preservado de Lombok, combinado con condiciones de surf excepcionales, la convenció del potencial de este destino.", noteText: "Inspiración", noteColor: "pink" },
+          { year: "3", title: "Nacimiento del Concepto", content: "Louise se unió a Camille unos meses después en Indonesia. Con nuestra experiencia en animación, desarrollamos la idea de un camp de surf para adultos. El objetivo: ofrecer vacaciones que combinen aventura, descubrimiento del surf y relajación, sin el estrés de la organización.", noteText: "Idea", noteColor: "blue" },
+          { year: "4", title: "Arriba Surf Camps Hoy", content: "Nuestra fórmula se dirige a adultos en busca de aventura, amistad y tranquilidad. Nos encargamos de toda la organización para permitir que nuestros clientes disfruten plenamente de su estancia: surf, exploración de Lombok y momentos de relajación en un entorno natural excepcional.", noteText: "Experiencia", noteColor: "yellow" },
+          { year: "5", title: "El Proyecto Toma Forma", content: "Después de más de un año de reflexión, planificación y perfeccionamiento de cada detalle, nuestro proyecto Arriba Surf Camps está listo para ver la luz. Ahora buscamos inversores apasionados que compartan nuestra visión para dar vida a esta aventura única.", noteText: "Estructura", noteColor: "pink" },
+          { year: "6", title: "Únete a la Aventura", content: "Si nuestro proyecto te inspira y quieres formar parte de esta hermosa aventura, no dudes en contactarnos. ¡Juntos, creemos recuerdos inolvidables!", noteText: "Invertir", noteColor: "blue" }
         ]
       },
       team: {
@@ -681,8 +701,8 @@ const resources = {
         subtitle: "Conoce a los apasionados que hacen cada momento único",
   closingNote: "",
         members: [
-          { id: 1, name: "Camille", role: "Operaciones & Experiencia", photo: "/src/assets/gallery/camille-to-crop.jpeg", bio: "Coordina la logística diaria y asegura que cada huésped se sienta en casa.", stickyNote: "Organización ✨", noteColor: "yellow", rotation: -5 },
-          { id: 2, name: "Louise", role: "Comunidad & Animación", photo: "/src/assets/gallery/louise-to-crop.jpeg", bio: "Hace crecer la comunidad Arriba y crea la energía colectiva única.", stickyNote: "Energía ❤️", noteColor: "pink", rotation: 6 }
+          { id: 1, name: "Camille", role: "Operaciones & Experiencia", photo: "/src/assets/gallery/camille-to-crop.jpeg", bio: "Coordina la logística diaria y asegura que cada huésped se sienta en casa.", stickyNote: "", noteColor: "yellow", rotation: -5 },
+          { id: 2, name: "Louise", role: "Comunidad & Animación", photo: "/src/assets/gallery/louise-to-crop.jpeg", bio: "Hace crecer la comunidad Arriba y crea la energía colectiva única.", stickyNote: "", noteColor: "pink", rotation: 6 }
         ],
         annotations: { bestTeam: "Mejor equipo! 🎉", family: "Arriba Family ✨", legends: "LEGENDA!", memories: "Creando recuerdos 📸" }
       },
@@ -700,6 +720,7 @@ const resources = {
   planning: "Planificación",
         bookNow: "Reservar"
       },
+  // homeRoomTypes removed (section deprecated)
       hero: {
         title: "ARRIBA SURF CAMP",
         subtitle: "Lombok, Indonesia – Experimenta la Aventura de Surf Definitiva"
@@ -709,6 +730,7 @@ const resources = {
         arrivalDate: "Fecha de Llegada",
         departureDate: "Fecha de Salida",
         participants: "Participantes",
+  roomType: "Tipo de habitación",
         person: "Persona",
         people: "Personas",
         searchBook: "BUSCAR & RESERVAR",
@@ -718,7 +740,7 @@ const resources = {
       bookNowPage: {
         heroTitle: "Reserva Tu Aventura Arriba",
   heroSubtitle: "7 días inolvidables todo incluido desde {{price}}",
-        steps: { dates: "1. Elige tus fechas", participants: "2. Participantes", package: "3. Paquete", info: "4. Tus datos", payment: "5. Pago" },
+        steps: { dates: "1. Elige tus fechas", participants: "2. Participantes", roomType: "3. Tipo de habitación", package: "4. Paquete", info: "5. Tus datos", payment: "6. Pago" },
         weeklyNote: "Estancias semanales (7 días / 6 noches).",
         standardPackage: "Paquete Estándar",
         perPerson: "/ persona",
@@ -727,12 +749,17 @@ const resources = {
         confirmCta: "Confirmar reserva",
         termsNote: "Al confirmar aceptas nuestros términos y política flexible de cancelación.",
   trustSignals: ["Pago seguro","Cancelación flexible"],
-        invalidStart: "Por favor elige un domingo (estancia de domingo a sábado)."
+        invalidStart: "Por favor elige un domingo (estancia de domingo a sábado).",
+        roomTypes: {
+          mixed: { title: "Habitación Mixta", description: "Compartida con viajeros de ambos géneros." },
+          girls: { title: "Habitación Solo Chicas", description: "Solo para viajeras." },
+          boys: { title: "Habitación Solo Chicos", description: "Solo para viajeros." }
+        }
       },
       cards: {
   discover: "Descubrir",
-  arriba: "Arriba",
-  team: "Equipo",
+  arriba: "Experiencia Arriba",
+  team: "El Equipo",
   gallery: "Galería",
   rooms: "Habitaciones",
   villa: "Villa",
@@ -868,14 +895,15 @@ const resources = {
         planning: {
           title: "Planificación",
           subtitle: "Una semana equilibrada entre progreso surf, bienestar y descubrimiento local",
-          daysOrder: ["monday","tuesday","wednesday","thursday","friday","weekend"],
+          daysOrder: ["domingo","lunes","martes","miércoles","jueves","viernes","sábado"],
           days: {
-            monday: { label: "LUNES", activities: ["🏄‍♂️ Clase Surf (7h)", "🧘‍♀️ Yoga (17h)", "🎉 Cena Bienvenida"] },
-            tuesday: { label: "MARTES", activities: ["🏄‍♂️ Clase Surf (7h)", "👨‍🍳 Clase Cocina (15h)", "🌅 Tiempo Libre Sunset"] },
-            wednesday: { label: "MIÉRCOLES", activities: ["🏄‍♂️ Clase Surf (7h)", "🤿 Snorkel (14h)", "🎬 Noche Cine (20h)"] },
-            thursday: { label: "JUEVES", activities: ["🏄‍♂️ Clase Surf (7h)", "🙏 Ofrendas Balinesas (16h)", "🧘‍♀️ Yoga (18h)"] },
-            friday: { label: "VIERNES", activities: ["🏄‍♂️ Clase Surf (7h)", "💪 Pilates (17h)", "🔥 BBQ Grupo (19h)"] },
-            weekend: { label: "FIN DE SEMANA", activities: ["🏄‍♂️ Clase Surf (7h)", "🏝️ Explorar Lombok", "👋 Fiesta Despedida"] }
+            domingo: { label: "DOMINGO", activities: ["✈️ Llegada & Check-in", "🌅 Bienvenida Sunset", "🍽️ Cena de Bienvenida"] },
+            lunes: { label: "LUNES", activities: ["🏄‍♂️ Clase Surf (7h)", "🧘‍♀️ Yoga (17h)", "🎉 Tiempo Comunidad"] },
+            martes: { label: "MARTES", activities: ["🏄‍♂️ Clase Surf (7h)", "👨‍🍳 Clase Cocina (15h)", "🌅 Sunset Libre"] },
+            miércoles: { label: "MIÉRCOLES", activities: ["🏄‍♂️ Clase Surf (7h)", "🤿 Snorkel (14h)", "🎬 Noche Cine (20h)"] },
+            jueves: { label: "JUEVES", activities: ["🏄‍♂️ Clase Surf (7h)", "🙏 Ofrendas Balinesas (16h)", "🧘‍♀️ Yoga (18h)"] },
+            viernes: { label: "VIERNES", activities: ["🏄‍♂️ Clase Surf (7h)", "💪 Pilates (17h)", "🔥 BBQ Grupo (19h)"] },
+            sábado: { label: "SÁBADO", activities: ["🏄‍♂️ Sesión Surf Final", "🏝️ Explorar Lombok", "👋 Fiesta Despedida"] }
           },
           legends: [
             "🏄‍♂️ Surf diario incluido",
@@ -885,6 +913,15 @@ const resources = {
           ],
           activityAlert: "Fin de semana especial TREK y descubrimiento de las montañas de Lombok – 24 de Septiembre. Reserva tu semana."
         }
+      },
+      bookingSummary: {
+        title: "Resumen",
+        dates: "Fechas",
+        participants: "Participantes",
+        roomType: "Tipo de habitación",
+        weekPrice: "Precio semana",
+        total: "Total",
+        inclusions: ["Todo incluido excepto vuelos y bebidas alcohólicas","Confirmación en 24h","Depósito 30% para asegurar tu lugar"]
       }
     }
   },
@@ -896,15 +933,16 @@ const resources = {
       },
   heroExp: { title: "L'EXP ARRIBA", subtitle: "28 reizigers, één villa op Lombok, 7 dagen totale onderdompeling", description: "Gedeelde kamers (4 tot 6 bedden) in het hart van een tropische villa met privézwembad en open gemeenschappelijke ruimtes. Modern comfort, gezellige sfeer en ideale ligging: een plek om uit te rusten, te verbinden en de Surf Camp avontuur volledig te beleven.", discover: "ONTDEK" },
   history: { title: "Ons Verhaal", subtitle: "Het Arriba avontuur: van idee tot surf paradijs 🏄‍♂️", annotations: { start: "Ons verhaal begint...", dreams: "Dromen worden realiteit ✨", building: "Paradijs bouwen!", family: "Familie groeit 👨‍👩‍👧‍👦", adventures: "Eindeloze avonturen!" }, timeline: [
-    { year: "2018", title: "De Droom Begint", content: "Een simpel idee om de magie van Indonesische golven te delen groeit uit tot een visie.", noteText: "Eerste Indo trip 🤯", noteColor: "yellow" },
-    { year: "2019", title: "Eerste Zoektocht", content: "Maandenlang zoeken naar de perfecte plek tot we ons hoekje paradijs vinden.", noteText: "Geheime spot gevonden! 📍", noteColor: "pink" },
-    { year: "2020", title: "Bouw Start", content: "Met lokale hulp bouwen we duurzaam – bamboe voor bamboe.", noteText: "Bamboe stap voor stap 🎋", noteColor: "blue" },
-    { year: "2021", title: "Opening", content: "De eerste surfers arriveren – de sfeer is meteen magisch.", noteText: "Eerste gasten = familie ❤️", noteColor: "yellow" },
-    { year: "2022-2024", title: "Groeiende Familie", content: "Iedere surfer laat een stukje verhaal achter – dat is Arriba spirit.", noteText: "Endless summer ☀️", noteColor: "pink" }
+    { year: "1", title: "Project Oorsprong", content: "Camille en Louise ontmoetten elkaar als groepsleiders op een Frans kinderkamp. Deze gedeelde ervaring in groepsleiding bracht ons samen en gaf ons solide expertise in het creëren van succesvolle groepservaringen.", noteText: "Ontmoeting", noteColor: "yellow" },
+    { year: "2", title: "Indonesië Ontdekken", content: "Op 18-jarige leeftijd ging Camille in Indonesië wonen. Haar reis voerde haar van Sulawesi naar Bali, vervolgens naar Lombok waar ze surfen ontdekte. Lombok's wilde en ongerepte natuur, gecombineerd met uitzonderlijke surfcondities, overtuigde haar van het potentieel van deze bestemming.", noteText: "Inspiratie", noteColor: "pink" },
+    { year: "3", title: "Geboorte van het Concept", content: "Louise voegde zich enkele maanden later bij Camille in Indonesië. Met onze animatie-ervaring ontwikkelden we het idee van een surf camp voor volwassenen. Het doel: vakanties aanbieden die avontuur, surf ontdekking en ontspanning combineren, zonder organisatiestress.", noteText: "Idee", noteColor: "blue" },
+    { year: "4", title: "Arriba Surf Camps Vandaag", content: "Onze formule richt zich op volwassenen die op zoek zijn naar avontuur, vriendschap en rust. We regelen alle organisatie zodat onze gasten volledig kunnen genieten van hun verblijf: surfen, Lombok verkennen en ontspannende momenten in een uitzonderlijke natuurlijke omgeving.", noteText: "Ervaring", noteColor: "yellow" },
+    { year: "5", title: "Het Project Krijgt Vorm", content: "Na meer dan een jaar reflectie, planning en het perfectioneren van elk detail, is ons Arriba Surf Camps project klaar om tot leven te komen. We zoeken nu gepassioneerde investeerders die onze visie delen om dit unieke avontuur tot leven te brengen.", noteText: "Structuur", noteColor: "pink" },
+    { year: "6", title: "Doe Mee Met Het Avontuur", content: "Als ons project je inspireert en je deel wilt uitmaken van dit prachtige avontuur, aarzel dan niet om contact met ons op te nemen. Samen, laten we onvergetelijke herinneringen creëren!", noteText: "Investeren", noteColor: "blue" }
   ] },
   team: { title: "Het Arriba Team", subtitle: "Ontmoet de gepassioneerde mensen die elk moment uniek maken", closingNote: "", members: [
-    { id: 1, name: "Camille", role: "Operaties & Gastbeleving", photo: "/src/assets/gallery/camille-to-crop.jpeg", bio: "Ze coördineert de dagelijkse logistiek en zorgt dat elke gast zich thuis voelt.", stickyNote: "Organisatie ✨", noteColor: "yellow", rotation: -5 },
-    { id: 2, name: "Louise", role: "Community & Beleving", photo: "/src/assets/gallery/louise-to-crop.jpeg", bio: "Ze bouwt de Arriba community uit en creëert de unieke groepsenergie.", stickyNote: "Energie ❤️", noteColor: "pink", rotation: 6 }
+  { id: 1, name: "Camille", role: "Operaties & Gastbeleving", photo: "/src/assets/gallery/camille-to-crop.jpeg", bio: "Ze coördineert de dagelijkse logistiek en zorgt dat elke gast zich thuis voelt.", stickyNote: "", noteColor: "yellow", rotation: -5 },
+  { id: 2, name: "Louise", role: "Community & Beleving", photo: "/src/assets/gallery/louise-to-crop.jpeg", bio: "Ze bouwt de Arriba community uit en creëert de unieke groepsenergie.", stickyNote: "", noteColor: "pink", rotation: 6 }
   ], annotations: { bestTeam: "Beste team! 🎉", family: "Arriba Family ✨", legends: "LEGENDS!", memories: "Herinneringen maken 📸" } },
   gallery: { title: "Arriba Leven", subtitle: "Ontdek de magie...", loadMore: "Meer Momenten", shareTitle: "Deel Je Arriba Ervaring", shareSubtitle: "Tag ons @arribasurfcamp" },
   photoFilter: { categories: { all: "Alles", surf: "Surf Sessions", camp: "Camp Life", food: "Food", sunsets: "Sunsets", community: "Community" }, descriptions: { all: "Alle categorieën", surf: "Surf sessies", camp: "Camp leven", food: "Gastronomie", sunsets: "Zonsondergangen", community: "Community" } },
@@ -920,6 +958,7 @@ const resources = {
         planning: "Planning",
         bookNow: "Boek Nu"
       },
+  // homeRoomTypes removed (section deprecated)
       hero: {
         title: "ARRIBA SURF CAMP",
         subtitle: "Lombok, Indonesië – Beleef het Ultieme Surf Avontuur"
@@ -929,6 +968,7 @@ const resources = {
         arrivalDate: "Aankomstdatum",
         departureDate: "Vertrekdatum",
         participants: "Deelnemers",
+  roomType: "Kamertype",
         person: "Persoon",
         people: "Personen",
         searchBook: "ZOEKEN & BOEKEN",
@@ -938,7 +978,7 @@ const resources = {
       bookNowPage: {
         heroTitle: "Boek Je Arriba Avontuur",
   heroSubtitle: "Onvergetelijke 7 dagen all-in vanaf {{price}}",
-        steps: { dates: "1. Kies je data", participants: "2. Deelnemers", package: "3. Pakket", info: "4. Jouw gegevens", payment: "5. Betaling" },
+        steps: { dates: "1. Kies je data", participants: "2. Deelnemers", roomType: "3. Kamertype", package: "4. Pakket", info: "5. Jouw gegevens", payment: "6. Betaling" },
         weeklyNote: "Wekelijkse verblijven (7 dagen / 6 nachten).",
         standardPackage: "Standaard Pakket",
         perPerson: "/ persoon",
@@ -947,7 +987,12 @@ const resources = {
         confirmCta: "Boeking bevestigen",
         termsNote: "Door te bevestigen accepteer je onze algemene voorwaarden & flexibel annuleringsbeleid.",
   trustSignals: ["Veilige betaling","Flexibele annulering"],
-        invalidStart: "Kies een zondag (verblijf zondag t/m zaterdag)."
+        invalidStart: "Kies een zondag (verblijf zondag t/m zaterdag).",
+        roomTypes: {
+          mixed: { title: "Gemengde Kamer", description: "Gedeeld door mannen en vrouwen." },
+          girls: { title: "Alleen Meisjes Kamer", description: "Alleen voor vrouwelijke reizigers." },
+          boys: { title: "Alleen Jongens Kamer", description: "Alleen voor mannelijke reizigers." }
+        }
       },
       paymentOptions: {
         method: { card: "Kaart", bank: "Overschrijving", later: "Later" },
@@ -1105,14 +1150,15 @@ const resources = {
         planning: {
           title: "Planning",
           subtitle: "Een gebalanceerde week tussen surf progressie, welzijn en lokale ontdekking",
-          daysOrder: ["monday","tuesday","wednesday","thursday","friday","weekend"],
+          daysOrder: ["zondag","maandag","dinsdag","woensdag","donderdag","vrijdag","zaterdag"],
           days: {
-            monday: { label: "MAANDAG", activities: ["🏄‍♂️ Surf Les (7u)", "🧘‍♀️ Yoga (17u)", "🎉 Welcome Dinner"] },
-            tuesday: { label: "DINSDAG", activities: ["🏄‍♂️ Surf Les (7u)", "👨‍🍳 Kookles (15u)", "🌅 Sunset Vrij"] },
-            wednesday: { label: "WOENSDAG", activities: ["🏄‍♂️ Surf Les (7u)", "🤿 Snorkel Trip (14u)", "🎬 Movie Night (20u)"] },
-            thursday: { label: "DONDERDAG", activities: ["🏄‍♂️ Surf Les (7u)", "🙏 Balinese Offers (16u)", "🧘‍♀️ Yoga (18u)"] },
-            friday: { label: "VRIJDAG", activities: ["🏄‍♂️ Surf Les (7u)", "💪 Pilates (17u)", "🔥 Groep BBQ (19u)"] },
-            weekend: { label: "WEEKEND", activities: ["🏄‍♂️ Surf Les (7u)", "🏝️ Ontdek Lombok", "👋 Farewell Party"] }
+            zondag: { label: "ZONDAG", activities: ["✈️ Aankomst & Check-in", "🌅 Sunset Welkom", "🍽️ Welkom Diner"] },
+            maandag: { label: "MAANDAG", activities: ["🏄‍♂️ Surf Les (7u)", "🧘‍♀️ Yoga (17u)", "🎉 Community Tijd"] },
+            dinsdag: { label: "DINSDAG", activities: ["🏄‍♂️ Surf Les (7u)", "👨‍🍳 Kookles (15u)", "🌅 Sunset Vrij"] },
+            woensdag: { label: "WOENSDAG", activities: ["🏄‍♂️ Surf Les (7u)", "🤿 Snorkel Trip (14u)", "🎬 Movie Night (20u)"] },
+            donderdag: { label: "DONDERDAG", activities: ["🏄‍♂️ Surf Les (7u)", "🙏 Balinese Offers (16u)", "🧘‍♀️ Yoga (18u)"] },
+            vrijdag: { label: "VRIJDAG", activities: ["🏄‍♂️ Surf Les (7u)", "💪 Pilates (17u)", "🔥 Groep BBQ (19u)"] },
+            zaterdag: { label: "ZATERDAG", activities: ["🏄‍♂️ Finale Surf Sessie", "🏝️ Ontdek Lombok", "👋 Farewell Party"] }
           },
           legends: [
             "🏄‍♂️ Dagelijkse surf inbegrepen",
@@ -1122,6 +1168,15 @@ const resources = {
           ],
           activityAlert: "Speciaal TREK weekend & ontdekking van de bergen van Lombok – 24 September. Boek je week."
         }
+      },
+      bookingSummary: {
+        title: "Samenvatting",
+        dates: "Data",
+        participants: "Deelnemers",
+        roomType: "Kamertype",
+        weekPrice: "Weekprijs",
+        total: "Totaal",
+        inclusions: ["Alles inbegrepen behalve vluchten en alcoholische dranken","Bevestiging binnen 24u","30% aanbetaling om je plek te reserveren"]
       }
     }
   },
@@ -1132,17 +1187,17 @@ const resources = {
         close: "Tutup pemberitahuan"
       },
   heroExp: { title: "L'EXP ARRIBA", subtitle: "28 traveler, satu vila di Lombok, 7 hari imersi total", description: "Kamar bersama (4–6 tempat tidur) di jantung vila tropis dengan kolam renang privat dan area komunal terbuka. Kenyamanan modern, suasana hangat dan lokasi ideal: tempat untuk istirahat, terhubung dan menjalani penuh petualangan Surf Camp.", discover: "JELAJAHI" },
-  history: { title: "Kisah Kami", subtitle: "Petualangan Arriba: dari ide ke surga selancar 🏄‍♂️", annotations: { start: "Kisah kami dimulai...", dreams: "Mimpi jadi nyata ✨", building: "Membangun surga!", family: "Keluarga bertambah 👨‍👩‍👧‍👦", adventures: "Petualangan tanpa akhir!" }, timeline: [] },
   team: { title: "Tim Arriba", subtitle: "Temui orang-orang penuh passion", closingNote: "", members: [
-    { id: 1, name: "Camille", role: "Operasi & Pengalaman Tamu", photo: "/src/assets/gallery/camille-to-crop.jpeg", bio: "Mengatur logistik harian dan memastikan setiap tamu merasa di rumah.", stickyNote: "Organisasi ✨", noteColor: "yellow", rotation: -5 },
-    { id: 2, name: "Louise", role: "Komunitas & Pengalaman", photo: "/src/assets/gallery/louise-to-crop.jpeg", bio: "Membangun komunitas Arriba dan menjaga energi kolektif yang khas.", stickyNote: "Energi ❤️", noteColor: "pink", rotation: 6 }
+    { id: 1, name: "Camille", role: "Operasi & Pengalaman Tamu", photo: "/src/assets/gallery/camille-to-crop.jpeg", bio: "Mengatur logistik harian dan memastikan setiap tamu merasa di rumah.", stickyNote: "", noteColor: "yellow", rotation: -5 },
+    { id: 2, name: "Louise", role: "Komunitas & Pengalaman", photo: "/src/assets/gallery/louise-to-crop.jpeg", bio: "Membangun komunitas Arriba dan menjaga energi kolektif yang khas.", stickyNote: "", noteColor: "pink", rotation: 6 }
   ], annotations: { bestTeam: "Tim terbaik! 🎉", family: "Arriba Family ✨", legends: "LEGENDS!", memories: "Mencipta kenangan 📸" } },
   history: { title: "Kisah Kami", subtitle: "Petualangan Arriba: dari ide ke surga selancar 🏄‍♂️", annotations: { start: "Kisah kami dimulai...", dreams: "Mimpi jadi nyata ✨", building: "Membangun surga!", family: "Keluarga bertambah 👨‍👩‍👧‍👦", adventures: "Petualangan tanpa akhir!" }, timeline: [
-    { year: "2018", title: "Mimpi Dimulai", content: "Ide sederhana berbagi keajaiban ombak Indonesia tumbuh jadi visi.", noteText: "Trip Indo pertama 🤯", noteColor: "yellow" },
-    { year: "2019", title: "Mencari Spot", content: "Berbulan eksplorasi hingga menemukan sudut surga kami.", noteText: "Spot rahasia ditemukan! 📍", noteColor: "pink" },
-    { year: "2020", title: "Mulai Bangun", content: "Dengan bantuan lokal kita bangun secara berkelanjutan – bambu demi bambu.", noteText: "Bambu bertahap 🎋", noteColor: "blue" },
-    { year: "2021", title: "Pembukaan", content: "Surfer pertama tiba – energi langsung terasa.", noteText: "Tamu pertama = keluarga ❤️", noteColor: "yellow" },
-    { year: "2022-2024", title: "Keluarga Bertumbuh", content: "Setiap surfer tinggalkan bagian cerita – itulah spirit Arriba.", noteText: "Endless summer ☀️", noteColor: "pink" }
+    { year: "1", title: "Asal Proyek", content: "Camille dan Louise bertemu sebagai pemimpin grup di kamp anak-anak Prancis. Pengalaman bersama dalam animasi grup ini menyatukan kami dan memberi kami keahlian solid dalam menciptakan pengalaman grup yang sukses.", noteText: "Pertemuan", noteColor: "yellow" },
+    { year: "2", title: "Menemukan Indonesia", content: "Pada usia 18 tahun, Camille tinggal di Indonesia. Perjalanannya membawanya dari Sulawesi ke Bali, lalu ke Lombok dimana dia menemukan selancar. Alam liar dan murni Lombok, dikombinasi dengan kondisi selancar yang luar biasa, meyakinkannya akan potensi destinasi ini.", noteText: "Inspirasi", noteColor: "pink" },
+    { year: "3", title: "Lahirnya Konsep", content: "Louise bergabung dengan Camille di Indonesia beberapa bulan kemudian. Dengan pengalaman animasi kami, kami mengembangkan ide surf camp untuk dewasa. Tujuannya: menawarkan liburan yang menggabungkan petualangan, penemuan selancar, dan relaksasi, tanpa stres organisasi.", noteText: "Ide", noteColor: "blue" },
+    { year: "4", title: "Arriba Surf Camps Hari Ini", content: "Formula kami menargetkan dewasa yang mencari petualangan, persahabatan, dan kedamaian. Kami mengurus semua organisasi sehingga tamu dapat sepenuhnya menikmati masa tinggal: selancar, eksplorasi Lombok, dan momen relaksasi di lingkungan alam yang luar biasa.", noteText: "Pengalaman", noteColor: "yellow" },
+    { year: "5", title: "Proyek Mengambil Bentuk", content: "Setelah lebih dari satu tahun refleksi, perencanaan, dan menyempurnakan setiap detail, proyek Arriba Surf Camps kami siap untuk hidup. Kami sekarang mencari investor yang passionate yang berbagi visi kami untuk mewujudkan petualangan unik ini.", noteText: "Struktur", noteColor: "pink" },
+    { year: "6", title: "Bergabung dengan Petualangan", content: "Jika proyek kami menginspirasi Anda dan Anda ingin menjadi bagian dari petualangan indah ini, jangan ragu untuk menghubungi kami. Bersama, mari ciptakan kenangan yang tak terlupakan!", noteText: "Investasi", noteColor: "blue" }
   ] },
   gallery: { title: "Kehidupan Arriba", subtitle: "Temukan magi Arriba...", loadMore: "Lihat Lebih Banyak", shareTitle: "Bagikan Pengalaman Arriba", shareSubtitle: "Tag kami @arribasurfcamp" },
   photoFilter: { categories: { all: "Semua", surf: "Surf Sessions", camp: "Camp Life", food: "Food", sunsets: "Sunsets", community: "Community" }, descriptions: { all: "Semua kategori", surf: "Sesi selancar", camp: "Kehidupan camp", food: "Gastronomi", sunsets: "Matahari terbenam", community: "Komunitas" } },
@@ -1158,6 +1213,7 @@ const resources = {
         planning: "Jadwal",
         bookNow: "Pesan Sekarang"
       },
+  // homeRoomTypes removed (section deprecated)
       hero: {
         title: "ARRIBA SURF CAMP",
         subtitle: "Lombok, Indonesia – Rasakan Petualangan Selancar Terbaik"
@@ -1167,6 +1223,7 @@ const resources = {
         arrivalDate: "Tanggal Kedatangan",
         departureDate: "Tanggal Keberangkatan",
         participants: "Peserta",
+  roomType: "Tipe kamar",
         person: "Orang",
         people: "Orang",
         searchBook: "CARI & PESAN",
@@ -1176,7 +1233,7 @@ const resources = {
       bookNowPage: {
         heroTitle: "Pesan Petualangan Arriba Anda",
   heroSubtitle: "7 hari tak terlupakan all-in mulai {{price}}",
-        steps: { dates: "1. Pilih tanggal", participants: "2. Peserta", package: "3. Paket", info: "4. Informasi Anda", payment: "5. Pembayaran" },
+        steps: { dates: "1. Pilih tanggal", participants: "2. Peserta", roomType: "3. Tipe kamar", package: "4. Paket", info: "5. Informasi Anda", payment: "6. Pembayaran" },
         weeklyNote: "Menginap mingguan (7 hari / 6 malam).",
         standardPackage: "Paket Standar",
         perPerson: "/ orang",
@@ -1185,7 +1242,12 @@ const resources = {
         confirmCta: "Konfirmasi pemesanan",
         termsNote: "Dengan mengkonfirmasi Anda menerima syarat umum & kebijakan pembatalan fleksibel.",
   trustSignals: ["Pembayaran aman","Pembatalan fleksibel"],
-        invalidStart: "Silakan pilih hari Minggu (minggu Minggu sampai Sabtu)."
+        invalidStart: "Silakan pilih hari Minggu (minggu Minggu sampai Sabtu).",
+        roomTypes: {
+          mixed: { title: "Kamar Campur", description: "Berbagi dengan perempuan & laki-laki." },
+          girls: { title: "Kamar Khusus Perempuan", description: "Hanya untuk perempuan." },
+          boys: { title: "Kamar Khusus Laki-laki", description: "Hanya untuk laki-laki." }
+        }
       },
       cards: {
       discover: "Jelajahi",
@@ -1326,14 +1388,15 @@ const resources = {
         planning: {
           title: "Jadwal",
           subtitle: "Minggu seimbang antara progres surf, kebugaran & eksplorasi lokal",
-          daysOrder: ["monday","tuesday","wednesday","thursday","friday","weekend"],
+          daysOrder: ["minggu","senin","selasa","rabu","kamis","jumat","sabtu"],
           days: {
-            monday: { label: "SENIN", activities: ["🏄‍♂️ Pelajaran Surf (07.00)", "🧘‍♀️ Yoga (17.00)", "🎉 Makan Malam Sambutan"] },
-            tuesday: { label: "SELASA", activities: ["🏄‍♂️ Pelajaran Surf (07.00)", "👨‍🍳 Kelas Masak (15.00)", "🌅 Waktu Bebas Sunset"] },
-            wednesday: { label: "RABU", activities: ["🏄‍♂️ Pelajaran Surf (07.00)", "🤿 Snorkeling (14.00)", "🎬 Malam Film (20.00)"] },
-            thursday: { label: "KAMIS", activities: ["🏄‍♂️ Pelajaran Surf (07.00)", "🙏 Persembahan Bali (16.00)", "🧘‍♀️ Yoga (18.00)"] },
-            friday: { label: "JUMAT", activities: ["🏄‍♂️ Pelajaran Surf (07.00)", "💪 Pilates (17.00)", "🔥 BBQ Grup (19.00)"] },
-            weekend: { label: "AKHIR PEKAN", activities: ["🏄‍♂️ Pelajaran Surf (07.00)", "🏝️ Jelajah Lombok", "👋 Pesta Perpisahan"] }
+            minggu: { label: "MINGGU", activities: ["✈️ Kedatangan & Check-in", "🌅 Sunset Sambutan", "🍽️ Makan Malam Sambutan"] },
+            senin: { label: "SENIN", activities: ["🏄‍♂️ Pelajaran Surf (07.00)", "🧘‍♀️ Yoga (17.00)", "🎉 Waktu Komunitas"] },
+            selasa: { label: "SELASA", activities: ["🏄‍♂️ Pelajaran Surf (07.00)", "👨‍🍳 Kelas Masak (15.00)", "🌅 Sunset Bebas"] },
+            rabu: { label: "RABU", activities: ["🏄‍♂️ Pelajaran Surf (07.00)", "🤿 Snorkeling (14.00)", "🎬 Malam Film (20.00)"] },
+            kamis: { label: "KAMIS", activities: ["🏄‍♂️ Pelajaran Surf (07.00)", "🙏 Persembahan Bali (16.00)", "🧘‍♀️ Yoga (18.00)"] },
+            jumat: { label: "JUMAT", activities: ["🏄‍♂️ Pelajaran Surf (07.00)", "💪 Pilates (17.00)", "🔥 BBQ Grup (19.00)"] },
+            sabtu: { label: "SABTU", activities: ["🏄‍♂️ Sesi Surf Terakhir", "🏝️ Jelajah Lombok", "👋 Pesta Perpisahan"] }
           },
           legends: [
             "🏄‍♂️ Surf harian termasuk",
@@ -1343,6 +1406,15 @@ const resources = {
           ],
           activityAlert: "Weekend spesial TREK & eksplorasi pegunungan Lombok – 24 September. Pesan minggumu."
         }
+      },
+      bookingSummary: {
+        title: "Ringkasan",
+        dates: "Tanggal",
+        participants: "Peserta",
+        roomType: "Tipe Kamar",
+        weekPrice: "Harga Minggu",
+        total: "Total",
+        inclusions: ["Semua termasuk kecuali penerbangan & minuman beralkohol","Konfirmasi dalam 24 jam","Deposit 30% untuk mengamankan tempat Anda"]
       }
     }
   }

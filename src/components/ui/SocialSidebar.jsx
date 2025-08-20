@@ -4,7 +4,7 @@ import React from 'react';
 const socials = [
   {
     name: 'Instagram',
-    href: 'https://www.instagram.com/arriba.surfcamp.bali?igsh=YWQ4eWI3bHR5dTBs',
+    href: 'https://www.instagram.com/arriba.surfcamp/profilecard/?igsh=d3B3ZWp6bTFudGc4',
     svg: (
       <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor" aria-hidden="true">
         <path d="M7.75 2A5.75 5.75 0 0 0 2 7.75v8.5A5.75 5.75 0 0 0 7.75 22h8.5A5.75 5.75 0 0 0 22 16.25v-8.5A5.75 5.75 0 0 0 16.25 2h-8.5ZM7.5 4.5h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-9a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3Zm10.25 1.75a1 1 0 1 0 0 2 1 1 0 0 0 0-2ZM12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm0 1.5A2.5 2.5 0 1 1 12 15a2.5 2.5 0 0 1 0-5Z" />

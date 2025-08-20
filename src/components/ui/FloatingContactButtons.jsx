@@ -3,7 +3,7 @@ import React from 'react';
 const socials = [
   {
     name: 'Instagram',
-    href: 'https://www.instagram.com/arriba.surfcamp.bali?igsh=YWQ4eWI3bHR5dTBs',
+    href: 'https://www.instagram.com/arriba.surfcamp/profilecard/?igsh=d3B3ZWp6bTFudGc4',
     bg: 'from-pink-500 to-orange-400',
     svg: (
       <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor" aria-hidden="true">

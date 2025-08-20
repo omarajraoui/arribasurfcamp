@@ -9,6 +9,7 @@ const BookingComponent = () => {
   const [startDate, setStartDate] = useState(null); // Sunday
   const [endDate, setEndDate] = useState(null); // Saturday
   const [participants, setParticipants] = useState(1);
+  const [roomType, setRoomType] = useState('mixed');
   const navigate = useNavigate();
 
   // Allow only Sundays for start selection
@@ -38,7 +39,7 @@ const BookingComponent = () => {
 
   const handleGoBook = () => {
     if (!startDate || !endDate) return;
-    navigate(`/book-now?start=${formatParam(startDate)}&end=${formatParam(endDate)}&p=${participants}`);
+  navigate(`/book-now?start=${formatParam(startDate)}&end=${formatParam(endDate)}&p=${participants}&prefRoom=${roomType}`);
   };
 
   return (
@@ -74,12 +75,24 @@ const BookingComponent = () => {
             onChange={(e) => setParticipants(e.target.value)}
             className="w-full p-2 border border-brand-sand-deep rounded-md focus:ring-2 focus:ring-brand-sun/60 focus:border-brand-sun bg-brand-foam/80 text-brand-ink"
           >
-            {[1, 2, 3, 4, 5].map((num) => (
+            {[1, 2, 3, 4, 5, 6].map((num) => (
               <option key={num} value={num}>
                 {num} {num === 1 ? t('booking.person') : t('booking.people')}
               </option>
             ))}
-            <option value="5+">5+ {t('booking.people')}</option>
+          </select>
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-brand-ink-soft mb-1">{t('booking.roomType')}</label>
+          <select
+            value={roomType}
+            onChange={(e) => setRoomType(e.target.value)}
+            className="w-full p-2 border border-brand-sand-deep rounded-md focus:ring-2 focus:ring-brand-sun/60 focus:border-brand-sun bg-brand-foam/80 text-brand-ink"
+          >
+            {['mixed','girls','boys'].map(rt => (
+              <option key={rt} value={rt}>{t(`bookNowPage.roomTypes.${rt}.title`)}</option>
+            ))}
           </select>
         </div>
         

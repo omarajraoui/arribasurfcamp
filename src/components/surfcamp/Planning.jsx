@@ -52,7 +52,7 @@ const Planning = () => {
                 {t('surfcamp.planning.activityAlert')}
               </p>
               <div className="flex md:self-stretch items-center justify-center">
-                <a href="#book" className="inline-flex items-center gap-2 text-sm md:text-base font-semibold px-6 py-3 rounded-full bg-orange-500 text-white shadow hover:bg-orange-600 transition">
+                <a href="/book-now" className="inline-flex items-center gap-2 text-sm md:text-base font-semibold px-6 py-3 rounded-full bg-orange-500 text-white shadow hover:bg-orange-600 transition">
                   <span>BOOK NOW</span>
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 5l7 7-7 7" /></svg>
                 </a>
