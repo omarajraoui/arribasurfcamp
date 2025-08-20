@@ -12,38 +12,51 @@ const GallerieSection = () => {
 
   const photoCategories = ['all','surf','camp','food','sunsets','community'].map(id => ({ id, label: t(`photoFilter.categories.${id}`), icon: '' }));
 
+  const base = import.meta.env.BASE_URL || './';
   const galleryPhotos = [
     // Row 1 (hero)
-    { id: 1, category: 'surf', size: 'large', title: 'Perfect Barrel', description: 'Dawn patrol perfection', src: 'https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=1200&h=800&fit=crop' },
+  { id: 1, category: 'surf', size: 'large', title: 'Session 1080', description: 'Morning paddle out', src: base + 'images/surfsessions/IMG_1080.jpg' },
     // Row 2 (wide + small)
-    { id: 2, category: 'camp', size: 'wide', title: 'Beach Paradise', description: 'Our slice of paradise', src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=600&fit=crop' },
-    { id: 3, category: 'surf', size: 'small', title: 'Lineup Check', description: 'Reading the sets', src: 'https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=400&h=400&fit=crop' },
+  { id: 2, category: 'camp', size: 'wide', title: 'Camp Life 1087', description: 'Shared villa vibe', src: base + 'images/camplife/IMG_1087.jpg' },
+  { id: 3, category: 'surf', size: 'small', title: 'Session 1081', description: 'Set lining up', src: base + 'images/surfsessions/IMG_1081.jpg' },
     // Row 3 (2 medium)
-    { id: 4, category: 'surf', size: 'medium', title: 'Learning the Waves', description: 'First rides stoke', src: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=600&fit=crop' },
-    { id: 5, category: 'surf', size: 'medium', title: 'Big Wave Challenge', description: 'Charging bigger sets', src: 'https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=800&h=600&fit=crop' },
+  { id: 4, category: 'surf', size: 'medium', title: 'Session 1082', description: 'First drops', src: base + 'images/surfsessions/IMG_1082.jpg' },
+  { id: 5, category: 'surf', size: 'medium', title: 'Session 1083', description: 'Trim down the line', src: base + 'images/surfsessions/IMG_1083.jpg' },
     // Row 4 (4 small)
-    { id: 6, category: 'sunsets', size: 'small', title: 'Mirror Sunset', description: 'Ocean turns to glass', src: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=400&fit=crop' },
-    { id: 7, category: 'food', size: 'small', title: 'Tropical Feast', description: 'Vibrant island plate', src: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=400&fit=crop' },
-    { id: 8, category: 'community', size: 'small', title: 'Camp Smiles', description: 'Friends after session', src: 'https://images.unsplash.com/photo-1530549387789-4c1017266635?w=400&h=400&fit=crop' },
-    { id: 9, category: 'food', size: 'small', title: 'Smoothie Bowl', description: 'Fuel for waves', src: 'https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=400&h=400&fit=crop' },
+  { id: 6, category: 'sunsets', size: 'small', title: 'Sunset 1103', description: 'Ocean turns to glass', src: base + 'images/sunsets/IMG_1103.jpg' },
+  { id: 7, category: 'food', size: 'small', title: 'Food 1095', description: 'Colorful plate', src: base + 'images/food/IMG_1095.jpg' },
+    { id: 8, category: 'community', size: 'small', title: 'Community 1109', description: 'Friends after session', src: base + 'images/community/IMG_1109.jpg' },
+  { id: 9, category: 'food', size: 'small', title: 'Food 1096', description: 'Morning energy', src: base + 'images/food/IMG_1096.jpg' },
     // Row 5 (wide + small)
-    { id: 10, category: 'sunsets', size: 'wide', title: 'Fire Sky', description: 'Evening blaze', src: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200&h=600&fit=crop' },
-    { id: 11, category: 'camp', size: 'small', title: 'Yoga Flow', description: 'Morning balance', src: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=400&fit=crop' },
+  { id: 10, category: 'sunsets', size: 'wide', title: 'Sunset 1104', description: 'Evening blaze', src: base + 'images/sunsets/IMG_1104.jpg' },
+  { id: 11, category: 'food', size: 'small', title: 'Food 1099', description: 'Fresh snack', src: base + 'images/food/IMG_1099.jpg' },
     // Row 6 (medium + small + small)
-    { id: 12, category: 'camp', size: 'medium', title: 'Beachfront Villa', description: 'Wake to waves', src: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&h=600&fit=crop' },
-    { id: 13, category: 'community', size: 'small', title: 'Teaching Moment', description: 'Sharing tips', src: 'https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=400&h=400&fit=crop' },
-    { id: 14, category: 'food', size: 'small', title: 'Island Fusion', description: 'Local + French style', src: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=400&fit=crop' },
+  { id: 12, category: 'food', size: 'medium', title: 'Food 1100', description: 'Shared table', src: base + 'images/food/IMG_1100.jpg' },
+  { id: 13, category: 'camp', size: 'small', title: 'Camp Life 1094', description: 'Chill corner', src: base + 'images/camplife/IMG_1094.jpg' },
+  { id: 14, category: 'food', size: 'small', title: 'Food 1097', description: 'Fusion bite', src: base + 'images/food/IMG_1097.jpg' },
     // Row 7 (small + medium + small)
-    { id: 15, category: 'surf', size: 'small', title: 'Aerial Boost', description: 'Progression moment', src: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&h=400&fit=crop' },
-    { id: 16, category: 'community', size: 'medium', title: 'Camp Celebration', description: 'Birthday vibes', src: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&h=600&fit=crop' },
-    { id: 17, category: 'surf', size: 'small', title: 'Paddle Out', description: 'Heading for sets', src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop' },
+  { id: 15, category: 'surf', size: 'small', title: 'Session 1084', description: 'Inside section', src: base + 'images/surfsessions/IMG_1084.jpg' },
+  { id: 16, category: 'community', size: 'medium', title: 'Community 1110', description: 'Group moment', src: base + 'images/community/IMG_1110.jpg' },
+  { id: 17, category: 'surf', size: 'small', title: 'Session 1085', description: 'Spray release', src: base + 'images/surfsessions/IMG_1085.jpg' },
     // Row 8 (medium + medium)
-    { id: 18, category: 'food', size: 'medium', title: 'Fresh Catch BBQ', description: 'Ocean to grill', src: 'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=800&h=600&fit=crop' },
-    { id: 19, category: 'community', size: 'medium', title: 'Bonfire Night', description: 'Stories & stars', src: 'https://images.unsplash.com/photo-1498550744921-75f79806b8a7?w=800&h=600&fit=crop' },
+  { id: 18, category: 'food', size: 'medium', title: 'Food 1098', description: 'Meal prep', src: base + 'images/food/IMG_1098.jpg' },
+  { id: 19, category: 'community', size: 'medium', title: 'Community 1111', description: 'Evening hangout', src: base + 'images/community/IMG_1111.jpg' },
     // Row 9 (wide + small) => completes 20
-  { id: 20, category: 'surf', size: 'wide', title: 'Glassy Dawn', description: 'Early calm', src: 'https://images.unsplash.com/photo-1501973801540-537f08ccae7b?w=1200&h=600&fit=crop' },
+  { id: 20, category: 'surf', size: 'wide', title: 'Session 1086', description: 'Glassy face', src: base + 'images/surfsessions/IMG_1086.jpg' },
   // Added small photo to complete final row (wide + small)
-  { id: 21, category: 'sunsets', size: 'small', title: 'First Light', description: 'Soft glow arriving', src: 'https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=400&h=800&fit=crop' }
+  { id: 21, category: 'sunsets', size: 'small', title: 'Sunset 1105', description: 'Soft glow arriving', src: base + 'images/sunsets/IMG_1105.jpg' },
+  // Additional community photos (new row)
+  { id: 22, category: 'community', size: 'small', title: 'Community 1112', description: 'Shared laugh', src: base + 'images/community/IMG_1112.jpg' },
+  { id: 23, category: 'community', size: 'medium', title: 'Community 1113', description: 'Group activity', src: base + 'images/community/IMG_1113.jpg' },
+  { id: 24, category: 'community', size: 'small', title: 'Community 1114', description: 'Relax time', src: base + 'images/community/IMG_1114.jpg' },
+  { id: 25, category: 'community', size: 'medium', title: 'Community 1115', description: 'Evening vibes', src: base + 'images/community/IMG_1115.jpg' }
+  ,
+  // Additional Camp Life photos to include all local camp images
+  { id: 26, category: 'camp', size: 'medium', title: 'Camp Life 1088', description: 'Morning stretch', src: base + 'images/camplife/IMG_1088.jpg' },
+  { id: 27, category: 'camp', size: 'small', title: 'Camp Life 1089', description: 'Villa corner', src: base + 'images/camplife/IMG_1089.jpg' },
+  { id: 28, category: 'camp', size: 'small', title: 'Camp Life 1090', description: 'Group focus', src: base + 'images/camplife/IMG_1090.jpg' },
+  { id: 29, category: 'camp', size: 'medium', title: 'Camp Life 1091', description: 'Meal prep', src: base + 'images/camplife/IMG_1091.jpg' },
+  { id: 30, category: 'camp', size: 'small', title: 'Camp Life 1093', description: 'Evening relax', src: base + 'images/camplife/IMG_1093.jpg' }
   ];
 
   const filteredPhotos = activeFilter === 'all' 
@@ -90,7 +103,7 @@ const GallerieSection = () => {
           viewport={{ once: true }}
         >
           <motion.a
-            href="https://www.instagram.com/arriba.surfcamp.bali?igsh=YWQ4eWI3bHR5dTBs"
+            href="https://www.instagram.com/arriba.surfcamp/profilecard/?igsh=d3B3ZWp6bTFudGc4"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="View more photos on Instagram"
@@ -117,14 +130,14 @@ const GallerieSection = () => {
           <p className="text-white text-lg mb-6">{t('gallery.shareSubtitle')}</p>
           <div className="flex justify-center space-x-4">
             <motion.a
-              href="https://www.instagram.com/arriba.surfcamp.bali?igsh=YWQ4eWI3bHR5dTBs"
+              href="https://www.instagram.com/arriba.surfcamp/profilecard/?igsh=d3B3ZWp6bTFudGc4"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white text-[#2E5984] px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              @arriba.surfcamp.bali
+              @arriba.surfcamp
             </motion.a>
           </div>
         </motion.div>

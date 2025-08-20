@@ -38,14 +38,8 @@ const HistoireSection = () => {
               </div>
               <div className="w-full h-44 mb-4 overflow-hidden">
                 <img
-                  src={`https://images.unsplash.com/photo-${
-                    index % 5 === 0 ? '1505142468610-359e7d316be0' :
-                    index % 5 === 1 ? '1502680390469-be75c86b636f' :
-                    index % 5 === 2 ? '1506905925346-21bda4d32df4' :
-                    index % 5 === 3 ? '1518837695005-2083093ee35b' :
-                    '1571896349842-33c89424de2d'
-                  }?w=600&h=400&fit=crop&auto=format`}
-                  alt={entry.title}
+                  src={`${import.meta.env.BASE_URL || './'}images/story/${index + 1}.jpg`}
+                  alt={entry.title || `Arriba history step ${index + 1}`}
                   className="w-full h-full object-cover transform group-hover:scale-105 transition duration-500"
                   loading="lazy"
                   decoding="async"

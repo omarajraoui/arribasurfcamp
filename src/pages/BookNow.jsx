@@ -17,6 +17,7 @@ const BookNow = () => {
   const [startDate, setStartDate] = useState(null);
   const endDate = startDate ? new Date(new Date(startDate).setDate(startDate.getDate() + 6)) : null;
   const [participants, setParticipants] = useState(1);
+  const [roomType, setRoomType] = useState('mixed');
   const [personalInfo, setPersonalInfo] = useState({ firstName: '', lastName: '', email: '', phone: '' });
   const [packageType] = useState('standard');
 
@@ -29,14 +30,16 @@ const BookNow = () => {
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const start = params.get('start');
-    const p = params.get('p');
+  const p = params.get('p');
+  const prefRoom = params.get('prefRoom');
     if (start) {
       const sd = new Date(start + 'T00:00:00');
       if (!isNaN(sd) && sd.getDay() === 0) {
         setStartDate(sd);
       }
     }
-    if (p && !isNaN(Number(p))) setParticipants(Number(p));
+  if (p && !isNaN(Number(p))) setParticipants(Number(p));
+  if (prefRoom && ['mixed','girls','boys'].includes(prefRoom)) setRoomType(prefRoom);
   }, [location.search]);
 
   const calculateTotal = () => {
@@ -81,6 +84,53 @@ const BookNow = () => {
           </div>
 
           <div className="booking-step bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
+            <h3 className="text-xl font-semibold text-brand-ink mb-6">{t('bookNowPage.steps.roomType')}</h3>
+            {(() => {
+              const base = import.meta.env.BASE_URL || './';
+              const roomTypeImages = {
+                mixed: base + 'images/chambretype/mixed.jpg',
+                girls: base + 'images/chambretype/girlsonly.jpg',
+                boys: base + 'images/chambretype/boysonly.jpg'
+              };
+              const order = ['mixed','girls','boys'];
+              return (
+                <div className="grid md:grid-cols-3 gap-4">
+                  {order.map(type => (
+                    <button
+                      type="button"
+                      key={type}
+                      onClick={() => setRoomType(type)}
+                      className={`group rounded-xl border overflow-hidden text-left transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-sun-accent ${
+                        roomType === type
+                          ? 'border-brand-sun-accent shadow-md bg-brand-sun-accent/10'
+                          : 'border-gray-200 hover:border-brand-sun-accent/50'
+                      }`}
+                    >
+                      <div className="relative aspect-[4/3] w-full overflow-hidden">
+                        <img
+                          src={roomTypeImages[type]}
+                          alt={t(`bookNowPage.roomTypes.${type}.title`)}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.06]"
+                          loading="lazy"
+                        />
+                        <div className={`absolute inset-0 bg-gradient-to-t from-black/50 via-black/5 to-transparent transition-opacity duration-300 ${roomType===type ? 'opacity-60' : 'opacity-40 group-hover:opacity-60'}`}></div>
+                      </div>
+                      <div className="p-4">
+                        <h4 className="font-semibold text-brand-ink mb-1">
+                          {t(`bookNowPage.roomTypes.${type}.title`)}
+                        </h4>
+                        <p className="text-sm text-brand-ink-soft">
+                          {t(`bookNowPage.roomTypes.${type}.description`)}
+                        </p>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              );
+            })()}
+          </div>
+
+          <div className="booking-step bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
             <h3 className="text-xl font-semibold text-brand-ink mb-6">{t('bookNowPage.steps.package')}</h3>
             <div className="grid md:grid-cols-2 gap-6">
               <div className={`package-card relative rounded-xl border ${packageType==='standard' ? 'border-brand-sun-accent shadow-md' : 'border-gray-200'} bg-white p-6`}>
@@ -109,6 +159,7 @@ const BookNow = () => {
           <BookingSummary 
             dates={[startDate, endDate]}
             participants={participants}
+            roomType={roomType}
             total={calculateTotal()}
             weekPrice={weekPrice}
           />

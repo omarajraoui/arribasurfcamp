@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 // Room / shared space photos
 import roomMain from '../../assets/surfcamp/chambre.JPG';
@@ -10,16 +10,26 @@ import roomAlt4 from '../../assets/surfcamp/yoga-class.jpg';
 // import OptimizedImage from '../ui/OptimizedImage';
 import { formatWeekBase } from '../../utils/currency';
 
+// Static room type config hoisted to avoid re-allocations on each render
+const BASE = import.meta.env.BASE_URL || './';
+const ROOM_TYPES = [
+  { key: 'mixed', image: `${BASE}images/chambretype/mixed.jpg` },
+  { key: 'girls', image: `${BASE}images/chambretype/girlsonly.jpg` },
+  { key: 'boys', image: `${BASE}images/chambretype/boysonly.jpg` }
+];
+
 const Chambres = () => {
   const { t, i18n } = useTranslation();
-  const amenities = t('surfcamp.rooms.amenities', { returnObjects: true });
-  const secondaryLabels = t('surfcamp.rooms.secondaryPhotos', { returnObjects: true });
+  const amenities = t('surfcamp.rooms.amenities', { returnObjects: true }) || [];
+  const secondaryLabels = t('surfcamp.rooms.secondaryPhotos', { returnObjects: true }) || [];
 
-  // Build an array of secondary image objects pairing a label (if available) with an imported asset.
-  const secondaryImages = [roomAlt1, roomAlt2, roomAlt3, roomAlt4].map((src, idx) => ({
-    src,
-    label: secondaryLabels[idx] || ''
-  }));
+  // Memoize derived arrays that depend on translation (language) changes
+  const secondaryImages = useMemo(() => (
+    [roomAlt1, roomAlt2, roomAlt3, roomAlt4].map((src, idx) => ({
+      src,
+      label: secondaryLabels[idx] || ''
+    }))
+  ), [secondaryLabels]);
 
   const formattedPrice = formatWeekBase((i18n.language || 'en').split('-')[0]);
 
@@ -56,6 +66,35 @@ const Chambres = () => {
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
+
+        {/* Room Types Row (professional photos instead of emojis) */}
+        <div className="mt-20">
+          <h3 className="text-2xl font-bold text-brand-ink mb-8 text-center">{t('bookNowPage.steps.roomType')}</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {ROOM_TYPES.map(({ key, image }) => (
+              <div key={key} className="group bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden flex flex-col">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img
+                    src={image}
+                    alt={t(`bookNowPage.roomTypes.${key}.title`)}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.07]"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-transparent opacity-60 pointer-events-none"/>
+                </div>
+                <div className="p-6 text-center flex-1 flex flex-col">
+                  <h4 className="text-xl font-semibold text-brand-ink mb-3">
+                    {t(`bookNowPage.roomTypes.${key}.title`)}
+                  </h4>
+                  <p className="text-sm text-brand-ink-soft flex-1">
+                    {t(`bookNowPage.roomTypes.${key}.description`)}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
