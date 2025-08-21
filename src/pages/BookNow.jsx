@@ -18,7 +18,7 @@ const BookNow = () => {
   const endDate = startDate ? new Date(new Date(startDate).setDate(startDate.getDate() + 6)) : null;
   const [participants, setParticipants] = useState(1);
   const [roomType, setRoomType] = useState('mixed');
-  const [personalInfo, setPersonalInfo] = useState({ firstName: '', lastName: '', email: '', phone: '' });
+  const [personalInfo, setPersonalInfo] = useState([{ firstName: '', lastName: '', email: '', phone: '' }]);
   const [packageType] = useState('standard');
 
   const { i18n } = useTranslation();
@@ -30,17 +30,25 @@ const BookNow = () => {
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const start = params.get('start');
-  const p = params.get('p');
-  const prefRoom = params.get('prefRoom');
+    const p = params.get('p');
+    const prefRoom = params.get('prefRoom');
     if (start) {
       const sd = new Date(start + 'T00:00:00');
       if (!isNaN(sd) && sd.getDay() === 0) {
         setStartDate(sd);
       }
     }
-  if (p && !isNaN(Number(p))) setParticipants(Number(p));
-  if (prefRoom && ['mixed','girls','boys'].includes(prefRoom)) setRoomType(prefRoom);
+    if (p && !isNaN(Number(p))) setParticipants(Number(p));
+    if (prefRoom && ['mixed','girls','boys'].includes(prefRoom)) setRoomType(prefRoom);
   }, [location.search]);
+
+  // Ensure personalInfo array matches participants count
+  useEffect(() => {
+    setPersonalInfo(prev => {
+      const arr = Array.from({ length: participants }, (_, i) => prev[i] || { firstName: '', lastName: '', email: '', phone: '' });
+      return arr;
+    });
+  }, [participants]);
 
   const calculateTotal = () => {
   if (!startDate) return 0;

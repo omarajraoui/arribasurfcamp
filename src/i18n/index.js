@@ -308,7 +308,7 @@ const resources = {
           boys: { title: "Boys Only Room", description: "Men-only shared room – relaxed vibe." }
         }
       },
-      personalInfoForm: { firstName: "First Name", lastName: "Last Name", email: "Email", phone: "Phone / WhatsApp", infoNote: "We will use this information only for your booking." },
+      personalInfoForm: { firstName: "First Name", lastName: "Last Name", email: "Email", phone: "Phone / WhatsApp", infoNote: "We will only use this information for your booking.", travelerLabel: "Guest {{index}}" },
       paymentOptions: {
         method: { card: "Card", bank: "Bank Transfer", later: "Later" },
         card: {
@@ -597,7 +597,7 @@ const resources = {
             "🎭 Activités culturelles",
             "🎉 Moments de groupe"
           ],
-          activityAlert: "Week-end spécialisé TREK & découverte des montagnes de Lombok – 24 Septembre. Réservez votre semaine."
+          activityAlert: "Fin de semaine spécialisé TREK & découverte des montagnes de Lombok – 24 Septembre. Réservez votre semaine."
         }
       }
       ,
@@ -642,7 +642,7 @@ const resources = {
           boys: { title: "Chambre Garçons Uniquement", description: "Réservée aux voyageurs." }
         }
       },
-      personalInfoForm: { firstName: "Prénom", lastName: "Nom", email: "Email", phone: "Téléphone / WhatsApp", infoNote: "Nous utiliserons ces informations uniquement pour votre réservation." },
+      personalInfoForm: { firstName: "Prénom", lastName: "Nom", email: "Email", phone: "Téléphone / WhatsApp", infoNote: "Nous utiliserons ces informations uniquement pour votre réservation.", travelerLabel: "Invité {{index}}" },
       paymentOptions: {
         method: { card: "Carte", bank: "Virement", later: "Plus tard" },
         card: {
@@ -701,7 +701,7 @@ const resources = {
         subtitle: "Conoce a los apasionados que hacen cada momento único",
   closingNote: "",
         members: [
-          { id: 1, name: "Camille", role: "Operaciones & Experiencia", photo: "/src/assets/gallery/camille-to-crop.jpeg", bio: "Coordina la logística diaria y asegura que cada huésped se sienta en casa.", stickyNote: "", noteColor: "yellow", rotation: -5 },
+          { id: 1, name: "Camille", role: "Operaciones & Experiencia", photo: "/src/assets/gallery/camille-to-crop.jpeg", bio: "Coordina la logística hariana dan memastikan setiap tamu merasa di rumah.", stickyNote: "", noteColor: "yellow", rotation: -5 },
           { id: 2, name: "Louise", role: "Comunidad & Animación", photo: "/src/assets/gallery/louise-to-crop.jpeg", bio: "Hace crecer la comunidad Arriba y crea la energía colectiva única.", stickyNote: "", noteColor: "pink", rotation: 6 }
         ],
         annotations: { bestTeam: "Mejor equipo! 🎉", family: "Arriba Family ✨", legends: "LEGENDA!", memories: "Creando recuerdos 📸" }
@@ -756,6 +756,7 @@ const resources = {
           boys: { title: "Habitación Solo Chicos", description: "Solo para viajeros." }
         }
       },
+      personalInfoForm: { firstName: "Nombre", lastName: "Apellido", email: "Email", phone: "Teléfono / WhatsApp", infoNote: "Usaremos esta información solo para tu reserva.", travelerLabel: "Invitado {{index}}" },
       cards: {
   discover: "Descubrir",
   arriba: "Experiencia Arriba",
@@ -836,7 +837,6 @@ const resources = {
         },
         rooms: {
           title: "Habitaciones",
-          subtitle: "Alojamiento compartido en villa – confort, espacio y comunidad",
           amenities: [
             "4-6 camas cómodas",
             "Aire acondicionado",
@@ -994,6 +994,7 @@ const resources = {
           boys: { title: "Alleen Jongens Kamer", description: "Alleen voor mannelijke reizigers." }
         }
       },
+      personalInfoForm: { firstName: "Voornaam", lastName: "Achternaam", email: "Email", phone: "Telefoon / WhatsApp", infoNote: "We gebruiken deze informatie alleen voor je boeking.", travelerLabel: "Gast {{index}}" },
       paymentOptions: {
         method: { card: "Kaart", bank: "Overschrijving", later: "Later" },
         card: {
@@ -1249,6 +1250,7 @@ const resources = {
           boys: { title: "Kamar Khusus Laki-laki", description: "Hanya untuk laki-laki." }
         }
       },
+      personalInfoForm: { firstName: "Nama Depan", lastName: "Nama Belakang", email: "Email", phone: "Telepon / WhatsApp", infoNote: "Kami hanya akan menggunakan informasi ini untuk pemesanan Anda.", travelerLabel: "Tamu {{index}}" },
       cards: {
       discover: "Jelajahi",
       arriba: "Arriba",
@@ -1393,9 +1395,9 @@ const resources = {
             minggu: { label: "MINGGU", activities: ["✈️ Kedatangan & Check-in", "🌅 Sunset Sambutan", "🍽️ Makan Malam Sambutan"] },
             senin: { label: "SENIN", activities: ["🏄‍♂️ Pelajaran Surf (07.00)", "🧘‍♀️ Yoga (17.00)", "🎉 Waktu Komunitas"] },
             selasa: { label: "SELASA", activities: ["🏄‍♂️ Pelajaran Surf (07.00)", "👨‍🍳 Kelas Masak (15.00)", "🌅 Sunset Bebas"] },
-            rabu: { label: "RABU", activities: ["🏄‍♂️ Pelajaran Surf (07.00)", "🤿 Snorkeling (14.00)", "🎬 Malam Film (20.00)"] },
-            kamis: { label: "KAMIS", activities: ["🏄‍♂️ Pelajaran Surf (07.00)", "🙏 Persembahan Bali (16.00)", "🧘‍♀️ Yoga (18.00)"] },
-            jumat: { label: "JUMAT", activities: ["🏄‍♂️ Pelajaran Surf (07.00)", "💪 Pilates (17.00)", "🔥 BBQ Grup (19.00)"] },
+            rabu: { label: "RABU", activities: ["🏄‍♂️ Pelajaran Surf (07.00)", "🤿 Snorkeling (14.00)", "🎬 Malam Film (20.00)" ] },
+            kamis: { label: "KAMIS", activities: ["🏄‍♂️ Pelajaran Surf (07.00)", "🙏 Persembahan Bali (16.00)", "🧘‍♀️ Yoga (18.00)" ] },
+            jumat: { label: "JUMAT", activities: ["🏄‍♂️ Pelajaran Surf (07.00)", "💪 Pilates (17.00)", "🔥 BBQ Grup (19.00)" ] },
             sabtu: { label: "SABTU", activities: ["🏄‍♂️ Sesi Surf Terakhir", "🏝️ Jelajah Lombok", "👋 Pesta Perpisahan"] }
           },
           legends: [
