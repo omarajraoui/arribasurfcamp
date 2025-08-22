@@ -2,6 +2,10 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
+// Import team images
+import camillePhoto from '../assets/gallery/camille-to-crop.jpeg';
+import louisePhoto from '../assets/gallery/louise-to-crop.jpeg';
+
 const resources = {
   en: {
     translation: {
@@ -39,8 +43,8 @@ const resources = {
         subtitle: "Meet the passionate people who make every moment unique",
   closingNote: "",
         members: [
-          { id: 1, name: "Camille", role: "Operations & Guest Experience", photo: "/src/assets/gallery/camille-to-crop.jpeg", bio: "She orchestrates daily logistics, partner coordination and ensures every guest feels at home.", stickyNote: "", noteColor: "yellow", rotation: -5 },
-          { id: 2, name: "Louise", role: "Community & Experience Curator", photo: "/src/assets/gallery/louise-to-crop.jpeg", bio: "She grows the Arriba community and shapes the collective vibe before, during and after each stay.", stickyNote: "", noteColor: "pink", rotation: 6 }
+          { id: 1, name: "Camille", role: "Operations & Guest Experience", photo: camillePhoto, bio: "She orchestrates daily logistics, partner coordination and ensures every guest feels at home.", stickyNote: "", noteColor: "yellow", rotation: -5 },
+          { id: 2, name: "Louise", role: "Community & Experience Curator", photo: louisePhoto, bio: "She grows the Arriba community and shapes the collective vibe before, during and after each stay.", stickyNote: "", noteColor: "pink", rotation: 6 }
         ],
         annotations: {
           bestTeam: "Best team ever! 🎉",
@@ -373,8 +377,8 @@ const resources = {
     subtitle: "Rencontrez les passionnés qui rendent chaque moment unique",
   closingNote: "",
         members: [
-          { id: 1, name: "Camille", role: "Opérations & Expérience Client", photo: "/src/assets/gallery/camille-to-crop.jpeg", bio: "Elle gère l'organisation quotidienne, coordonne les partenaires et veille à ce que tout se déroule parfaitement.", stickyNote: "", noteColor: "yellow", rotation: -5 },
-          { id: 2, name: "Louise", role: "Communauté & Animation", photo: "/src/assets/gallery/louise-to-crop.jpeg", bio: "Elle développe la communauté Arriba et garantit l'énergie collective unique de chaque groupe.", stickyNote: "", noteColor: "pink", rotation: 6 }
+          { id: 1, name: "Camille", role: "Opérations & Expérience Client", photo: camillePhoto, bio: "Elle gère l'organisation quotidienne, coordonne les partenaires et veille à ce que tout se déroule parfaitement.", stickyNote: "", noteColor: "yellow", rotation: -5 },
+          { id: 2, name: "Louise", role: "Communauté & Animation", photo: louisePhoto, bio: "Elle développe la communauté Arriba et garantit l'énergie collective unique de chaque groupe.", stickyNote: "", noteColor: "pink", rotation: 6 }
         ],
         annotations: {
           bestTeam: "Best team ever! 🎉",
@@ -701,8 +705,8 @@ const resources = {
         subtitle: "Conoce a los apasionados que hacen cada momento único",
   closingNote: "",
         members: [
-          { id: 1, name: "Camille", role: "Operaciones & Experiencia", photo: "/src/assets/gallery/camille-to-crop.jpeg", bio: "Coordina la logística hariana dan memastikan setiap tamu merasa di rumah.", stickyNote: "", noteColor: "yellow", rotation: -5 },
-          { id: 2, name: "Louise", role: "Comunidad & Animación", photo: "/src/assets/gallery/louise-to-crop.jpeg", bio: "Hace crecer la comunidad Arriba y crea la energía colectiva única.", stickyNote: "", noteColor: "pink", rotation: 6 }
+          { id: 1, name: "Camille", role: "Operaciones & Experiencia", photo: camillePhoto, bio: "Coordina la logística hariana dan memastikan setiap tamu merasa di rumah.", stickyNote: "", noteColor: "yellow", rotation: -5 },
+          { id: 2, name: "Louise", role: "Comunidad & Animación", photo: louisePhoto, bio: "Hace crecer la comunidad Arriba y crea la energía colectiva única.", stickyNote: "", noteColor: "pink", rotation: 6 }
         ],
         annotations: { bestTeam: "Mejor equipo! 🎉", family: "Arriba Family ✨", legends: "LEGENDA!", memories: "Creando recuerdos 📸" }
       },
@@ -941,8 +945,8 @@ const resources = {
     { year: "6", title: "Doe Mee Met Het Avontuur", content: "Als ons project je inspireert en je deel wilt uitmaken van dit prachtige avontuur, aarzel dan niet om contact met ons op te nemen. Samen, laten we onvergetelijke herinneringen creëren!", noteText: "Investeren", noteColor: "blue" }
   ] },
   team: { title: "Het Arriba Team", subtitle: "Ontmoet de gepassioneerde mensen die elk moment uniek maken", closingNote: "", members: [
-  { id: 1, name: "Camille", role: "Operaties & Gastbeleving", photo: "/src/assets/gallery/camille-to-crop.jpeg", bio: "Ze coördineert de dagelijkse logistiek en zorgt dat elke gast zich thuis voelt.", stickyNote: "", noteColor: "yellow", rotation: -5 },
-  { id: 2, name: "Louise", role: "Community & Beleving", photo: "/src/assets/gallery/louise-to-crop.jpeg", bio: "Ze bouwt de Arriba community uit en creëert de unieke groepsenergie.", stickyNote: "", noteColor: "pink", rotation: 6 }
+  { id: 1, name: "Camille", role: "Operaties & Gastbeleving", photo: camillePhoto, bio: "Ze coördineert de dagelijkse logistiek en zorgt dat elke gast zich thuis voelt.", stickyNote: "", noteColor: "yellow", rotation: -5 },
+  { id: 2, name: "Louise", role: "Community & Beleving", photo: louisePhoto, bio: "Ze bouwt de Arriba community uit en creëert de unieke groepsenergie.", stickyNote: "", noteColor: "pink", rotation: 6 }
   ], annotations: { bestTeam: "Beste team! 🎉", family: "Arriba Family ✨", legends: "LEGENDS!", memories: "Herinneringen maken 📸" } },
   gallery: { title: "Arriba Leven", subtitle: "Ontdek de magie...", loadMore: "Meer Momenten", shareTitle: "Deel Je Arriba Ervaring", shareSubtitle: "Tag ons @arribasurfcamp" },
   photoFilter: { categories: { all: "Alles", surf: "Surf Sessions", camp: "Camp Life", food: "Food", sunsets: "Sunsets", community: "Community" }, descriptions: { all: "Alle categorieën", surf: "Surf sessies", camp: "Camp leven", food: "Gastronomie", sunsets: "Zonsondergangen", community: "Community" } },
@@ -1189,8 +1193,8 @@ const resources = {
       },
   heroExp: { title: "L'EXP ARRIBA", subtitle: "28 traveler, satu vila di Lombok, 7 hari imersi total", description: "Kamar bersama (4–6 tempat tidur) di jantung vila tropis dengan kolam renang privat dan area komunal terbuka. Kenyamanan modern, suasana hangat dan lokasi ideal: tempat untuk istirahat, terhubung dan menjalani penuh petualangan Surf Camp.", discover: "JELAJAHI" },
   team: { title: "Tim Arriba", subtitle: "Temui orang-orang penuh passion", closingNote: "", members: [
-    { id: 1, name: "Camille", role: "Operasi & Pengalaman Tamu", photo: "/src/assets/gallery/camille-to-crop.jpeg", bio: "Mengatur logistik harian dan memastikan setiap tamu merasa di rumah.", stickyNote: "", noteColor: "yellow", rotation: -5 },
-    { id: 2, name: "Louise", role: "Komunitas & Pengalaman", photo: "/src/assets/gallery/louise-to-crop.jpeg", bio: "Membangun komunitas Arriba dan menjaga energi kolektif yang khas.", stickyNote: "", noteColor: "pink", rotation: 6 }
+    { id: 1, name: "Camille", role: "Operasi & Pengalaman Tamu", photo: camillePhoto, bio: "Mengatur logistik harian dan memastikan setiap tamu merasa di rumah.", stickyNote: "", noteColor: "yellow", rotation: -5 },
+    { id: 2, name: "Louise", role: "Komunitas & Pengalaman", photo: louisePhoto, bio: "Membangun komunitas Arriba dan menjaga energi kolektif yang khas.", stickyNote: "", noteColor: "pink", rotation: 6 }
   ], annotations: { bestTeam: "Tim terbaik! 🎉", family: "Arriba Family ✨", legends: "LEGENDS!", memories: "Mencipta kenangan 📸" } },
   history: { title: "Kisah Kami", subtitle: "Petualangan Arriba: dari ide ke surga selancar 🏄‍♂️", annotations: { start: "Kisah kami dimulai...", dreams: "Mimpi jadi nyata ✨", building: "Membangun surga!", family: "Keluarga bertambah 👨‍👩‍👧‍👦", adventures: "Petualangan tanpa akhir!" }, timeline: [
     { year: "1", title: "Asal Proyek", content: "Camille dan Louise bertemu sebagai pemimpin grup di kamp anak-anak Prancis. Pengalaman bersama dalam animasi grup ini menyatukan kami dan memberi kami keahlian solid dalam menciptakan pengalaman grup yang sukses.", noteText: "Pertemuan", noteColor: "yellow" },
